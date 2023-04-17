@@ -2,9 +2,31 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <title>Login | deinNachbar.de</title>
 </head>
 <body>
-ändern
-</body>
+    <header>
+      <h1>deinNachbar.de</h1>
+    </header>
+
+    <form>
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email"pattern ="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title = "Bitte geben sie eine g&uuml;ltige Email-Adresse der Form: characters@characters.domain ein!" required>
+
+      <label for="password">Passwort:</label>
+      <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Das Passwort muss mindestens einen Gro&szlig;buchstaben, einen Kleinbuchstaben, eine Nummer und mindestens 8 Zeichen enthalten!"required>
+
+      <button type="submit">OK</button>
+    </form>
+
+    <p>Noch nicht registriert? <a href="https://tobis.w3spaces.com/registrierungmitpwwdh.html">Hier registrieren</a></p>
+
+    <footer>
+      <ul>
+        <li><a href="#">AGB</a></li>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">&Uuml;ber Uns</a></li>
+      </ul>
+    </footer>
+  </body>
 </html>
