@@ -9,19 +9,21 @@
     <header>
       <h1>deinNachbar.de</h1>
     </header>
+    <main>
 
     <form>
       <label for="email">Email:</label>
-      <input type="text" id="email" name="email"pattern ="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title = "Bitte geben sie eine g&uuml;ltige Email-Adresse der Form: characters@characters.domain ein!" required>
+      <input type="text" id="email" name="email"pattern ="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title = "Bitte geben sie eine g&uuml;ltige Email-Adresse der Form: characters@characters.domain ein!" placeholder="name@gmail.com" required>
 
       <label for="password">Passwort:</label>
-      <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Das Passwort muss mindestens einen Gro&szlig;buchstaben, einen Kleinbuchstaben, eine Nummer und mindestens 8 Zeichen enthalten!"required>
+      <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Das Passwort muss mindestens einen Gro&szlig;buchstaben, einen Kleinbuchstaben, eine Nummer und mindestens 8 Zeichen enthalten!" placeholder="TestPwd17" required>
 
       <button type="submit">OK</button>
     </form>
 
     <p>Noch nicht registriert? <a href="registrierung.html">Hier registrieren</a></p>
-
+	
+	</main>
     <footer>
       <ul>
         <li><a href="#">AGB</a></li>
