@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faceted-project>
   <runtime name="WildFly 24.0 Runtime"/>
+  <fixed facet="java"/>
   <fixed facet="wst.jsdt.web"/>
-<<<<<<< HEAD
-  <fixed facet="java"/>
   <fixed facet="jst.web"/>
-=======
-  <fixed facet="jst.web"/>
-  <fixed facet="java"/>
->>>>>>> parent of ba9e8e0 (init lukas)
   <installed facet="java" version="17"/>
   <installed facet="jst.web" version="4.0"/>
   <installed facet="wst.jsdt.web" version="1.0"/>
