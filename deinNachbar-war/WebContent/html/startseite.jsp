@@ -1,9 +1,17 @@
+<!-- Tobi -->
+<%@ page language="Java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page errorPage="fehlerausgabe.jsp" %>
+<!-- Tobi -->
 <!DOCTYPE html>
 <html>
 <!-- Lukas -->
 <head>
 <meta charset="UTF-8">
 <title>startseite</title>
+<!-- Tobi -->
+<base href="$ {pageContext.request.requestURI}"/>
+<!-- Tobi -->
+
 </head>
 <body>
 	<header>
@@ -51,10 +59,10 @@
 				</ul>
 			</div>
 		</nav>
-		<div id="FensterFürAnzeigen">
+		<div id="FensterFÃ¼rAnzeigen">
 			<div id="tabSuche">
 				<ul>
-					<li>Suche Gärtner</li>
+					<li>Suche GÃ¤rtner</li>
 					<li>Suche Maler</li>
 					<li>Suche Elektiker</li>
 				</ul>
@@ -74,7 +82,7 @@
 	<footer>
 		<nav>
 			<a href="./agb.html">AGB</a> <a href="./impressum.html">Impressum</a>
-			<a href="./überUns.html">Über uns</a>
+			<a href="./Ã¼berUns.html">Ãber uns</a>
 		</nav>
 	</footer>
 </body>
