@@ -30,13 +30,13 @@
 		<!-- Veronika -->
 		<h1>Anzeige aufgeben</h1>
 		<div id=FormularAnzeige>
-			<form action="" method="post" enctype="multipart/form-data">
+			<form method="POST" action="./../ServletAnzeigeAufgeben" enctype="multipart/form-data">
 				<input type="radio" name="anzeigeArt" id="suche" value="suche" checked> 
 						<label for="suche">Suche</label> <br> 
 					<input type="radio" name="anzeigeArt" id="biete" value="biete"> 
 						<label for="biete">Biete</label> 
 					<input type="text" name="titelAnzeige" size="50" maxlength="50" placeholder="Titel der Anzeige"> 
-					<input type="text" name="preis" size="50" maxlength="50" placeholder="Preis"> 
+					<input type="text" name="preis" size="50" maxlength="50" placeholder="Preis" pattern="^[0-9]"> 
 				<select name="preiskategorie" size="1">
 					<option value="fix">Festpreis</option>
 					<option value="VB">Verhandlungsbasis</option>
