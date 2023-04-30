@@ -1,9 +1,16 @@
+<!-- Tobi -->
+<%@ page language="Java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page errorPage="fehlerausgabe.jsp" %>
+<!-- Tobi -->
 <!DOCTYPE html>
 <html>
 <!-- Lukas -->
 <head>
 <meta charset="UTF-8">
-<title>meineGebuchten</title>
+<title>meineAnzeigen</title>
+<!-- Tobi -->
+<base href="$ {pageContext.request.requestURI}"/>
+<!-- Tobi -->
 </head>
 <body>
 	<header>
@@ -27,7 +34,7 @@
 	</header>
 
 	<main>
-		<h1>Meine Gebuchten</h1>
+		<h1>Meine Anzeigen</h1>
 		<table style="width: 100%">
 			<tr>
 				<td>test</td>
@@ -48,9 +55,10 @@
 		<br />
 		<nav>
 			<form>
-				<button formaction="./startseite.html">+</button>
+				<button formaction="./anzeigeAufgeben.html">+</button>
 			</form>
 		</nav><br/>
+
 	</main>
 
 	<!-- Lukas -->

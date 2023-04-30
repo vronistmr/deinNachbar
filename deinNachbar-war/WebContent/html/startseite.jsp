@@ -1,9 +1,17 @@
+<!-- Tobi -->
+<%@ page language="Java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page errorPage="fehlerausgabe.jsp" %>
+<!-- Tobi -->
 <!DOCTYPE html>
 <html>
 <!-- Lukas -->
 <head>
 <meta charset="UTF-8">
 <title>startseite</title>
+<!-- Tobi -->
+<base href="$ {pageContext.request.requestURI}"/>
+<!-- Tobi -->
+
 </head>
 <body>
 	<header>
