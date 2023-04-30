@@ -1,0 +1,9 @@
+<%@ page language="Java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	<footer>
+		<nav>
+			<a href="./agb.html">AGB</a> <a href="./impressum.html">Impressum</a>
+			<a href="./überUns.html">Über uns</a>
+		</nav>
+	</body>
+</html>
