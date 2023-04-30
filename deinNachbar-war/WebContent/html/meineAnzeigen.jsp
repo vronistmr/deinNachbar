@@ -65,7 +65,7 @@
 	<footer>
 		<nav>
 			<a href="./agb.html">AGB</a> <a href="./impressum.html">Impressum</a>
-			<a href="./Ã¼berUns.html">Ãber uns</a>
+			<a href="./überUns.html">Über uns</a>
 		</nav>
 	</footer>
 </body>

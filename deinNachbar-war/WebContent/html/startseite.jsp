@@ -59,10 +59,10 @@
 				</ul>
 			</div>
 		</nav>
-		<div id="FensterFÃ¼rAnzeigen">
+		<div id="FensterFürAnzeigen">
 			<div id="tabSuche">
 				<ul>
-					<li>Suche GÃ¤rtner</li>
+					<li>Suche Gärtner</li>
 					<li>Suche Maler</li>
 					<li>Suche Elektiker</li>
 				</ul>
@@ -82,7 +82,7 @@
 	<footer>
 		<nav>
 			<a href="./agb.html">AGB</a> <a href="./impressum.html">Impressum</a>
-			<a href="./Ã¼berUns.html">Ãber uns</a>
+			<a href="./überUns.html">Über uns</a>
 		</nav>
 	</footer>
 </body>
