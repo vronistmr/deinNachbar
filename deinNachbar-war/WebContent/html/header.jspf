@@ -1,0 +1,35 @@
+
+<!-- Lukas -->
+<%@ page language="Java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>deinNachbar.de</title>
+
+<!-- Tobi -->
+<base href="$ {pageContext.request.requestURI}" />
+
+<!-- Lukas -->
+</head>
+<header>
+	<nav>
+		<a href="./index.html">deinNachbar.de</a>
+		<div class="right-nav">
+		
+			<form>
+				<button formaction="html/anzeigeAufgeben.html">Anzeige
+					aufgeben</button>
+			</form>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">Profil</button>
+			<div class="dropdown-content">
+				<a href="./meineAnzeigen.jsp">Meine Anzeigen</a> <a
+					href="./meineGebuchten.jsp">Meine Gebuchten</a> <a
+					href="../index.html">Ausloggen</a>
+			</div>
+		</div>
+	</nav>
+</header>
