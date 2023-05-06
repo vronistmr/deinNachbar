@@ -2,50 +2,28 @@ package beans.formulare;
 
 import java.io.Serializable;
 
+//Veronika 
 
-import jakarta.ejb.LocalBean;
-import jakarta.ejb.Stateless;
-//Veronika
-/**
- * Session Bean implementation class BeanIndex
- */
-@Stateless
-@LocalBean
-public class BeanIndex implements Serializable{
+public class BeanIndex implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	private String email;
 	private String passwort;
-	
-	
-	
-    public String getEmail() {
+
+	public String getEmail() {
 		return email;
 	}
-
-
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-
-
 	public String getPasswort() {
 		return passwort;
 	}
 
-
-
 	public void setPasswort(String passwort) {
 		this.passwort = passwort;
 	}
-
-
-
-	/**
-     * Default constructor. 
-     */
-    public BeanIndex() {
-        // TODO Auto-generated constructor stub
-    }
 
 }
