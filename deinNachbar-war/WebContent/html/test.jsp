@@ -18,7 +18,10 @@
 		<br><b>Passwort: </b>${registrierenForm.passwort}
 		<br><b>Standort: </b>${registrierenForm.standort}
 		
-	
+		<br><b>Standort: </b>${AnzeigeAufgebenForm.anzeigeArt}
+		<br><b>Standort: </b>${AnzeigeAufgebenForm.titelAnzeige}
+		<br><b>Standort: </b>${AnzeigeAufgebenForm.preis}
+		<br><b>Standort: </b>${AnzeigeAufgebenForm.preiskategorie}
 		
 
 </body>
