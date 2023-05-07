@@ -23,22 +23,22 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 
 		BeanAnzeigeAufgeben beanAnzeigeAufgeben = new BeanAnzeigeAufgeben();
 		
 		beanAnzeigeAufgeben.setAnzeigeArt(request.getParameter("anzeigeArt"));
 		beanAnzeigeAufgeben.setTitelAnzeige(request.getParameter("titelAnzeige"));
-		beanAnzeigeAufgeben.setPreis(Integer.parseInt(request.getParameter("preis")));
+		beanAnzeigeAufgeben.setPreis(Integer.valueOf(request.getParameter("preis")));
 		beanAnzeigeAufgeben.setPreiskategorie(request.getParameter("preiskategorie"));
 		beanAnzeigeAufgeben.setKategorie(request.getParameter("kategorie"));
 		beanAnzeigeAufgeben.setStandort(request.getParameter("standort"));
-		beanAnzeigeAufgeben.setUmkreis(Integer.parseInt(request.getParameter("umkreis")));
+		beanAnzeigeAufgeben.setUmkreis(Integer.valueOf(request.getParameter("umkreis")));
 		beanAnzeigeAufgeben.setBeschreibung(request.getParameter("beschreibung"));
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("AnzeigeAufgebenForm", beanAnzeigeAufgeben);
-		response.sendRedirect("html/AnzeigeAnzeigen.jsp");
+		response.sendRedirect("html/test.jsp");
 	}
 
 	/**
