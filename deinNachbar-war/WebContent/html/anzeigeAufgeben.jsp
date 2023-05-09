@@ -1,30 +1,8 @@
-<!DOCTYPE html>
-<html>
 <!-- Lukas -->
-<head>
-<meta charset="UTF-8">
-<title>anzeigeAzfgeben</title>
-</head>
-<body>
-	<header>
-		<nav>
-			<a href="../index.html">deinNachbar.de</a>
-			<div class="right-nav">
-				<form>
-					<button formaction="./anzeigeAufgeben.html">Anzeige
-						aufgeben</button>
-				</form>
-			</div>
-			<div class="dropdown">
-				<button class="dropbtn">Profil</button>
-				<div class="dropdown-content">
-					<a href="./meineAnzeigen.jsp">Meine Anzeigen</a> <a
-						href="./meineGebuchten.jsp">Meine Gebuchten</a> <a
-						href="../index.html">Ausloggen</a>
-				</div>
-			</div>
-		</nav>
-	</header>
+<%@ page language="Java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page errorPage="fehlerausgabe.jsp"%>
+<%@ include file="header.jspf"%>
 
 	<main>
 		<!-- Veronika -->
@@ -63,17 +41,10 @@
 				<label for="foto">Foto hochladen:</label> 
 				<input type="file" id="foto" name="foto" accept="image/*"> <br>
 				
-				<button type="submit" value="neu" name="veröffentlichen">Anzeige aufgeben</button>
+				<button type="submit" value="neu" name="verÃ¶ffentlichen">Anzeige aufgeben</button>
 			</form>
 		</div>
 	</main>
 
 	<!-- Lukas -->
-	<footer>
-		<nav>
-			<a href="./agb.html">AGB</a> <a href="./impressum.html">Impressum</a>
-			<a href="./überUns.html">Über uns</a>
-		</nav>
-	</footer>
-</body>
-</html>
+	<%@ include file="footer.jspf"%>

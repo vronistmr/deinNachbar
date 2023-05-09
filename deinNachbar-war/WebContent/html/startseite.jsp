@@ -4,7 +4,7 @@
 
 <!-- Lukas -->
 <%@ include file="header.jspf" %> 
-<body>
+
 	<main>
 		<!-- Veronika -->
 		<aside>

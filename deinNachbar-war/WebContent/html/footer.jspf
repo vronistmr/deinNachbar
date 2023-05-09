@@ -2,8 +2,9 @@
 	pageEncoding="UTF-8"%>
 	<footer>
 		<nav>
-			<a href="./agb.html">AGB</a> <a href="./impressum.html">Impressum</a>
-			<a href="./überUns.html">Über uns</a>
+			<a href="./agb.jsp">AGB</a> <a href="./impressum.jsp">Impressum</a>
+			<a href="./überUns.jsp">Über uns</a>
 		</nav>
+	</footer>
 	</body>
 </html>
