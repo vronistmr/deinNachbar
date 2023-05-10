@@ -5,7 +5,6 @@
 <!-- Lukas -->
 <%@ include file="header.jspf" %> 
 
-<body>
 	<main>
 		<h1>Meine Gebuchten</h1>
 		<table style="width: 100%">

@@ -15,6 +15,17 @@ public class BeanAnzeigeAufgeben implements Serializable{
 	private String standort;
 	private int umkreis;
 	private String beschreibung;
+	private int benutzerID;
+	private int anzeigeID;
+
+
+	public int getAnzeigeID() {
+		return anzeigeID;
+	}
+
+	public void setAnzeigeID(int anzeigeID) {
+		this.anzeigeID = anzeigeID;
+	}
 
 	public String getAnzeigeArt() {
 		return anzeigeArt;
@@ -78,6 +89,14 @@ public class BeanAnzeigeAufgeben implements Serializable{
 
 	public void setBeschreibung(String beschreibung) {
 		this.beschreibung = beschreibung;
+	}
+
+	public int getBenutzerID() {
+		return benutzerID;
+	}
+
+	public void setBenutzerID(int benutzerID) {
+		this.benutzerID = benutzerID;
 	}
 
 }
