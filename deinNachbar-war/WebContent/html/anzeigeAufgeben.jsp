@@ -14,9 +14,9 @@
 					<input type="radio" name="anzeigeArt" id="biete" value="biete"> 
 						<label for="biete">Biete</label> 
 					
-					<input type="text" name="titelAnzeige" size="50" maxlength="50" placeholder="Titel der Anzeige"> 
+					<input type="text" name="titelAnzeige" size="50" maxlength="200" placeholder="Titel der Anzeige" > 
 					
-					<input type="number" name="preis" size="50" maxlength="50" placeholder="Preis" pattern="[1-9]|[1-9][0-9]|[1-9][0-9][0-9]"> 
+					<input type="number" name="preis" max="999" placeholder="Preis"> 
 				
 				<select name="preiskategorie" size="1">
 					<option value="fix">Festpreis</option>
@@ -34,14 +34,14 @@
 				
 				<input type="text" name="standort" size="50" maxlength="50" placeholder="Dein Standort">
 				
-				<input type="number" name="umkreis" size="50" maxlength="50" placeholder="Umkreis" pattern="[1-9]|[1-9][0-9]|[1-9][0-9][0-9]">
+				<input type="number" name="umkreis" size="50" max="999" placeholder="Umkreis">
 				
-				<textarea name="beschreibung" rows="10" cols="100" maxlength="1000" placeholder="Beschreibung deiner Anzeige..."></textarea>
+				<textarea name="beschreibung" rows="10" cols="100" maxlength="1000" placeholder="Beschreibung deiner Anzeige..." maxlength=1000"></textarea>
 				
 				<label for="foto">Foto hochladen:</label> 
 				<input type="file" id="foto" name="foto" accept="image/*"> <br>
 				
-				<button type="submit" value="neu" name="verÃ¶ffentlichen">Anzeige aufgeben</button>
+				<button type="submit" value="neu" name="veroeffentlichen">Anzeige aufgeben</button>
 			</form>
 		</div>
 	</main>
