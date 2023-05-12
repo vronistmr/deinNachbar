@@ -18,7 +18,7 @@
 		<br><b>Standort: </b>${AnzeigeAufgebenForm.standort}
 		<br><b>Umkreis: </b>${AnzeigeAufgebenForm.umkreis}
 		<br><b>Beschreibung: </b>${AnzeigeAufgebenForm.beschreibung}
-		<br><b>Hier könnte noch das Foto stehen :) </b>
+		<br><b>Bild: </b><img src="./../ServletBildAnzeige?anzeigeID=${AnzeigeAufgebenForm.anzeigeID}">
 		<br>
 			<!-- Tobias -->
 	<button type="submit" name="buchungsbutton" value="buchungneu">Buchen</button>

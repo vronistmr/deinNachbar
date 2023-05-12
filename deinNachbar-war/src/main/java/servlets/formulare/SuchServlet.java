@@ -4,7 +4,7 @@ package servlets.formulare;
 import java.io.IOException;
 import java.util.List;
 
-import beans.formulare.BeanAnzeigeAufgeben;
+import beans.formulare.BeanAnzeige;
 
 
 import java.sql.Connection;
@@ -44,7 +44,7 @@ public class SuchServlet extends HttpServlet {
 		
 		String suchString = request.getParameter("suchstring");
 		
-		List<BeanAnzeigeAufgeben> anzeigen = search(suchString);
+		List<BeanAnzeige> anzeigen = search(suchString);
 		
 		// Anzeigen-Liste in Request Scope (wegen Such-/Leseoperation)hinterlegen:
 		
@@ -59,10 +59,10 @@ public class SuchServlet extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	private List<BeanAnzeigeAufgeben> search(String suchString)throws ServletException{
+	private List<BeanAnzeige> search(String suchString)throws ServletException{
 		
 		suchString = (suchString == null || suchString == "")? "%" : "%" + suchString + "%";
-		List<BeanAnzeigeAufgeben> anzeigen = new ArrayList<BeanAnzeigeAufgeben>();
+		List<BeanAnzeige> anzeigen = new ArrayList<BeanAnzeige>();
 		
 		//DB-Zugriff
 		
@@ -73,7 +73,7 @@ public class SuchServlet extends HttpServlet {
 			try(ResultSet rs = pstmt.executeQuery()){
 				
 				while(rs.next()) {
-					BeanAnzeigeAufgeben anzeige = new BeanAnzeigeAufgeben();
+					BeanAnzeige anzeige = new BeanAnzeige();
 					
 					Integer anzeigeID = Integer.valueOf(rs.getInt("anzeigeID"));
 					anzeige.setAnzeigeID(anzeigeID);
