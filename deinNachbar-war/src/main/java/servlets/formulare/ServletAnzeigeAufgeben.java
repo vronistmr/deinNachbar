@@ -3,11 +3,14 @@ package servlets.formulare;
 import jakarta.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
+
 import javax.sql.DataSource;
 
-import beans.formulare.BeanAnzeigeAufgeben;
+import beans.formulare.BeanAnzeige;
 import jakarta.annotation.Resource;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
@@ -39,7 +42,7 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
-		BeanAnzeigeAufgeben beanAnzeigeAufgeben = new BeanAnzeigeAufgeben();
+		BeanAnzeige beanAnzeigeAufgeben = new BeanAnzeige();
 
 		beanAnzeigeAufgeben.setAnzeigeArt(request.getParameter("anzeigeArt"));
 		beanAnzeigeAufgeben.setTitelAnzeige(request.getParameter("titelAnzeige"));
@@ -49,9 +52,9 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 		beanAnzeigeAufgeben.setStandort(request.getParameter("standort"));
 		beanAnzeigeAufgeben.setUmkreis(Integer.valueOf(request.getParameter("umkreis")));
 		beanAnzeigeAufgeben.setBeschreibung(request.getParameter("beschreibung"));
+		beanAnzeigeAufgeben.setDatum(Date.valueOf(LocalDate.now()));
 		// Foto
 		Part foto = request.getPart("foto");
-
 		// Datenbank Zugriff
 		persist(beanAnzeigeAufgeben, foto);
 
@@ -60,64 +63,26 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 		response.sendRedirect("html/anzeigenAnzeigen.jsp");
 	}
 
-	private void persist(BeanAnzeigeAufgeben beanAnzeigeAufgeben, Part foto) throws ServletException {
+	private void persist(BeanAnzeige beanAnzeigeAufgeben, Part foto) throws ServletException {
 		String[] generatedKeys = new String[] {"anzeigeID"};
-
-		// Auslesen der ID für die Fremdschlüssel preiskategorieID
-		// Auslesen der ID für die Fremdschlüssel anzeigeArtID
-		// Auslesen der ID für die Fremdschlüssel kategorieID
-		int anzeigeArtID = 0;
-		int preiskategorieID = 0;
-		int kategorieID = 0;
-		try (Connection con = ds.getConnection();
-				PreparedStatement readAnzeigeArtID = con
-						.prepareStatement("SELECT (anzeigeArtID) FROM anzeigeArt WHERE anzeigeArt = ?");
-				PreparedStatement readPreiskategorieID = con
-						.prepareStatement("SELECT (preiskategorieID) FROM preiskategorie WHERE preiskategorie = ?");
-				PreparedStatement readKategorieID = con
-						.prepareStatement("SELECT (kategorieID) FROM kategorie WHERE kategorie = ?")) {
-
-			readAnzeigeArtID.setString(1, beanAnzeigeAufgeben.getAnzeigeArt());
-
-			try (ResultSet rs = readAnzeigeArtID.executeQuery()) {
-				if (rs != null && rs.next()) {
-					anzeigeArtID = Integer.valueOf(rs.getInt("anzeigeArtID"));
-				}
-			}
-			readPreiskategorieID.setString(1, beanAnzeigeAufgeben.getPreiskategorie());
-
-			try (ResultSet rs = readPreiskategorieID.executeQuery()) {
-				if (rs != null && rs.next()) {
-					preiskategorieID = Integer.valueOf(rs.getInt("preiskategorieID"));
-				}
-			}
-
-			readKategorieID.setString(1, beanAnzeigeAufgeben.getKategorie());
-
-			try (ResultSet rs = readKategorieID.executeQuery()) {
-				if (rs != null && rs.next()) {
-					kategorieID = Integer.valueOf(rs.getInt("kategorieID"));
-				}
-			}
-		} catch (Exception ex) {
-			throw new ServletException(ex.getMessage());
-		}
 
 		// Speichern in Datenbank
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(
-						"INSERT INTO anzeige (anzeigeArtID,titelAnzeige, preis, preiskategorieID, kategorieID, standort, umkreis, beschreibung, foto, benutzerID)"
-								+ "VALUES (?,?,?,?,?,?,?,?,?,1)",generatedKeys)) {
-
-			pstmt.setInt(1, anzeigeArtID);
+						"INSERT INTO anzeige (anzeigeArt,titelAnzeige, preis, preiskategorie, kategorie, standort, umkreis, beschreibung, foto, benutzerID, datum)"
+								+ "VALUES (?,?,?,?,?,?,?,?,?,1,?)",generatedKeys)) {
+//Benutzer ID aktuell noch Festwert!
+			pstmt.setString(1, beanAnzeigeAufgeben.getAnzeigeArt());
 			pstmt.setString(2, beanAnzeigeAufgeben.getTitelAnzeige());
 			pstmt.setInt(3, beanAnzeigeAufgeben.getPreis());
-			pstmt.setInt(4, preiskategorieID);
-			pstmt.setInt(5, kategorieID);
+			pstmt.setString(4, beanAnzeigeAufgeben.getPreiskategorie());
+			pstmt.setString(5, beanAnzeigeAufgeben.getKategorie());
 			pstmt.setString(6, beanAnzeigeAufgeben.getStandort());
 			pstmt.setInt(7, beanAnzeigeAufgeben.getUmkreis());
 			pstmt.setString(8, beanAnzeigeAufgeben.getBeschreibung());
 			pstmt.setBinaryStream(9, foto.getInputStream());
+			pstmt.setDate(10, beanAnzeigeAufgeben.getDatum());
+
 
 			pstmt.executeUpdate();
 
