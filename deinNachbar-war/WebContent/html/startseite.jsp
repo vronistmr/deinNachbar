@@ -18,10 +18,12 @@
 			</ol>
 		</aside>
 		<nav>
-			<form>
-				<input type="text" name="suche" size="50" maxlength="50" placeholder="Was suchtst du?">
-				<button type="submit">Suchen</button>
+			<!-- Tobi -->
+			<form action="./../SuchServlet" method="post">
+				<input type="text" name="suchstring" size="50" maxlength="50" placeholder="Was suchtst du?">
+				<button name= "submit" type="submit">Suchen</button>
 			</form>
+			<!-- Tobi -->
 			<div id="tabsSucheBiete">
 				<ul>
 					<!-- Navigation zu IDs - ausblenden der anderen Liste mit JavaScript -->
