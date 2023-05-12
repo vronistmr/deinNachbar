@@ -1,10 +1,11 @@
 package beans.formulare;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 //Veronika
 
-public class BeanAnzeigeAufgeben implements Serializable{
+public class BeanAnzeige implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private String anzeigeArt;
@@ -16,7 +17,9 @@ public class BeanAnzeigeAufgeben implements Serializable{
 	private int umkreis;
 	private String beschreibung;
 	private int benutzerID;
+	private Date datum;
 	private int anzeigeID;
+	private byte[] foto;
 
 
 	public int getAnzeigeID() {
@@ -97,6 +100,22 @@ public class BeanAnzeigeAufgeben implements Serializable{
 
 	public void setBenutzerID(int benutzerID) {
 		this.benutzerID = benutzerID;
+	}
+
+	public Date getDatum() {
+		return datum;
+	}
+
+	public void setDatum(Date datum) {
+		this.datum = datum;
+	}
+
+	public byte[] getFoto() {
+		return foto;
+	}
+
+	public void setFoto(byte[] foto) {
+		this.foto = foto;
 	}
 
 }

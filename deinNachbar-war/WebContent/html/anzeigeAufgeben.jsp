@@ -9,9 +9,9 @@
 		<h1>Anzeige aufgeben</h1>
 		<div id=FormularAnzeige>
 			<form method="POST" action="./../ServletAnzeigeAufgeben" enctype="multipart/form-data">
-				<input type="radio" name="anzeigeArt" id="suche" value="suche" checked> 
+				<input type="radio" name="anzeigeArt" id="suche" value="Suche" checked> 
 						<label for="suche">Suche</label> <br> 
-					<input type="radio" name="anzeigeArt" id="biete" value="biete"> 
+					<input type="radio" name="anzeigeArt" id="biete" value="Biete"> 
 						<label for="biete">Biete</label> 
 					
 					<input type="text" name="titelAnzeige" size="50" maxlength="200" placeholder="Titel der Anzeige" > 
@@ -19,17 +19,17 @@
 					<input type="number" name="preis" max="999" placeholder="Preis"> 
 				
 				<select name="preiskategorie" size="1">
-					<option value="fix">Festpreis</option>
+					<option value="Fix">Festpreis</option>
 					<option value="VB">Verhandlungsbasis</option>
-					<option value="gratis">Zu verschenken</option>
+					<option value="Gratis">Zu verschenken</option>
 				</select> 
 				
 				<select name="kategorie" size="1">
-					<option value="haus">Haus</option>
-					<option value="garten">Garten</option>
-					<option value="elektronik">Elektronik</option>
-					<option value="technik">Technik</option>
-					<option value="kreativ">Kreativ</option>
+					<option value="Haus">Haus</option>
+					<option value="Harten">Garten</option>
+					<option value="Elektronik">Elektronik</option>
+					<option value="Technik">Technik</option>
+					<option value="Kreativ">Kreativ</option>
 				</select> 
 				
 				<input type="text" name="standort" size="50" maxlength="50" placeholder="Dein Standort">
