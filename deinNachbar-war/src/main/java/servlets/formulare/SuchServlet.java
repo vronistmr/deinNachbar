@@ -78,6 +78,9 @@ public class SuchServlet extends HttpServlet {
 					Integer anzeigeID = Integer.valueOf(rs.getInt("anzeigeID"));
 					anzeige.setAnzeigeID(anzeigeID);
 					
+					String anzeigeArt = rs.getString("anzeigeArt");
+					anzeige.setAnzeigeArt(anzeigeArt);
+					
 					Integer benutzerID = Integer.valueOf(rs.getInt("benutzerID"));
 					anzeige.setBenutzerID(benutzerID);
 					
@@ -95,6 +98,19 @@ public class SuchServlet extends HttpServlet {
 					
 					Integer preis = Integer.valueOf(rs.getInt("preis"));
 					anzeige.setPreis(preis);
+					
+					String preiskategorie = rs.getString("preiskategorie");
+					anzeige.setPreiskategorie(preiskategorie);
+					
+					String kategorie = rs.getString("kategorie");
+					anzeige.setKategorie(kategorie);
+					
+					//Date datum = rs.getDate("datum"); Datum auslesen?
+					//anzeige.setDatum(datum);
+					
+					byte[] foto = rs.getBinaryStream("foto").readAllBytes();
+					anzeige.setFoto(foto);
+					
 					
 					
 					anzeigen.add(anzeige);

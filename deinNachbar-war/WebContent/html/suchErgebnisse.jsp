@@ -12,11 +12,16 @@
 			<tr>
 				<th>Anzeigetitel</th>
 				<th>Preis</th>
+				<th>Preiskategorie</th>
+				<th>Kategorie</th>
 				<th>Standort</th>
 				<th>Umkreis</th>
 				<th>Beschreibung</th>
 				<th>AnzeigeID</th>
 				<th>BenutzerID</th>
+				<th>AnzeigeArt</th>
+				<th>Foto</th>
+				<th>Datum</th>
 				<th>Aktion</th>
 				
 			</tr>
@@ -24,11 +29,16 @@
 				<tr>
 					<td>${anzeige.titelAnzeige}</td>
 					<td>${anzeige.preis}</td>
+					<td>${anzeige.preiskategorie}</td>
+					<td>${anzeige.kategorie}</td>
 					<td>${anzeige.standort}</td>
 					<td>${anzeige.umkreis}</td>
 					<td>${anzeige.beschreibung}</td>
 					<td>${anzeige.anzeigeID}</td>
 					<td>${anzeige.benutzerID}</td>
+					<td>${anzeige.anzeigeArt}</td>
+					<td>${anzeige.foto}</td>
+					<td>${anzeige.datum}</td>
 					<td><a href="..=${anzeige.anzeigeID}">Hier gehts zur Anzeige</a></td>
 				</tr>
 			</c:forEach>
