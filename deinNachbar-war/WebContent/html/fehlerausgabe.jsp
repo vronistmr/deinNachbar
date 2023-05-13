@@ -20,9 +20,9 @@
 	<br>Die Fehlermeldung lautet:</br>
 	${pageContext.exception}
 	<br>Stack trace:</br>
-	<c: forEach var="trace items"= "${pageContext.exception.stackTrace}">
+	<c:forEach var="trace items"="${pageContext.exception.stackTrace}">
 		<p>${trace}</p>
-	</c: forEach>
+	</c:forEach>
 
 </body>
 </html>
