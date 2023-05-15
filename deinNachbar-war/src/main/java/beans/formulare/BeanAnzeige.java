@@ -3,6 +3,7 @@ package beans.formulare;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
+import java.sql.Timestamp;
 
 //Veronika
 
@@ -20,7 +21,8 @@ public class BeanAnzeige implements Serializable{
 	private int benutzerID;
 	private Date datum;
 	private Time zeit;
-	private Date datetime;
+	//private Date datetime;
+	private Timestamp datetime;
 	private int anzeigeID;
 	private byte[] foto;
 
@@ -104,7 +106,7 @@ public class BeanAnzeige implements Serializable{
 	public void setBenutzerID(int benutzerID) {
 		this.benutzerID = benutzerID;
 	}
-
+	
 	public Date getDatum() {
 		return datum;
 	}
@@ -112,7 +114,7 @@ public class BeanAnzeige implements Serializable{
 	public void setDatum(Date datum) {
 		this.datum = datum;
 	}
-
+	
 	public byte[] getFoto() {
 		return foto;
 	}
@@ -128,12 +130,12 @@ public class BeanAnzeige implements Serializable{
 	public void setZeit(Time zeit) {
 		this.zeit = zeit;
 	}
-
-	public Date getDatetime() {
+	
+	public Timestamp getDatetime() {
 		return datetime;
 	}
 
-	public void setDatetime(Date datetime) {
+	public void setDatetime(Timestamp datetime) {
 		this.datetime = datetime;
 	}
 
