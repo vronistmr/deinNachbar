@@ -22,7 +22,7 @@
 				<th>BenutzerID</th>
 				<th>AnzeigeArt</th>
 				<th>Foto</th>
-				<th>Datum</th>
+				<th>Datum und Uhrzeit</th>
 				<th>Aktion</th>
 				
 			</tr>
@@ -39,7 +39,7 @@
 					<td>${anzeige.benutzerID}</td>
 					<td>${anzeige.anzeigeArt}</td>
 					<td>${anzeige.foto}</td>
-					<td>${anzeige.datum}</td>
+					<td>${anzeige.datetime}</td>
 					<td><a href="..=${anzeige.anzeigeID}">Hier gehts zur Anzeige</a></td>
 				</tr>
 			</c:forEach>
