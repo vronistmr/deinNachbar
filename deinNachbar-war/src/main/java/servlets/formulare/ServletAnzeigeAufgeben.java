@@ -6,7 +6,11 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.sql.DataSource;
 
@@ -53,6 +57,9 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 		beanAnzeigeAufgeben.setUmkreis(Integer.valueOf(request.getParameter("umkreis")));
 		beanAnzeigeAufgeben.setBeschreibung(request.getParameter("beschreibung"));
 		beanAnzeigeAufgeben.setDatum(Date.valueOf(LocalDate.now()));
+		beanAnzeigeAufgeben.setZeit(Time.valueOf(LocalTime.now()));
+
+		
 		// Foto
 		Part foto = request.getPart("foto");
 		// Datenbank Zugriff
@@ -81,7 +88,7 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 			pstmt.setInt(7, beanAnzeigeAufgeben.getUmkreis());
 			pstmt.setString(8, beanAnzeigeAufgeben.getBeschreibung());
 			pstmt.setBinaryStream(9, foto.getInputStream());
-			pstmt.setDate(10, beanAnzeigeAufgeben.getDatum());
+			pstmt.setTimestamp(10, Timestamp.from(Instant.now()));
 
 
 			pstmt.executeUpdate();
