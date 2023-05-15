@@ -1,8 +1,9 @@
-
 <!-- Lukas -->
 <%@ page language="Java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page errorPage="fehlerausgabe.jsp"%>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -13,13 +14,16 @@
 <base href="$ {pageContext.request.requestURI}" />
 
 <!-- Lukas -->
+<link rel="stylesheet" href="./../css/style.css">
 </head>
 <body>
 <header>
 	<nav>
 		<c:choose>
-		<c:when test="${empty BeanIndex}">
-		
+		<c:when test="${empty beanIndex}">
+			<a href="./startseite.jsp">deinNachbar.de</a>
+			
+			
 		</c:when>
 		<c:otherwise>
 			<a href="./startseite.jsp">deinNachbar.de</a>
@@ -29,6 +33,7 @@
 					Anzeige aufgeben</button>
 			</div>
 			<div class="dropdown">
+	
 				<button class="dropbtn">Profil</button>
 				<div class="dropdown-content">
 					<a href="./meineAnzeigen.jsp">Meine Anzeigen</a> <a

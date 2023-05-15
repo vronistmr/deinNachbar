@@ -2,12 +2,8 @@
 package servlets.formulare;
 
 import java.io.IOException;
-import java.util.List;
-
-import beans.formulare.BeanAnzeige;
-
-
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -15,6 +11,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import beans.formulare.BeanAnzeige;
 import jakarta.annotation.Resource;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -22,7 +19,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 
 @WebServlet("/SuchServlet")
@@ -78,6 +74,9 @@ public class SuchServlet extends HttpServlet {
 					Integer anzeigeID = Integer.valueOf(rs.getInt("anzeigeID"));
 					anzeige.setAnzeigeID(anzeigeID);
 					
+					String anzeigeArt = rs.getString("anzeigeArt");
+					anzeige.setAnzeigeArt(anzeigeArt);
+					
 					Integer benutzerID = Integer.valueOf(rs.getInt("benutzerID"));
 					anzeige.setBenutzerID(benutzerID);
 					
@@ -95,6 +94,19 @@ public class SuchServlet extends HttpServlet {
 					
 					Integer preis = Integer.valueOf(rs.getInt("preis"));
 					anzeige.setPreis(preis);
+					
+					String preiskategorie = rs.getString("preiskategorie");
+					anzeige.setPreiskategorie(preiskategorie);
+					
+					String kategorie = rs.getString("kategorie");
+					anzeige.setKategorie(kategorie);
+					
+					Date datum = rs.getDate("datum");
+					anzeige.setDatum(datum);
+					
+					byte[] foto = rs.getBinaryStream("foto").readAllBytes();
+					anzeige.setFoto(foto);
+					
 					
 					
 					anzeigen.add(anzeige);
