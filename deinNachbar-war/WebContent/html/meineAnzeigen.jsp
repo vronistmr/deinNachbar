@@ -27,7 +27,7 @@
 	<br />
 	<nav>
 		<form>
-			<button formaction="./anzeigeAufgeben.html">+</button>
+			<button formaction="./anzeigeAufgeben.jsp">+</button>
 		</form>
 	</nav>
 	<br />
