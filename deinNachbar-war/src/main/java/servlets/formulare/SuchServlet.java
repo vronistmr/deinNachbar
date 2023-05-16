@@ -3,10 +3,11 @@ package servlets.formulare;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.sql.Timestamp;
+import java.sql.Date;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -40,6 +41,7 @@ public class SuchServlet extends HttpServlet {
 		
 		String suchString = request.getParameter("suchstring");
 		
+		
 		List<BeanAnzeige> anzeigen = search(suchString);
 		
 		// Anzeigen-Liste in Request Scope (wegen Such-/Leseoperation)hinterlegen:
@@ -63,7 +65,7 @@ public class SuchServlet extends HttpServlet {
 		//DB-Zugriff
 		
 		try(Connection con = ds.getConnection();
-			PreparedStatement pstmt = con.prepareStatement("SELECT * FROM anzeige WHERE titelAnzeige Like ?")){
+			PreparedStatement pstmt = con.prepareStatement("SELECT * FROM anzeige WHERE titelAnzeige Like ? ORDER BY datum DESC")){
 			
 			pstmt.setString(1, suchString);
 			try(ResultSet rs = pstmt.executeQuery()){
@@ -104,9 +106,12 @@ public class SuchServlet extends HttpServlet {
 					Date datum = rs.getDate("datum");
 					anzeige.setDatum(datum);
 					
+					
+					Timestamp datetime = rs.getTimestamp("datum");
+					anzeige.setDatetime(datetime);
+					
 					byte[] foto = rs.getBinaryStream("foto").readAllBytes();
 					anzeige.setFoto(foto);
-					
 					
 					
 					anzeigen.add(anzeige);
