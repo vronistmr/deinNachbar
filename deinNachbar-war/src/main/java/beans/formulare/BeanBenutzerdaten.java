@@ -5,14 +5,15 @@ import java.io.Serializable;
 //Veronika
 
 
-public class BeanRegistrieren implements Serializable{
+public class BeanBenutzerdaten implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private String vorname;
-	private String email;
-	private String passwort;
+	public String email;
+	public String passwort;
 	private String standort;
-	private int benutzerID;
+	private Integer benutzerID;
+	private boolean istAdmin;
 
 	public String getVorname() {
 		return vorname;
@@ -46,12 +47,20 @@ public class BeanRegistrieren implements Serializable{
 		this.standort = standort;
 	}
 
-	public int getBenutzerID() {
+	public Integer getBenutzerID() {
 		return benutzerID;
 	}
 
 	public void setBenutzerID(int benutzerID) {
 		this.benutzerID = benutzerID;
+	}
+
+	public boolean isIstAdmin() {
+		return istAdmin;
+	}
+
+	public void setIstAdmin(boolean istAdmin) {
+		this.istAdmin = istAdmin;
 	}
 
 }

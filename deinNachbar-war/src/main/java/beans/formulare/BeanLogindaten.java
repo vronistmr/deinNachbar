@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 //Veronika 
 
-public class BeanIndex implements Serializable {
+public class BeanLogindaten implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String email;
