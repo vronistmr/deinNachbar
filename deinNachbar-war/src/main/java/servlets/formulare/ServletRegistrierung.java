@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 
 import javax.sql.DataSource;
 
-import beans.formulare.BeanRegistrieren;
+import beans.formulare.BeanBenutzerdaten;
 import jakarta.annotation.Resource;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
@@ -34,7 +34,7 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		BeanRegistrieren beanRegistrieren = new BeanRegistrieren();
+		BeanBenutzerdaten beanRegistrieren = new BeanBenutzerdaten();
 		
 		beanRegistrieren.setVorname(request.getParameter("vorname"));
 		beanRegistrieren.setEmail(request.getParameter("email"));
@@ -50,7 +50,7 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 		response.sendRedirect("html/test.jsp");
 	}
 	
-	private void persist(BeanRegistrieren beanRegistrieren) throws ServletException {
+	private void persist(BeanBenutzerdaten beanRegistrieren) throws ServletException {
 		// DB-Zugriff
 		String[] generatedKeys = new String[] {"benutzerID"};	// Name der Spalte(n), die automatisch generiert wird(werden)
 		

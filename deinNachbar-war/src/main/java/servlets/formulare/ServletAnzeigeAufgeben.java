@@ -13,7 +13,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 import javax.sql.DataSource;
-
+import beans.formulare.BeanBenutzerdaten;
 import beans.formulare.BeanAnzeige;
 import jakarta.annotation.Resource;
 import jakarta.servlet.Servlet;
@@ -58,6 +58,8 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 		beanAnzeigeAufgeben.setBeschreibung(request.getParameter("beschreibung"));
 		beanAnzeigeAufgeben.setDatum(Date.valueOf(LocalDate.now()));
 		beanAnzeigeAufgeben.setZeit(Time.valueOf(LocalTime.now()));
+		beanAnzeigeAufgeben.setBenutzerID(Integer.valueOf(((BeanBenutzerdaten) request.getSession().getAttribute("loginForm")).getBenutzerID()));
+
 
 		
 		// Foto
@@ -77,7 +79,7 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(
 						"INSERT INTO anzeige (anzeigeArt,titelAnzeige, preis, preiskategorie, kategorie, standort, umkreis, beschreibung, foto, benutzerID, datum)"
-								+ "VALUES (?,?,?,?,?,?,?,?,?,1,?)",generatedKeys)) {
+								+ "VALUES (?,?,?,?,?,?,?,?,?,?,?)",generatedKeys)) {
 //Benutzer ID aktuell noch Festwert!
 			pstmt.setString(1, beanAnzeigeAufgeben.getAnzeigeArt());
 			pstmt.setString(2, beanAnzeigeAufgeben.getTitelAnzeige());
@@ -88,7 +90,8 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 			pstmt.setInt(7, beanAnzeigeAufgeben.getUmkreis());
 			pstmt.setString(8, beanAnzeigeAufgeben.getBeschreibung());
 			pstmt.setBinaryStream(9, foto.getInputStream());
-			pstmt.setTimestamp(10, Timestamp.from(Instant.now()));
+			pstmt.setInt(10, beanAnzeigeAufgeben.getBenutzerID());
+			pstmt.setTimestamp(11, Timestamp.from(Instant.now()));
 
 
 			pstmt.executeUpdate();
