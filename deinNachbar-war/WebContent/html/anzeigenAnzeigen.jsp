@@ -20,9 +20,10 @@
 		<br><b>Beschreibung: </b>${AnzeigeAufgebenForm.beschreibung}
 		<br><b>Bild: </b><img src="./../ServletBildAnzeige?anzeigeID=${AnzeigeAufgebenForm.anzeigeID}">
 		<br>
-			<!-- Tobias -->
+	<!-- Lukas -->
+	<form action="./../ServletAnzeigeBuchen" method="post">
 	<button type="submit" name="buchungsbutton" value="buchungneu">Buchen</button>
-
+	</form>
 </main>
 
 <!-- Lukas -->
