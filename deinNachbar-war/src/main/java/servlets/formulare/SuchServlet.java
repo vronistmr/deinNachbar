@@ -29,11 +29,6 @@ public class SuchServlet extends HttpServlet {
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
 
-    
-    public SuchServlet() {
-        super();
-    }
-
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
