@@ -1,4 +1,5 @@
-package servlets;
+//Lukas
+package servlets.formulare;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -13,33 +14,23 @@ import javax.sql.DataSource;
 
 import jakarta.annotation.Resource;
 import jakarta.servlet.RequestDispatcher;
-//Lukas
-/**
- * Servlet implementation class DeleteServlet
- */
-@WebServlet("/DeleteServlet")
+
+@WebServlet("/ServletAnziegeLoeschen")
 public class ServletAnzeigeLoeschen extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
-    /**
-     * Default constructor. 
-     */
-    public DeleteServlet() {
-        // TODO Auto-generated constructor stub
+    
+    public ServletAnzeigeLoeschen() {
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Servlet zur Entgegennahme von Formularinhalten, Löschen der Daten in einer DB und Generierung
 				// eines Feldes zur Weitergabe an eine JSP
 				request.setCharacterEncoding("UTF-8");	// In diesem Format erwartet das Servlet jetzt die Formulardaten
 				Long id = Long.valueOf(request.getParameter("id"));
 		
-				
 				// DB-Zugriff
 				delete(id);
 						
@@ -51,6 +42,7 @@ public class ServletAnzeigeLoeschen extends HttpServlet {
 				dispatcher.forward(request, response);	
 			}
 	private void delete(Long id) throws ServletException {
+		
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
 			 PreparedStatement pstmt = con.prepareStatement("DELETE FROM products WHERE id = ?")){
@@ -61,11 +53,8 @@ public class ServletAnzeigeLoeschen extends HttpServlet {
 		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
 

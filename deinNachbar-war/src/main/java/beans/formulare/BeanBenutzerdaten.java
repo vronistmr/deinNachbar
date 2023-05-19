@@ -51,7 +51,7 @@ public class BeanBenutzerdaten implements Serializable{
 		return benutzerID;
 	}
 
-	public void setBenutzerID(int benutzerID) {
+	public void setBenutzerID(Integer benutzerID) {
 		this.benutzerID = benutzerID;
 	}
 
