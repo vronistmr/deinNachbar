@@ -32,14 +32,14 @@ public class ServletAnzeigeBuchen extends HttpServlet implements Servlet {
 
 		BeanBuchen beanAnzeigeBuchen = new BeanBuchen();
 		beanAnzeigeBuchen.setBenutzerID(Integer.valueOf(((BeanBenutzerdaten) request.getSession().getAttribute("loginForm")).getBenutzerID()));
-		beanAnzeigeBuchen.setAnzeigeID(Integer.valueOf(request.getParameter("anzeigeID")));
+		beanAnzeigeBuchen.setAnzeigeID(Integer.valueOf(request.getParameter("id")));
 		
 		// DB-Zugriff
 		persist(beanAnzeigeBuchen);
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("buchenForm", beanAnzeigeBuchen);
-		response.sendRedirect("html/anzeigenAnzeigen");
+		response.sendRedirect("html/anzeigenAnzeigen.jsp");
 	}
 	
 	private void persist(BeanBuchen beanAnzeigeBuchen) throws ServletException {

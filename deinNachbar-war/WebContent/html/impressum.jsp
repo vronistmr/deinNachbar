@@ -5,7 +5,7 @@
 <%@ include file="header.jspf"%>
 
 <h1>Impressum</h1>
-<h2>Angaben gemäß 5 TMG:</h2>
+<h2>Angaben gemäß 5 TMG</h2>
 deinNachbar.de
 <br />
 Esplanade 10
