@@ -1,6 +1,5 @@
 package servlets.formulare;
 
-import jakarta.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,20 +8,22 @@ import java.sql.ResultSet;
 import javax.sql.DataSource;
 
 import beans.formulare.BeanBenutzerdaten;
+import beans.formulare.BeanBuchen;
 import jakarta.annotation.Resource;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-//Veronika
+//Lukas
 /**
- * Servlet implementation class ServletRegistrierung
- */
+* Servlet implementation class ServletRegistrierung
+*/
 @WebServlet("/ServletRegistrierung")
-public class ServletRegistrierung extends HttpServlet implements Servlet {
+public class ServletAnzeigeBuchen extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = 1L;
 
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
@@ -33,48 +34,31 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
-		BeanBenutzerdaten beanRegistrieren = new BeanBenutzerdaten();
-		
-		beanRegistrieren.setVorname(request.getParameter("vorname"));
-		beanRegistrieren.setEmail(request.getParameter("email"));
-		beanRegistrieren.setPasswort(request.getParameter("passwort"));
-		beanRegistrieren.setStandort(request.getParameter("standort"));
+
+		BeanBuchen beanAnzeigeBuchen = new BeanBuchen();
+		beanAnzeigeBuchen.setBenutzerID(Integer.valueOf(((BeanBenutzerdaten) request.getSession().getAttribute("loginForm")).getBenutzerID()));
+		beanAnzeigeBuchen.setAnzeigeID(Integer.valueOf(request.getParameter("anzeigeID")));
 		
 		// DB-Zugriff
-		persist(beanRegistrieren);
+		persist(beanAnzeigeBuchen);
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("registrierenForm", beanRegistrieren);
-		//JSP Seiten eigenltich nicht notwendig?
-		response.sendRedirect("html/test.jsp");
+		session.setAttribute("buchenForm", beanAnzeigeBuchen);
+		response.sendRedirect("html/anzeigeAnziegen");
 	}
 	
-	private void persist(BeanBenutzerdaten beanRegistrieren) throws ServletException {
+	private void persist(BeanBuchen beanAnzeigeBuchen) throws ServletException {
 		// DB-Zugriff
-		String[] generatedKeys = new String[] {"benutzerID"};	// Name der Spalte(n), die automatisch generiert wird(werden)
-		
 		try (Connection con = ds.getConnection(); 
 			PreparedStatement pstmt = con.prepareStatement(
-					"INSERT INTO benutzer (vorname,email,passwort,standort) VALUES (?,?,?,?)", 
-					generatedKeys)){
+					"INSERT INTO gebuchte (benutzerID,anzeigeID) VALUES (?,?)")){
 
 			
 			// Zugriff über Klasse java.sql.PreparedStatement
-			pstmt.setString(1, beanRegistrieren.getVorname());
-			pstmt.setString(2, beanRegistrieren.getEmail());
-			pstmt.setString(3, beanRegistrieren.getPasswort());
-			pstmt.setString(4, beanRegistrieren.getStandort());
-			
-			
+			pstmt.setInt(1, beanAnzeigeBuchen.getBenutzerID());
+			pstmt.setInt(2, beanAnzeigeBuchen.getAnzeigeID());
+		
 			pstmt.executeUpdate();
-			
-			// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)
-			try (ResultSet rs = pstmt.getGeneratedKeys()) {
-				while (rs.next()) {
-					beanRegistrieren.setBenutzerID(rs.getInt(1));
-				}
-			}
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}

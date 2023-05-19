@@ -23,6 +23,12 @@
 		<br><b>Standort: </b>${AnzeigeAufgebenForm.preis}
 		<br><b>Standort: </b>${AnzeigeAufgebenForm.preiskategorie}
 		
+		<br><b>Vorname: </b>${loginForm.vorname}
+		<br><b>E-Mail: </b>${loginForm.email}
+		<br><b>Passwort: </b>${loginForm.passwort}
+		<br><b>Standort: </b>${loginForm.standort}
+		<br><b>Standort: </b>${loginForm.benutzerID}
+		
 
 </body>
 </html>
