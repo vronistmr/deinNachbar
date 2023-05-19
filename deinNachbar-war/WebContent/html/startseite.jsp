@@ -40,7 +40,7 @@
 		</aside>
 		<nav>
 			<!-- Tobi -->
-			<form action="./../ServletKategorieNeu" method="post">
+			<form action="./../SuchServlet" method="post">
 				<input type="text" name="suchstring" size="50" maxlength="50" placeholder="Was suchtst du?">
 				<button name= "submit" type="submit">Suchen</button>
 			</form>
