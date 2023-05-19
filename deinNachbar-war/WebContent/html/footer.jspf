@@ -1,11 +1,24 @@
 <!-- Lukas -->
+
 <%@ page language="Java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 	<footer>
 		<nav>
-			<a href="./agb.jsp">AGB</a> <a href="./impressum.jsp">Impressum</a>
-			<a href="./überUns.jsp">Über uns</a>
+			
+			<c:choose>
+    			<c:when test="${pageContext.request.servletPath == '/index.jsp'}">
+        			<a href="./html/agb.jsp">AGB</a> <a href="./html/impressum.jsp">Impressum</a>
+					<a href="./html/überUns.jsp">Über uns</a>
+    			</c:when>
+    			<c:otherwise>
+        			<a href="./agb.jsp">AGB</a> <a href="./impressum.jsp">Impressum</a>
+					<a href="./überUns.jsp">Über uns</a>
+    			</c:otherwise>
+			</c:choose>
+	
 		</nav>
 	</footer>
+	
 	</body>
 </html>

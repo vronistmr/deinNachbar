@@ -1,3 +1,5 @@
+//Lukas
+
 package servlets.formulare;
 
 import java.io.IOException;
@@ -18,41 +20,34 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-//Lukas
-/**
-* Servlet implementation class ServletRegistrierung
-*/
-@WebServlet("/ServletRegistrierung")
+@WebServlet("/ServletAnzeigeBuchen")
 public class ServletAnzeigeBuchen extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = 1L;
 
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
 	
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
 		BeanBuchen beanAnzeigeBuchen = new BeanBuchen();
 		beanAnzeigeBuchen.setBenutzerID(Integer.valueOf(((BeanBenutzerdaten) request.getSession().getAttribute("loginForm")).getBenutzerID()));
-		beanAnzeigeBuchen.setAnzeigeID(Integer.valueOf(request.getParameter("anzeigeID")));
+		beanAnzeigeBuchen.setAnzeigeID(Integer.valueOf(request.getParameter("id")));
 		
 		// DB-Zugriff
 		persist(beanAnzeigeBuchen);
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("buchenForm", beanAnzeigeBuchen);
-		response.sendRedirect("html/anzeigenAnzeigen");
+		response.sendRedirect("html/anzeigenAnzeigen.jsp");
 	}
 	
 	private void persist(BeanBuchen beanAnzeigeBuchen) throws ServletException {
+		
 		// DB-Zugriff
 		try (Connection con = ds.getConnection(); 
 			PreparedStatement pstmt = con.prepareStatement(
 					"INSERT INTO gebuchte (benutzerID,anzeigeID) VALUES (?,?)")){
-
 			
 			// Zugriff über Klasse java.sql.PreparedStatement
 			pstmt.setInt(1, beanAnzeigeBuchen.getBenutzerID());
@@ -64,11 +59,8 @@ public class ServletAnzeigeBuchen extends HttpServlet implements Servlet {
 		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		doGet(request, response);
 	}
 

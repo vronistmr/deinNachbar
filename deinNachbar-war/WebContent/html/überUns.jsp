@@ -30,9 +30,9 @@
 		</tr>
 		<tr>
 			<td colspan="3">Wir sind ein Team von Entwicklern, das sich
-				darauf konzentriert, innovative LÃ¶sungen fÃ¼r unsere Kunden zu
-				entwickeln. Mit unserer Leidenschaft fÃ¼r Technologie und unserem
-				Engagement fÃ¼r Spitzenleistungen setzen wir uns fÃ¼r die Erreichung
+				darauf konzentriert, innovative Lösungen für unsere Kunden zu
+				entwickeln. Mit unserer Leidenschaft für Technologie und unserem
+				Engagement für Spitzenleistungen setzen wir uns für die Erreichung
 				unserer Ziele ein.</td>
 		</tr>
 	</table>
