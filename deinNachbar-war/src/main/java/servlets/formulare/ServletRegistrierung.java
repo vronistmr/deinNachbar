@@ -46,8 +46,7 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("registrierenForm", beanRegistrieren);
-		//JSP Seiten eigenltich nicht notwendig?
-		response.sendRedirect("html/test.jsp");
+		response.sendRedirect("./index.jsp");
 	}
 	
 	private void persist(BeanBenutzerdaten beanRegistrieren) throws ServletException {

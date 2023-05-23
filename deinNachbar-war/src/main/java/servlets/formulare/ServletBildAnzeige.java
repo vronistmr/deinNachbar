@@ -33,7 +33,7 @@ public class ServletBildAnzeige extends HttpServlet implements Servlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Servlet zum Auslesen eines Bildes aus einer DB und Rückgabe als binärer Datenstrom
 				request.setCharacterEncoding("UTF-8");	// In diesem Format erwartet das Servlet jetzt die Formulardaten
-				Long id = Long.valueOf(request.getParameter("anzeigeID"));
+				int id = Integer.valueOf(request.getParameter("anzeigeID"));
 				
 				// DB-Zugriff
 				try (Connection con = ds.getConnection();
