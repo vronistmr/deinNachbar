@@ -19,13 +19,13 @@
 			title="Bitte geben sie eine g&uuml;ltige Email-Adresse der Form: characters@characters.domain ein!"
 			required> <label for="passwort">Passwort:</label> <input
 			type="password" id="passwort" name="passwort" size="30"
-			maxlength="40" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+			maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 			title="Das Passwort muss mindestens einen Gro&szlig;buchstaben, einen Kleinbuchstaben, eine Nummer und mindestens 8 Zeichen enthalten!"
 			required> <label for="passwortwdh">Passwort
 			wiederholen:</label> <input type="password" id="passwortwdh"
-			name="passwortwdh" size="30" maxlength="40" required> <label
+			name="passwortwdh" size="30" maxlength="20" required> <label
 			for="standort">Standort:</label> <input type="text" id="standort"
-			name="standort" size="30" maxlength="40" required>
+			name="standort" size="30" maxlength="30" required>
 
 		<button type="submit" name="regButton" value="registrierungneu">Registrieren</button>
 
