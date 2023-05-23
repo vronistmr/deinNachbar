@@ -49,13 +49,10 @@ public class ServletIndex extends HttpServlet implements Servlet {
 			HttpSession session = request.getSession();
 		    session.setAttribute("loginForm", benutzer);
 		    response.sendRedirect("html/startseite.jsp");
-		    //final RequestDispatcher dispatcher = request.getRequestDispatcher("html/startseite.jsp");
-			//dispatcher.forward(request, response);
 		} else {
 			//Login fehlgeschlagen: mit Java Script Meldung anzeigen
 			response.sendRedirect("html/fehlerausgabe.jsp");
-			//final RequestDispatcher dispatcher = request.getRequestDispatcher("html/test.jsp");
-			//dispatcher.forward(request, response);
+			
 				}
 		
 	}

@@ -69,8 +69,9 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 		persist(beanAnzeigeAufgeben, foto);
 
 		HttpSession session = request.getSession();
-		session.setAttribute("AnzeigeAufgebenForm", beanAnzeigeAufgeben);
-		response.sendRedirect("html/anzeigenAnzeigen.jsp");
+		session.setAttribute("anzeigeNeu", beanAnzeigeAufgeben);
+		response.sendRedirect("./html/neueAnzeige.jsp");
+		
 	}
 
 	private void persist(BeanAnzeige beanAnzeigeAufgeben, Part foto) throws ServletException {
