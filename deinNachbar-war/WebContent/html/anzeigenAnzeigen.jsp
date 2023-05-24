@@ -18,7 +18,7 @@
 		<br><b>Standort: </b>${AnzeigeForm.standort}
 		<br><b>Umkreis: </b>${AnzeigeForm.umkreis}
 		<br><b>Beschreibung: </b>${AnzeigeForm.beschreibung}
-		<br><b>Bild: </b><img src="./../ServletBildAnzeige?anzeigeID=${AnzeigeForm.anzeigeID}" width="400" height="auto" alt="Kein Bild vorhanden">
+		<br><b>Bild: </b><img src="./../ServletBildAnzeige?anzeigeID=${AnzeigeForm.anzeigeID}" width="300" height="auto" alt="Kein Bild vorhanden">
 		<br>
 		
 	<!-- Lukas -->

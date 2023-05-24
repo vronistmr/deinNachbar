@@ -56,7 +56,7 @@
 				<button class="dropbtn">Profil</button>
 				<div class="dropdown-content">
 					<a href="./../ServletMeineAnzeigen">Meine Anzeigen</a> <a
-						href="./../ServletMeineGebuchten.jsp">Meine Gebuchten</a>
+						href="./../ServletMeineGebuchten">Meine Gebuchten</a>
 						<form action="./../ServletLogout" method="post">
 							<button name= "submit" type="submit">Auslogen</button>
 						</form>
