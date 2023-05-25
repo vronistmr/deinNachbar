@@ -47,7 +47,7 @@ public class ServletAnzeigeAnzeigen extends HttpServlet {
 		//noch vorhanden sein!:
 		HttpSession session = request.getSession();
 		session.setAttribute("AnzeigeForm", anzeigebean);
-		response.sendRedirect("html/anzeigenAnzeigen.jsp");
+		response.sendRedirect("./html/anzeigenAnzeigen.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
