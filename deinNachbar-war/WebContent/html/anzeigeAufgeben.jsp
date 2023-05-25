@@ -16,7 +16,7 @@
 					
 					<input type="text" name="titelAnzeige" size="50" maxlength="200" placeholder="Titel der Anzeige" > 
 					
-					<input type="number" name="preis" max="999" placeholder="Preis"> 
+					<input type="number" name="preis" max="999" placeholder="Preis" required> 
 				
 				<select name="preiskategorie" size="1">
 					<option value="Fix">Festpreis</option>
@@ -34,7 +34,7 @@
 				
 				<input type="text" name="standort" size="50" maxlength="50" placeholder="Dein Standort">
 				
-				<input type="number" name="umkreis" size="50" max="999" placeholder="Umkreis">
+				<input type="number" name="umkreis" size="50" max="999" placeholder="Umkreis" required>
 				
 				<textarea name="beschreibung" rows="10" cols="100" maxlength="1000" placeholder="Beschreibung deiner Anzeige..." maxlength=1000"></textarea>
 				

@@ -39,7 +39,7 @@
 					<td>${anzeige.anzeigeArt}</td>
 					<td>${anzeige.foto}</td>
 					<td>${anzeige.datetime}</td>
-					<td><a href="html/anzeigenAnzeigen.jsp">Hier gehts zur Anzeige</a></td>
+					<td><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${anzeige.anzeigeID}">Hier gehts zur Anzeige</a></td>
 				</tr>
 			</c:forEach>
 		</table>
