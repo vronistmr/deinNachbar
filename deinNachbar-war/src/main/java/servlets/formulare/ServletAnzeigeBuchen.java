@@ -39,7 +39,7 @@ public class ServletAnzeigeBuchen extends HttpServlet implements Servlet {
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("buchenForm", beanAnzeigeBuchen);
-		response.sendRedirect("html/anzeigenAnzeigen.jsp");
+		response.sendRedirect("./ServletMeineGebuchten");
 	}
 	
 	private void persist(BeanBuchen beanAnzeigeBuchen) throws ServletException {

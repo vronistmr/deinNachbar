@@ -19,7 +19,7 @@
 					<li>${currentAnzeige.preis} €</li>
 					<li>${currentAnzeige.preiskategorie}</li>
 					<li>${currentAnzeige.standort}</li>
-					<li><a href="./ServletAnzeigeAnzeigen?anzeigeid=${currentAnzeige.anzeigeID}"">Zur Anzeige</a></li>
+					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentAnzeige.anzeigeID}"">Zur Anzeige</a></li>
 				</ul>
 				</div>
 			</c:forEach>

@@ -11,8 +11,7 @@
 <meta charset="UTF-8">
 <title>deinNachbar.de</title>
 
-<!-- Tobi -->
-<base href="$ {pageContext.request.requestURI}" />
+<base href="${pageContext.request.requestURI}" />
 
 <!-- Lukas -->
 	<c:choose>
@@ -37,7 +36,7 @@
         			<a href="./index.jsp">deinNachbar.de</a>
     			</c:when>
     			<c:otherwise>
-        			<a href="../index.jsp">deinNachbar.de</a>
+        			<a href="./../index.jsp">deinNachbar.de</a>
     			</c:otherwise>
 			</c:choose>
 			
@@ -55,7 +54,7 @@
 				<div class="dropdown-content">
 					<a href="./../ServletMeineAnzeigen">Meine Anzeigen</a> <a
 						href="./../ServletMeineGebuchten">Meine Gebuchten</a>
-						<form action="./../ServletLogout" method="post">
+						<form action="../ServletLogout" method="post">
 							<button name= "submit" type="submit">Auslogen</button>
 						</form>
 				</div>

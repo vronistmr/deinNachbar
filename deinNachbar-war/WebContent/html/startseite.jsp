@@ -12,7 +12,7 @@
 			<h3>Kategorien</h3>
 			<ol>
 				<li>
-					<img src=../img/haus.jpg width="30" height="30">Haus
+					<img src=./../img/haus.jpg width="30" height="30">Haus
 					<c:if test="${sessionScope.loginForm.istAdmin}">
 					<form>
 					<button typ="button" name="update" href="./../ServletKategorieBearbeiten">Bearbeiten</button>
