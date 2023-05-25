@@ -1,9 +1,10 @@
 <!-- Lukas -->
-<%@ page language="Java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="Java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page errorPage="fehlerausgabe.jsp"%>
+
 <%@ include file="header.jspf"%>
 
+<main>
 	<h1>Über uns</h1>
 	<p>Willkommen bei deineNachbar.de! Wir sind eine Plattform, auf der
 		Nachbarschaftsanzeigen aufgenommen und vermittelt werden. Unser Ziel
