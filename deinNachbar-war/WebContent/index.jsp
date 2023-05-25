@@ -1,8 +1,9 @@
 <!-- Lukas -->
-<%@ page language="Java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="Java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page errorPage="fehlerausgabe.jsp"%>
+
 <%@ include file="./html/header.jspf"%>
+
 
 <main>
 	<!-- Tobi -->
@@ -11,15 +12,14 @@
 
 		<label for="email">Email:</label> 
 		<input autofocus type="text"
-			id="email" name="email"
-			pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-			title="Bitte geben sie eine g&uuml;ltige Email-Adresse der Form: characters@characters.domain ein!"
+			id="email" name="email" size="30" maxlength="40"
+			title="Bitte geben sie ihre Email-Adresse ein, mit der sie sich registriert haben!"
 			required> 
 		<label for="passwort">Passwort:</label> 
 		<input
 			type="password" id="passwort" name="passwort"
-			pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-			title="Das Passwort muss mindestens einen Gro&szlig;buchstaben, einen Kleinbuchstaben, eine Nummer und mindestens 8 Zeichen enthalten!"
+			size="30" maxlength="20"
+			title="Bitte geben sie ihr Passwort ein, mit dem sie sich registriert haben!"
 			required>
 
 		<button type="submit">OK</button>
@@ -33,6 +33,7 @@
 	</nav>
 
 </main>
+
 
 <!-- Lukas -->
 <%@ include file="./html/footer.jspf"%>

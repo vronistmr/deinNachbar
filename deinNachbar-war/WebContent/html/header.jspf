@@ -1,7 +1,5 @@
 <!-- Lukas -->
-
-<%@ page language="Java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="Java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page errorPage="fehlerausgabe.jsp"%>
 
@@ -13,16 +11,15 @@
 <meta charset="UTF-8">
 <title>deinNachbar.de</title>
 
-<!-- Tobi -->
-<base href="$ {pageContext.request.requestURI}" />
+<base href="${pageContext.request.requestURI}" />
 
 <!-- Lukas -->
 	<c:choose>
     <c:when test="${pageContext.request.servletPath == '/index.jsp'}">
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/basis.css">
     </c:when>
     <c:otherwise>
-       	<link rel="stylesheet" href="./../css/style.css">
+       	<link rel="stylesheet" href="./../css/basis.css">
     </c:otherwise>
 	</c:choose>
 </head>
@@ -39,7 +36,7 @@
         			<a href="./index.jsp">deinNachbar.de</a>
     			</c:when>
     			<c:otherwise>
-        			<a href="../index.jsp">deinNachbar.de</a>
+        			<a href="./../index.jsp">deinNachbar.de</a>
     			</c:otherwise>
 			</c:choose>
 			
@@ -57,7 +54,7 @@
 				<div class="dropdown-content">
 					<a href="./../ServletMeineAnzeigen">Meine Anzeigen</a> <a
 						href="./../ServletMeineGebuchten">Meine Gebuchten</a>
-						<form action="./../ServletLogout" method="post">
+						<form action="../ServletLogout" method="post">
 							<button name= "submit" type="submit">Auslogen</button>
 						</form>
 				</div>

@@ -17,7 +17,7 @@
 					<li>${currentGebuchte.preis} €</li>
 					<li>${currentGebuchte.preiskategorie}</li>
 					<li>${currentGebuchte.standort}</li>
-					<li><a href="./ServletAnzeigeAnzeigen?anzeigeid=${currentGebuchte.anzeigeID}"">Zur Anzeige</a></li>
+					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentGebuchte.anzeigeID}"">Zur Anzeige</a></li>
 				</ul>
 				</div>
 			</c:forEach>
@@ -26,4 +26,5 @@
 		<br/>
 	</main>
 
-	<%@ include file="footer.jspf" %> 
+
+<%@ include file="footer.jspf" %> 
