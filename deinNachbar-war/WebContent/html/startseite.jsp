@@ -5,12 +5,9 @@
 <!-- Lukas -->
 <%@ include file="header.jspf" %> 
 
+
 	<main>
 		<!-- Veronika -->
-							<a href="../ServletMeineAnzeigen">Meine Anzeigen</a> 
-							<a href="../ServletMeineGebuchten">Meine Gebuchten</a> 
-							
-		
 		<aside>
 			<h3>Kategorien</h3>
 			<ol>
@@ -74,5 +71,6 @@
 
 	</main>
 
-	<!-- Lukas -->
-	<%@ include file="footer.jspf" %> 
+
+<!-- Lukas -->
+<%@ include file="footer.jspf" %> 

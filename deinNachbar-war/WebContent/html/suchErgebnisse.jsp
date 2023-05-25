@@ -1,8 +1,9 @@
 <!-- Tobi -->
-<%@ page language="Java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="Java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page errorPage="fehlerausgabe.jsp"%>
+
 <%@ include file="header.jspf"%>
+
 
 <main>
 
@@ -45,5 +46,6 @@
 		</table>
 
 </main>
+
 
 <%@ include file="footer.jspf"%>

@@ -26,4 +26,5 @@
 		<br/>
 	</main>
 
-	<%@ include file="footer.jspf" %> 
+
+<%@ include file="footer.jspf" %> 
