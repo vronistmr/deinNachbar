@@ -50,6 +50,7 @@ public class ServletMeineAnzeigen extends HttpServlet implements Servlet {
 		//response.sendRedirect("./html/meineAnzeigen.jsp");
 		
 				request.setAttribute("anzeigen", meineAnzeigen);
+
 				final RequestDispatcher dispatcher = request.getRequestDispatcher("./html/meineAnzeigen.jsp");
 				dispatcher.forward(request, response);	
 		

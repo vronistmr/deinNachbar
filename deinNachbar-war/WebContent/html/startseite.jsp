@@ -5,17 +5,14 @@
 <!-- Lukas -->
 <%@ include file="header.jspf" %> 
 
+
 	<main>
 		<!-- Veronika -->
-							<a href="../ServletMeineAnzeigen">Meine Anzeigen</a> 
-							<a href="../ServletMeineGebuchten">Meine Gebuchten</a> 
-							
-		
 		<aside>
 			<h3>Kategorien</h3>
 			<ol>
 				<li>
-					<img src=../img/haus.jpg width="30" height="30">Haus
+					<img src=./../img/haus.jpg width="30" height="30">Haus
 					<c:if test="${sessionScope.loginForm.istAdmin}">
 					<form>
 					<button typ="button" name="update" href="./../ServletKategorieBearbeiten">Bearbeiten</button>
@@ -74,5 +71,6 @@
 
 	</main>
 
-	<!-- Lukas -->
-	<%@ include file="footer.jspf" %> 
+
+<!-- Lukas -->
+<%@ include file="footer.jspf" %> 
