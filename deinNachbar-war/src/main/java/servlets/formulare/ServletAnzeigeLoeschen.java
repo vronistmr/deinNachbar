@@ -13,9 +13,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 import jakarta.annotation.Resource;
-import jakarta.servlet.RequestDispatcher;
 
-@WebServlet("/ServletAnziegeLoeschen")
+@WebServlet("/ServletAnzeigeLoeschen")
 public class ServletAnzeigeLoeschen extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -26,31 +25,30 @@ public class ServletAnzeigeLoeschen extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Servlet zur Entgegennahme von Formularinhalten, Löschen der Daten in einer DB und Generierung
-				// eines Feldes zur Weitergabe an eine JSP
-				request.setCharacterEncoding("UTF-8");	// In diesem Format erwartet das Servlet jetzt die Formulardaten
+				request.setCharacterEncoding("UTF-8");	
 				Long id = Long.valueOf(request.getParameter("id"));
 		
-				// DB-Zugriff
 				delete(id);
-						
-				// Scope "Request"
-				request.setAttribute("deleteForm", id);
 				
-				// Weiterleiten an JSP
-				final RequestDispatcher dispatcher = request.getRequestDispatcher("2_deleteentry.jsp");
-				dispatcher.forward(request, response);	
+				response.sendRedirect("./ServletMeineAnzeigen");	
 			}
+	
 	private void delete(Long id) throws ServletException {
 		
-		// DB-Zugriff
 		try (Connection con = ds.getConnection();
-			 PreparedStatement pstmt = con.prepareStatement("DELETE FROM products WHERE id = ?")){
+			 PreparedStatement pstmt = con.prepareStatement("DELETE FROM anzeige WHERE anzeigeID = ?")){
 			pstmt.setLong(1, id);
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
+		try (Connection con = ds.getConnection();
+				 PreparedStatement pstmt = con.prepareStatement("DELETE FROM gebuchte WHERE anzeigeID = ?")){
+				pstmt.setLong(1, id);
+				pstmt.executeUpdate();
+			} catch (Exception ex) {
+				throw new ServletException(ex.getMessage());
+			}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
