@@ -77,7 +77,7 @@ footer {
   text-decoration: underline;
 }
 
-footer a{
+footer nav{
   display: flex;
   justify-content: center;
 }
