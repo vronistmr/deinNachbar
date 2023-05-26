@@ -23,9 +23,7 @@
 				</ul>
 				</div>
 			</c:forEach>
-
-
-	
+			
 	<br />
 
 </main>
