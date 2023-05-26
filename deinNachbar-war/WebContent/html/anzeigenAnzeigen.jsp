@@ -22,9 +22,18 @@
 		<br>
 		
 	<!-- Lukas -->
-	<form action="./../ServletAnzeigeBuchen?id=${AnzeigeForm.anzeigeID}" method="post">
-	<button type="submit" name="buchungsbutton" value="buchungneu">Buchen</button>
-	</form>
+	<c:if test="${AnzeigeForm.benutzerID != loginForm.benutzerID}">
+		<form action="./../ServletAnzeigeBuchen?id=${AnzeigeForm.anzeigeID}" method="post">
+			<button type="submit" name="buchungsbutton" value="buchungneu">Buchen</button>
+		</form>
+	</c:if>
+	
+	<c:if test="${AnzeigeForm.benutzerID == loginForm.benutzerID}">
+		<form action="./../ServletAnzeigeLoeschen?id=${AnzeigeForm.anzeigeID}" method="post">
+			<button type="submit" name="löschbutton" value="löschung">Löschen</button>
+		</form>
+	</c:if>
+	
 </main>
 
 

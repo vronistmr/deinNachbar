@@ -4,7 +4,7 @@
 }
 
 body {
-  margin: 0;
+ padding: 20px;
 }
 
 header {
@@ -21,7 +21,7 @@ header {
 nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: right;
 }
 
 nav a {
@@ -37,7 +37,6 @@ nav a:hover {
 
 .right-nav {
   display: flex;
-  align-items: center;
 }
 
 .dropdown {
