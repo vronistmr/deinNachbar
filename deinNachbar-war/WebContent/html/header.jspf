@@ -49,8 +49,8 @@
 					<button formaction="./../ServletMeineAnzeigen">Meine Anzeigen</button>
 					<button formaction="./../ServletMeineGebuchten">Meine Gebuchten</button>	
 				</form>	
-				<form action="../ServletLogout" method="post" class=buttonLogOut>
-					<button name= "submit" type="submit">LogOut</button>
+				<form action="../ServletLogout" method="post">
+					<button name= "submit" type="submit" id="buttonLogOut">LogOut</button>
 				</form>
 				</div>
 		</c:otherwise>

@@ -50,39 +50,52 @@ button {
   border-radius: 15px;
   background-color: #3498db;
   border: none;
+
 }
 
 button:hover {
   background-color: #2980b9;
 }
 
-.buttonLogOut {
+#buttonLogOut {
+  padding: 6px 14px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 15px;
   background-color: transparent;
   border: 2px solid #3498db;
   color: #3498db;
+  margin-left: 10px;
+  margin-right: 5px;
 }
 
-.buttonLogOut:hover {
+#buttonLogOut:hover {
   background-color: #3498db;
   color: white;
 }
+
 footer {
   background-color: #fff;
-  color:  #005fa3;
+  color: #333;
   padding: 20px;
   position: fixed;
   bottom: 0;
   width: 100%;
   text-align: center;
-  text-decoration: underline;
 }
 
-footer nav{
+footer nav {
   display: flex;
   justify-content: center;
 }
 
+footer a {
+  color: #0077c2;
+  text-decoration: underline;
+  margin-right: 20px;
+}
+
 footer a:hover {
-  color:#0077c2;
+  color: #005fa3;
   text-decoration: none;
 }
