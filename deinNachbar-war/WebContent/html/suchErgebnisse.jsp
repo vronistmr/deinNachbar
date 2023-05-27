@@ -7,44 +7,24 @@
 
 <main>
 
-<h2>Erfolgreiches Suchen von Anzeigen</h2>
-		<h3>Gelesene Daten</h3>
-		<table>
-			<tr>
-				<th>Anzeigetitel</th>
-				<th>Preis</th>
-				<th>Preiskategorie</th>
-				<th>Kategorie</th>
-				<th>Standort</th>
-				<th>Umkreis</th>
-				<th>Beschreibung</th>
-				<th>AnzeigeID</th>
-				<th>BenutzerID</th>
-				<th>AnzeigeArt</th>
-				<th>Foto</th>
-				<th>Datum und Uhrzeit</th>
-				<th>Aktion</th>
-				
-			</tr>
-			<c:forEach items="${Anzeigen}" var="anzeige">
-				<tr>
-					<td>${anzeige.titelAnzeige}</td>
-					<td>${anzeige.preis}</td>
-					<td>${anzeige.preiskategorie}</td>
-					<td>${anzeige.kategorie}</td>
-					<td>${anzeige.standort}</td>
-					<td>${anzeige.umkreis}</td>
-					<td>${anzeige.beschreibung}</td>
-					<td>${anzeige.anzeigeID}</td>
-					<td>${anzeige.benutzerID}</td>
-					<td>${anzeige.anzeigeArt}</td>
-					<td>${anzeige.foto}</td>
-					<td>${anzeige.datetime}</td>
-					<td><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${anzeige.anzeigeID}">Hier gehts zur Anzeige</a></td>
-				</tr>
+	<h1>Gesuchte Anzeigen</h1>
+	
+	<c:forEach items="${Anzeigen}" var="gesuchteAnzeige" varStatus="status">
+				<div class="anzeigeBox">
+				<ul>
+					<li>
+					<img src="./../ServletBildAnzeige?anzeigeID=${gesuchteAnzeige.anzeigeID}" width="300" height="auto" alt="Kein Bild vorhanden"></li> 
+					<li><h4>${gesuchteAnzeige.titelAnzeige}</h4></li>
+					<li>${gesuchteAnzeige.preis} €</li>
+					<li>${gesuchteAnzeige.preiskategorie}</li>
+					<li>${gesuchteAnzeige.standort}</li>
+					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${gesuchteAnzeige.anzeigeID}"">Zur Anzeige</a></li>
+				</ul>
+				</div>
 			</c:forEach>
-		</table>
-
+			
+	<br />
+	
 </main>
 
 

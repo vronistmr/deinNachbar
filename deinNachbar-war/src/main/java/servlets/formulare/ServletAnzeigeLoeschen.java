@@ -26,25 +26,25 @@ public class ServletAnzeigeLoeschen extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				request.setCharacterEncoding("UTF-8");	
-				Long id = Long.valueOf(request.getParameter("id"));
+				int id = Integer.parseInt(request.getParameter("id"));
 		
 				delete(id);
 				
 				response.sendRedirect("./ServletMeineAnzeigen");	
 			}
 	
-	private void delete(Long id) throws ServletException {
+	private void delete(int id) throws ServletException {
 		
 		try (Connection con = ds.getConnection();
 			 PreparedStatement pstmt = con.prepareStatement("DELETE FROM anzeige WHERE anzeigeID = ?")){
-			pstmt.setLong(1, id);
+			pstmt.setInt(1, id);
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
 		try (Connection con = ds.getConnection();
 				 PreparedStatement pstmt = con.prepareStatement("DELETE FROM gebuchte WHERE anzeigeID = ?")){
-				pstmt.setLong(1, id);
+				pstmt.setInt(1, id);
 				pstmt.executeUpdate();
 			} catch (Exception ex) {
 				throw new ServletException(ex.getMessage());
