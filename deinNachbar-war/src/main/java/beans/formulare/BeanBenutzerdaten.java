@@ -1,8 +1,8 @@
-package beans.formulare;
+//Veronika
 
+package beans.formulare;
 import java.io.Serializable;
 
-//Veronika
 
 
 public class BeanBenutzerdaten implements Serializable{

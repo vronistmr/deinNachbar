@@ -1,4 +1,5 @@
 <!-- Lukas -->
+
 <%@ page language="Java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page errorPage="fehlerausgabe.jsp"%>
 
@@ -6,8 +7,8 @@
 
 
 <main>
-	<!-- Hier wird der Hauptinhalt der Website eingefÃ¼gt -->
 	<!-- Tobi -->
+	
 	<form method="POST" action="./../ServletRegistrierung">
 		<h2>Registrieren</h2>
 
@@ -34,4 +35,5 @@
 </main>
 
 
+<!-- Lukas -->
 <%@ include file="footer.jspf"%>

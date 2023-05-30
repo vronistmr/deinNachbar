@@ -1,8 +1,8 @@
-package beans.formulare;
+//Veronika 
 
+package beans.formulare;
 import java.io.Serializable;
 
-//Veronika 
 
 public class BeanLogindaten implements Serializable {
 	private static final long serialVersionUID = 1L;
