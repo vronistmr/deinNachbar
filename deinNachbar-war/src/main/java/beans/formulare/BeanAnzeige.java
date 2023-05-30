@@ -1,11 +1,11 @@
-package beans.formulare;
+//Veronika
 
+package beans.formulare;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
 
-//Veronika
 
 public class BeanAnzeige implements Serializable{
 	private static final long serialVersionUID = 1L;

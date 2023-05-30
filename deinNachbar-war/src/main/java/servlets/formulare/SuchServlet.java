@@ -1,6 +1,6 @@
 // Tobi
-package servlets.formulare;
 
+package servlets.formulare;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -125,5 +125,4 @@ public class SuchServlet extends HttpServlet {
 		}
 		return anzeigen;
 	}
-
 }

@@ -1,6 +1,6 @@
 // Tobi
-package servlets.formulare;
 
+package servlets.formulare;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
@@ -19,6 +19,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+
 
 @WebServlet("/ServletAnzeigeAnzeigen")
 public class ServletAnzeigeAnzeigen extends HttpServlet {
@@ -116,5 +117,4 @@ public class ServletAnzeigeAnzeigen extends HttpServlet {
 		}
 		return anzeige;
 	}
-
 }

@@ -1,5 +1,6 @@
-package servlets.formulare;
+//Veronika
 
+package servlets.formulare;
 import java.io.InputStream;
 import java.sql.Blob;
 import java.sql.Connection;
@@ -17,19 +18,14 @@ import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-//Veronika
-/**
- * Servlet implementation class ServletBildAnzeige
- */
+
+
 @WebServlet("/ServletBildAnzeige")
 public class ServletBildAnzeige extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
 	
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Servlet zum Auslesen eines Bildes aus einer DB und Rückgabe als binärer Datenstrom
 				request.setCharacterEncoding("UTF-8");	// In diesem Format erwartet das Servlet jetzt die Formulardaten
@@ -64,12 +60,8 @@ public class ServletBildAnzeige extends HttpServlet implements Servlet {
 				}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

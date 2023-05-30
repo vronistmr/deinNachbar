@@ -1,10 +1,9 @@
 //Lukas
-package servlets.formulare;
 
+package servlets.formulare;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -13,6 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 import jakarta.annotation.Resource;
+
 
 @WebServlet("/ServletAnzeigeLoeschen")
 public class ServletAnzeigeLoeschen extends HttpServlet {
@@ -55,5 +55,4 @@ public class ServletAnzeigeLoeschen extends HttpServlet {
 		
 		doGet(request, response);
 	}
-
 }

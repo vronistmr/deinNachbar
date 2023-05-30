@@ -1,5 +1,6 @@
-package servlets.formulare;
+//Tobi
 
+package servlets.formulare;
 import java.io.IOException;
 
 import jakarta.servlet.ServletException;
@@ -23,5 +24,4 @@ public class ServletKategorieLoeschen extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }
