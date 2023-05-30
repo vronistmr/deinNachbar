@@ -1,6 +1,8 @@
 <!-- Tobi -->
+
 <%@ page language="Java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page errorPage="fehlerausgabe.jsp" %>
+
 
 <!-- Lukas -->
 <%@ include file="header.jspf" %> 
@@ -8,6 +10,7 @@
 	<main>
 		<h1>Meine Gebuchten</h1>
 		<!-- Veronika -->
+		
 		<c:forEach var="currentGebuchte" items="${anzeigen}" varStatus="status">
 				<div class="anzeigeBox">
 				<ul>
@@ -21,6 +24,7 @@
 				</ul>
 				</div>
 			</c:forEach>
+			
 			<!-- Lukas -->
 			
 		<br/>

@@ -1,8 +1,7 @@
-package beans.formulare;
-
-import java.io.Serializable;
-
 //Lukas
+
+package beans.formulare;	
+import java.io.Serializable;
 
 
 public class BeanBuchen implements Serializable{

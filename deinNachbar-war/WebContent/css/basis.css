@@ -54,7 +54,7 @@ button {
 }
 
 button:hover {
-  background-color: #2980b9;
+  background-color: #005fa3;
 }
 
 #buttonLogOut {
@@ -70,8 +70,9 @@ button:hover {
 }
 
 #buttonLogOut:hover {
-  background-color: #3498db;
-  color: white;
+  background-color:#005fa3;
+  border: 2px solid #3498db;
+  color: #333;
 }
 
 footer {
@@ -90,7 +91,7 @@ footer nav {
 }
 
 footer a {
-  color: #0077c2;
+  color: #3498db;
   text-decoration: underline;
   margin-right: 20px;
 }
