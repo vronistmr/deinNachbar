@@ -1,7 +1,6 @@
 //Lukas
 
 package servlets.formulare;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,6 +18,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+
 
 @WebServlet("/ServletAnzeigeBuchen")
 public class ServletAnzeigeBuchen extends HttpServlet implements Servlet {
@@ -63,5 +63,4 @@ public class ServletAnzeigeBuchen extends HttpServlet implements Servlet {
 	
 		doGet(request, response);
 	}
-
 }
