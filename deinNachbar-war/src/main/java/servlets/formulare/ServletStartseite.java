@@ -2,7 +2,6 @@
 
 package servlets.formulare;
 
-import jakarta.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
@@ -21,8 +20,10 @@ import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 /**
  * Servlet implementation class ServletStartseite
  */
@@ -43,9 +44,12 @@ public class ServletStartseite extends HttpServlet implements Servlet {
 		List<BeanAnzeige> bieteAnzeigen = readAnzeigen("biete");
 		List<BeanKategorie> kategorien = readKategorien();
 		
+		//Kategorien müssen in Session-Scope hinterlegt werden da kategorieID und kategorie-Werte noch zum Kategorien Löschen nach Request mit Löschen-Button benötigt werden!
+		HttpSession session = request.getSession();
+		
 		request.setAttribute("suchenAnzeigen", sucheAnzeigen);
 		request.setAttribute("bieteAnzeigen", bieteAnzeigen);
-		request.setAttribute("kategorien", kategorien);
+		session.setAttribute("kategorien", kategorien);
 
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("./html/startseite.jsp");
 		dispatcher.forward(request, response);	
