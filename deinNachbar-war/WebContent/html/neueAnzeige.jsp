@@ -22,7 +22,7 @@
 		<br><b>Standort: </b>${anzeigeNeu.standort}
 		<br><b>Umkreis: </b>${anzeigeNeu.umkreis} Kilometer
 		<br><b>Beschreibung: </b>${anzeigeNeu.beschreibung}
-		<br><b>Bild: </b><img src="./../ServletBildAnzeige?anzeigeID=${anzeigeNeu.anzeigeID}" width="300" height="auto" alt="Kein Bild vorhanden"> 
+		<br><b>Bild: </b><img src="./../ServletBildAnzeige?anzeigeID=${anzeigeNeu.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/blume.png';"> <!--onerror: https://bit.ly/3N6GpwJ  --> 
 		</p>
 		
 		<form>

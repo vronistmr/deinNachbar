@@ -33,14 +33,13 @@ public class ServletKategorieNeu extends HttpServlet implements Servlet {
 		BeanKategorie beanKategorie = new BeanKategorie();
 		
 		beanKategorie.setKategorie(request.getParameter("neueKategorie"));
-		// Foto
-		Part kategoriebild = request.getPart("kategoriebild");
 
 		persist(beanKategorie);
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("KategorieNeu", beanKategorie);
 		//html Seite neu laden?! dass Kategorie angezeigt wird
+		response.sendRedirect("./ServletStartseite");
 	}
 
 	private void persist(BeanKategorie beanKategorie) throws ServletException {

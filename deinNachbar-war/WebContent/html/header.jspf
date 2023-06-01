@@ -44,10 +44,10 @@
 			
 		</c:when>
 		<c:otherwise>
-			<a href="./startseite.jsp">deinNachbar.de</a>
+			<a href="./../ServletStartseite">deinNachbar.de</a>
 				<div class=navRechts>
 				<form>
-					<button formaction="./anzeigeAufgeben.jsp">Anzeige Aufgeben</button>
+					<button formaction="./anzeigeAufgeben.jsp">Neue Anzeige aufgeben</button>
 					<button formaction="./../ServletMeineAnzeigen">Meine Anzeigen</button>
 					<button formaction="./../ServletMeineGebuchten">Meine Gebuchten</button>	
 				</form>	
