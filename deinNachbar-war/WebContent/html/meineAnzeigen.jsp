@@ -15,7 +15,7 @@
 				<div class="anzeigeBox">
 				<ul>
 					<li>
-					<img src="./../ServletBildAnzeige?anzeigeID=${currentAnzeige.anzeigeID}" width="300" height="auto" alt="Kein Bild vorhanden"></li> 
+					<img src="./../ServletBildAnzeige?anzeigeID=${currentAnzeige.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/blume.png';"></li><!--onerror: https://bit.ly/3N6GpwJ  --> 
 					<li><h4>${currentAnzeige.titelAnzeige}</h4></li>
 					<li>${currentAnzeige.preis} €</li>
 					<li>${currentAnzeige.preiskategorie}</li>

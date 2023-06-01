@@ -44,7 +44,7 @@ public class ServletIndex extends HttpServlet implements Servlet {
 			//Erfolgreicher Login
 			HttpSession session = request.getSession();
 		    session.setAttribute("loginForm", benutzer);
-		    response.sendRedirect("html/startseite.jsp");
+		    response.sendRedirect("./ServletStartseite");
 		} else {
 			//Login fehlgeschlagen: mit Java Script Meldung anzeigen
 			response.sendRedirect("html/fehlerausgabe.jsp");
