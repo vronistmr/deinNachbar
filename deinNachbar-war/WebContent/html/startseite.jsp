@@ -1,38 +1,31 @@
 <!-- Tobi -->
 
-<%@ page language="Java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page errorPage="fehlerausgabe.jsp" %>
+<%@ page language="Java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page errorPage="fehlerausgabe.jsp"%>
 
 <!-- Lukas -->
-<%@ include file="header.jspf" %> 
-
+<%@ include file="header.jspf" %>
 
 	<main>
 		<!-- Veronika -->
 		
 		<aside>
 			<h3>Kategorien</h3>
-			<ol>
-				<li>
-					<img src=./../img/haus.jpg width="30" height="30">Haus
-					<c:if test="${sessionScope.loginForm.istAdmin}">
+			
+			<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
+					<li>${currentKategorie.kategorie}</li>
+				<c:if test="${sessionScope.loginForm.istAdmin}">
 					<form>
 					<button typ="button" name="update" href="./../ServletKategorieBearbeiten">Bearbeiten</button>
 					<button typ="button" name="delete" href="./../ServletKategorieLoeschen">Löschen</button>
 					</form>
 					</c:if>
-				</li>
-				<li><img src=../img/garten.jpg width="30" height="30">Garten</li>
-				<li><img src=../img/elektronik.jpg width="30" height="30">Elektronik</li>
-				<li><img src=../img/technik.jpg width="30" height="30">Technik</li>
-				<li><img src=../img/kreativ.jpg width="30" height="30">Kreativ</li>
-			</ol>
+			</c:forEach>
+			
 			<c:if test="${sessionScope.loginForm.istAdmin}">
     	<!-- Hier der Code für Admin - Kategorien bearbeiten  -->
-    	<form action="./../ServletKategorieNeu" method="post">
+    	<form action="./../ServletKategorieNeu" method="POST">
     	<input type="text" name="neueKategorie" size="50" maxlength="50" placeholder="Neue Kategorie" required> <br>
-    	<label for="kategoriebild">Kategoriebild hochladen:</label> 
-		<input type="file" id="kategoriebild" name="kategoriebild" accept="image/*">
     	<button type="submit" value="neu" name="action">Kategorie ergänzen</button>
     	</form>
     	
@@ -45,33 +38,45 @@
 				<input type="text" name="suchstring" size="50" maxlength="50" placeholder="Was suchtst du?">
 				<button name= "submit" type="submit">Suchen</button>
 			</form>
-			<!-- Tobi -->
-			<div id="tabsSucheBiete">
+		</nav>
+		<!-- Veronika -->
+		<div class="tabsSucheBiete">
 				<ul>
 					<!-- Navigation zu IDs - ausblenden der anderen Liste mit JavaScript -->
 					<li><a href="#tabSuche">Suche</a></li>
 					<li><a href="#tabBiete">Biete</a></li>
 				</ul>
-			</div>
-		</nav>
-		<div id="FensterFürAnzeigen">
-			<div id="tabSuche">
+	</div>
+	<div id="tabSuche">
+		<c:forEach var="currentSucheAnzeige" items="${suchenAnzeigen}" varStatus="status">
 				<ul>
-					<li>Suche Gärtner</li>
-					<li>Suche Maler</li>
-					<li>Suche Elektiker</li>
+					<li>
+					<img src="./../ServletBildAnzeige?anzeigeID=${currentSucheAnzeige.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/blume.png';"></li>  <!--onerror: https://bit.ly/3N6GpwJ  -->
+					<li><h4>${currentSucheAnzeige.titelAnzeige}</h4></li>
+					<li>${currentSucheAnzeige.preis} €</li>
+					<li>${currentSucheAnzeige.preiskategorie}</li>
+					<li>${currentSucheAnzeige.standort}</li>
+					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentSucheAnzeige.anzeigeID}"">Zur Anzeige</a></li>
 				</ul>
-			</div>
-			<div id="tabBiete">
+		</c:forEach>
+	</div>
+	
+	<div id="tabBiete">
+		<c:forEach var="currentBieteAnzeige" items="${bieteAnzeigen}" varStatus="status">
 				<ul>
-					<li>Biete Malerarbeiten</li>
-					<li>Biete Einaufshilfe</li>
-					<li>Biete Elekronikservice</li>
+					<li>
+					<img src="./../ServletBildAnzeige?anzeigeID=${currentBieteAnzeige.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/blume.png';"></li> <!--onerror: https://bit.ly/3N6GpwJ  -->
+					<li><h4>${currentBieteAnzeige.titelAnzeige}</h4></li>
+					<li>${currentBieteAnzeige.preis} €</li>
+					<li>${currentBieteAnzeige.preiskategorie}</li>
+					<li>${currentBieteAnzeige.standort}</li>
+					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentBieteAnzeige.anzeigeID}"">Zur Anzeige</a></li>
 				</ul>
-			</div>
-		</div>
-
+		</c:forEach>
+	</div>
+			
 	</main>
+	
 
 
 <!-- Lukas -->
