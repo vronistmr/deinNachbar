@@ -21,7 +21,15 @@ public class ServletKategorieBearbeiten extends HttpServlet {
 	private DataSource ds;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		request.setCharacterEncoding("UTF-8");
+		
+		int kategorieID = Integer.parseInt(request.getParameter("kategorieID"));
+		String eingabe = " ";
+		
+		update(kategorieID, eingabe);
+		
+		response.sendRedirect("./ServletStartseite");
 		
 	}
 
@@ -30,12 +38,13 @@ public class ServletKategorieBearbeiten extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	private void persist() throws ServletException{
+	private void update(int kategorieID, String NeueKategorie) throws ServletException{
 		try(Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("UPDATE kategorie" + "SET kategorie = ?" + "WHERE id = ?")){
+				PreparedStatement pstmt = con.prepareStatement("UPDATE kategorie SET kategorie = ? WHERE kategorieID = ?")){
 			
-				pstmt.setString(1, );
-				pstmt.setString(2, );
+				pstmt.setString(1, NeueKategorie);
+				pstmt.setInt(2, kategorieID);
+				pstmt.executeUpdate();
 				
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());

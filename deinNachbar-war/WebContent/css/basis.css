@@ -68,8 +68,6 @@ button:hover {
   background-color: transparent;
   border: 2px solid #3498db;
   color: #3498db;
-  margin-left: 10px;
-  margin-right: 5px;
 }
 
 #buttonLogOut:hover {

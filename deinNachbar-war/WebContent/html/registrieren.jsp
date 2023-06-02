@@ -29,7 +29,7 @@
 			for="standort">Standort:</label> <input type="text" id="standort"
 			name="standort" size="30" maxlength="30" required>
 
-		<button type="submit" name="regButton" value="registrierungneu">Registrieren</button>
+		<button type="submit" name="registrierung" value="neu">Registrieren</button>
 
 	</form>
 </main>

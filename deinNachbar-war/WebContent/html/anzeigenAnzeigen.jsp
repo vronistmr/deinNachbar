@@ -25,13 +25,13 @@
 	<!-- Lukas -->
 	<c:if test="${AnzeigeForm.benutzerID != loginForm.benutzerID}">
 		<form action="./../ServletAnzeigeBuchen?id=${AnzeigeForm.anzeigeID}" method="post">
-			<button type="submit" name="buchungsbutton">Buchen</button>
+			<button type="submit" name="buchung" value="neu">Buchen</button>
 		</form>
 	</c:if>
 	
 	<c:if test="${AnzeigeForm.benutzerID == loginForm.benutzerID}">
 		<form action="./../ServletAnzeigeLoeschen?id=${AnzeigeForm.anzeigeID}" method="post">
-			<button type="submit" name="löschbutton">Löschen</button>
+			<button type="submit" name="löschen" value="neu">Löschen</button>
 		</form>
 	</c:if>
 	
