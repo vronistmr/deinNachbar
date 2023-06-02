@@ -56,7 +56,7 @@ public class ServletMeineAnzeigen extends HttpServlet implements Servlet {
 		List<BeanAnzeige> anzeigen = new ArrayList<BeanAnzeige>();
 		
 		try (Connection con = ds.getConnection();
-				 PreparedStatement pstmt = con.prepareStatement("SELECT DISTINCT * FROM anzeige WHERE benutzerID = ?")) {
+				 PreparedStatement pstmt = con.prepareStatement("SELECT DISTINCT * FROM anzeige WHERE benutzerID = ? ORDER BY datum DESC")) {
 
 				pstmt.setInt(1, benutzerID);;
 				try (ResultSet rs = pstmt.executeQuery()) {

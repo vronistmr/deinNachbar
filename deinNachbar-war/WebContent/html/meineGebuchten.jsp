@@ -15,12 +15,13 @@
 				<div class="anzeigeBox">
 				<ul>
 					<li>
-					<img src="./../ServletBildAnzeige?anzeigeID=${currentGebuchte.anzeigeID}" width="300" height="auto" alt="Kein Bild vorhanden"></li> 
+					<img src="./../ServletBildAnzeige?anzeigeID=${currentGebuchte.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/blume.png';"></li><!--onerror: https://bit.ly/3N6GpwJ  --> 
 					<li><h4>${currentGebuchte.titelAnzeige}</h4></li>
 					<li>${currentGebuchte.preis} €</li>
 					<li>${currentGebuchte.preiskategorie}</li>
 					<li>${currentGebuchte.standort}</li>
 					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentGebuchte.anzeigeID}"">Zur Anzeige</a></li>
+					<li><a href="./../ServletBuchungLoeschen?anzeigeID=${currentGebuchte.anzeigeID}"">Buchung löschen</a></li>
 				</ul>
 				</div>
 			</c:forEach>
