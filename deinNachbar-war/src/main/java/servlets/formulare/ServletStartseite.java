@@ -44,15 +44,14 @@ public class ServletStartseite extends HttpServlet implements Servlet {
 		List<BeanAnzeige> bieteAnzeigen = readAnzeigen("biete");
 		List<BeanKategorie> kategorien = readKategorien();
 		
-		//Kategorien müssen in Session-Scope hinterlegt werden da kategorieID und kategorie-Werte noch zum Kategorien Löschen nach Request mit Löschen-Button benötigt werden!
-		HttpSession session = request.getSession();
 		
+		//Kategorie-Daten in Session, da für Kategorie bearbeiten, Kategorie löschen und Kategorie bei Anzeige anlegen notwendig - 
 		request.setAttribute("suchenAnzeigen", sucheAnzeigen);
-		request.setAttribute("bieteAnzeigen", bieteAnzeigen);
-	    session.setAttribute("kategorien", kategorien);
+ 		request.setAttribute("bieteAnzeigen", bieteAnzeigen);
+ 		HttpSession session = request.getSession();
+ 	    session.setAttribute("kategorien", kategorien);
+		
 
-
-	    
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("./html/startseite.jsp");
 		dispatcher.forward(request, response);	
 		

@@ -27,6 +27,7 @@ public class BeanAnzeige implements Serializable{
 	private byte[] foto;
 
 
+
 	public int getAnzeigeID() {
 		return anzeigeID;
 	}
