@@ -16,7 +16,7 @@
 					<li>${currentKategorie.kategorie}</li>
 				<c:if test="${sessionScope.loginForm.istAdmin}">
 					<form action="./../ServletKategorieLoeschen" method="GET">
-						<button type="button" name="update" formaction="./../ServletKategorieBearbeiten">Bearbeiten</button>
+						<button name="update" value="${currentKategorie.kategorieID}" formaction="./../ServletKategorieBearbeiten">Bearbeiten</button>
 						
 						<input type="hidden" name="kategorieID" value="${currentKategorie.kategorieID}">
   						<button type="submit">Löschen</button>
