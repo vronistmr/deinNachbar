@@ -76,10 +76,10 @@ public class ServletKategorieNeu extends HttpServlet implements Servlet {
 			pstmt.setString(1, kategorie);
 
 			try (ResultSet rs = pstmt.executeQuery()) {
-			if(rs != null) {
-				kategorieneu=false;
+			if(rs != null && rs.next()) {
+				kategorieneu = false;
 			} else {
-				kategorieneu=true;
+				kategorieneu = true;
 			}
 			}
 		} catch (Exception ex) {

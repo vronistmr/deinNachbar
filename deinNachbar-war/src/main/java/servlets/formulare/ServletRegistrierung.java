@@ -89,7 +89,7 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 			pstmt.setString(1, email);
 
 			try (ResultSet rs = pstmt.executeQuery()) {
-			if(rs != null) {
+			if(rs != null && rs.next()) {
 				emailneu=false;
 			} else {
 				emailneu=true;
