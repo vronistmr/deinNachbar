@@ -17,7 +17,7 @@
 
 		<label for="email">E-Mail:</label> <input type="email" id="email"
 			name="email" size="30" maxlength="40"
-			pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+			pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
 			title="Bitte geben sie eine g&uuml;ltige Email-Adresse der Form: characters@characters.domain ein!"
 			required> <label for="passwort">Passwort:</label> <input
 			type="password" id="passwort" name="passwort" size="30"

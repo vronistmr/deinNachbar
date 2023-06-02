@@ -49,7 +49,7 @@ request.setCharacterEncoding("UTF-8");
 		List<BeanAnzeige> anzeigen = new ArrayList<BeanAnzeige>();
 		
 		try (Connection con = ds.getConnection();
-				 PreparedStatement pstmt = con.prepareStatement("SELECT DISTINCT * FROM anzeige JOIN gebuchte ON anzeige.anzeigeID=gebuchte.anzeigeID WHERE gebuchte.benutzerID = ?")) {
+				 PreparedStatement pstmt = con.prepareStatement("SELECT DISTINCT * FROM anzeige JOIN gebuchte ON anzeige.anzeigeID=gebuchte.anzeigeID WHERE gebuchte.benutzerID = ?;")) {
 
 				pstmt.setInt(1, benutzerID);;
 				try (ResultSet rs = pstmt.executeQuery()) {
