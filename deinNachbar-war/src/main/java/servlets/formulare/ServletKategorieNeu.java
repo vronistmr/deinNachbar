@@ -34,14 +34,18 @@ public class ServletKategorieNeu extends HttpServlet implements Servlet {
 		
 		beanKategorie.setKategorie(request.getParameter("neueKategorie"));
 
+		if(kategorieNeuPruefen(beanKategorie.getKategorie())){
 		persist(beanKategorie);
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("KategorieNeu", beanKategorie);
-		//html Seite neu laden?! dass Kategorie angezeigt wird
 		response.sendRedirect("./ServletStartseite");
+	}else {
+		response.sendRedirect("html/fehlerausgabe.jsp");
 	}
+		}
 
+		
 	private void persist(BeanKategorie beanKategorie) throws ServletException {
 		String[] generatedKeys = new String[] {"kategorieID"};
 		try (Connection con = ds.getConnection();
@@ -62,6 +66,28 @@ public class ServletKategorieNeu extends HttpServlet implements Servlet {
 			throw new ServletException(ex.getMessage());
 		}
 	}
+	
+	private boolean kategorieNeuPruefen(String kategorie) throws ServletException {
+		boolean kategorieneu;
+
+		try (Connection con = ds.getConnection();
+				PreparedStatement pstmt = con.prepareStatement("SELECT * FROM kategorie WHERE kategorie = ?;")) {
+			
+			pstmt.setString(1, kategorie);
+
+			try (ResultSet rs = pstmt.executeQuery()) {
+			if(rs != null && rs.next()) {
+				kategorieneu = false;
+			} else {
+				kategorieneu = true;
+			}
+			}
+		} catch (Exception ex) {
+			throw new ServletException(ex.getMessage());
+		}
+
+	return kategorieneu;
+}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

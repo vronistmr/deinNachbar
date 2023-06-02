@@ -12,7 +12,6 @@ import javax.sql.DataSource;
 import beans.formulare.BeanBenutzerdaten;
 import beans.formulare.BeanLogindaten;
 import jakarta.annotation.Resource;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

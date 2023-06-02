@@ -54,7 +54,6 @@ button {
   border-radius: 15px;
   background-color: #3498db;
   border: none;
-
 }
 
 button:hover {
@@ -69,13 +68,11 @@ button:hover {
   background-color: transparent;
   border: 2px solid #3498db;
   color: #3498db;
-  margin-left: 10px;
-  margin-right: 5px;
 }
 
 #buttonLogOut:hover {
   background-color:#005fa3;
-  border: 2px solid #3498db;
+  border: 2px solid #005fa3;
   color: #333;
 }
 
