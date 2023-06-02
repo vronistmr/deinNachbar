@@ -27,11 +27,9 @@
 				</select> 
 				
 				<select name="kategorie" size="1">
-					<option value="Haus">Haus</option>
-					<option value="Harten">Garten</option>
-					<option value="Elektronik">Elektronik</option>
-					<option value="Technik">Technik</option>
-					<option value="Kreativ">Kreativ</option>
+				<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
+					<option value="${currentKategorie.kategorie}">${currentKategorie.kategorie}</option>  <!-- Scope Session für Kategorie!! -->
+				</c:forEach>
 				</select> 
 				
 				<input type="text" name="standort" size="50" maxlength="50" placeholder="Dein Standort">

@@ -49,7 +49,9 @@ public class ServletStartseite extends HttpServlet implements Servlet {
 		
 		request.setAttribute("suchenAnzeigen", sucheAnzeigen);
 		request.setAttribute("bieteAnzeigen", bieteAnzeigen);
-		session.setAttribute("kategorien", kategorien);
+		HttpSession session = request.getSession();
+	    session.setAttribute("kategorien", kategorien);
+
 
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("./html/startseite.jsp");
 		dispatcher.forward(request, response);	
