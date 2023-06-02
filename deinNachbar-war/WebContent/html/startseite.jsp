@@ -15,10 +15,13 @@
 			<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
 					<li>${currentKategorie.kategorie}</li>
 				<c:if test="${sessionScope.loginForm.istAdmin}">
-					<form>
-					<button typ="button" name="update" href="./../ServletKategorieBearbeiten">Bearbeiten</button>
-					<button typ="button" name="delete" href="./../ServletKategorieLoeschen">Löschen</button>
+					<form action="./../ServletKategorieLoeschen" method="GET">
+						<button type="button" name="update" formaction="./../ServletKategorieBearbeiten">Bearbeiten</button>
+						
+						<input type="hidden" name="kategorieID" value="${currentKategorie.kategorieID}">
+  						<button type="submit">Löschen</button>
 					</form>
+					
 					</c:if>
 			</c:forEach>
 			

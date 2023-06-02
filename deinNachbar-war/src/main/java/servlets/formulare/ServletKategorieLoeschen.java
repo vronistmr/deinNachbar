@@ -25,14 +25,17 @@ public class ServletKategorieLoeschen extends HttpServlet {
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
+		request.setCharacterEncoding("UTF-8");
+	
 		// KategorieId und kategorie von zu gelöschter Kategorie aus QS lesen! Dafür müssen dem Button "Löschen" auf der Startseite die Id und die jeweilige kategorie übergeben werden!
 		
 		int kategorieId = Integer.parseInt(request.getParameter("kategorieID"));
 		String kategorie = request.getParameter("kategorie");
 		
 		delete(kategorieId, kategorie);
+		
+		//html Seite neu laden?! dass Kategorie angezeigt wird
+		response.sendRedirect("./ServletStartseite");
 	}
 
 	
@@ -58,13 +61,14 @@ public class ServletKategorieLoeschen extends HttpServlet {
 			}
 		
 		// von gebuchte müssen die Anzeigen mit der jeweiligen Kategorie noch gelöscht werden: Lösung über geschachtelte SQL-Abfrage!
-		
+		// Hier noch ein Fehler! Falsche DB Abfrage andereLösung über Join nötig!
+		/*
 		try (Connection con = ds.getConnection();
 				 PreparedStatement pstmt = con.prepareStatement("DELETE FROM gebuchte WHERE anzeigeID IN (SELECT anzeigeID FROM anzeige WHERE kategorie = ?")){
 				pstmt.setString(1, kategorie);
 				pstmt.executeUpdate();
 			} catch (Exception ex) {
 				throw new ServletException(ex.getMessage());
-			}
+			}*/
 	}
 }
