@@ -16,10 +16,10 @@
 					<li>${currentKategorie.kategorie}</li>
 				<c:if test="${sessionScope.loginForm.istAdmin}">
 					<form action="./../ServletKategorieLoeschen" method="GET">
-						<button type="button" name="update" formaction="./../ServletKategorieBearbeiten">Bearbeiten</button>
-						
-						<input type="hidden" name="kategorieID" value="${currentKategorie.kategorieID}">
-  						<button type="submit">Löschen</button>
+						<button name="update" value="${currentKategorie.kategorieID}" formaction="./../ServletKategorieBearbeiten">Bearbeiten</button>
+  						<!--  <button type="submit" name="kategorieID" value="${currentKategorie.kategorieID}">Löschen</button>-->
+  						<a href="./../ServletKategorieLoeschen?kategorieID=${currentKategorie.kategorieID}&kategorie=${currentKategorie.kategorie}">Löschen</a>
+  		
 					</form>
 					
 					</c:if>
