@@ -60,15 +60,13 @@ public class ServletKategorieLoeschen extends HttpServlet {
 				throw new ServletException(ex.getMessage());
 			}
 		
-		// von gebuchte müssen die Anzeigen mit der jeweiligen Kategorie noch gelöscht werden: Lösung über geschachtelte SQL-Abfrage!
-		// Hier noch ein Fehler! Falsche DB Abfrage andereLösung über Join nötig!
-		/*
+		
 		try (Connection con = ds.getConnection();
-				 PreparedStatement pstmt = con.prepareStatement("DELETE FROM gebuchte WHERE anzeigeID IN (SELECT anzeigeID FROM anzeige WHERE kategorie = ?")){
-				pstmt.setString(1, kategorie);
+				 PreparedStatement pstmt = con.prepareStatement("DELETE FROM gebuchte WHERE gebuchte.anzeigeID IN(SELECT anzeige.anzeigeID FROM kategorie JOIN anzeige ON anzeige.kategorie = kategorie.kategorie WHERE kategorie.kategorieID = ?)")){
+				pstmt.setInt(1, kategorieId);
 				pstmt.executeUpdate();
 			} catch (Exception ex) {
 				throw new ServletException(ex.getMessage());
-			}*/
+			}
 	}
 }
