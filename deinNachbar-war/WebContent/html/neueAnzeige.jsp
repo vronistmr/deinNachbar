@@ -13,7 +13,7 @@
 	<br>
 	
 		<p>
-		<b>Anzeige ID: </b>${anzeigeNeu.anzeigeID}
+		<b>Anzeige-ID: </b>${anzeigeNeu.anzeigeID}
 		<br><b>Art der Anzeige: </b>${anzeigeNeu.anzeigeArt}
 		<br><b>Titel der Anzeige:</b>${anzeigeNeu.titelAnzeige}
 		<br><b>Preis: </b>${anzeigeNeu.preis} Euro
