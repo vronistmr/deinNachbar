@@ -46,6 +46,13 @@ public class ServletKategorieLoeschen extends HttpServlet {
 	private void delete(int kategorieId, String kategorie) throws ServletException {
 		
 		try (Connection con = ds.getConnection();
+				 PreparedStatement pstmt = con.prepareStatement("DELETE FROM gebuchte WHERE gebuchte.anzeigeID IN(SELECT anzeige.anzeigeID FROM kategorie JOIN anzeige ON anzeige.kategorie = kategorie.kategorie WHERE kategorie.kategorieID = ?)")){
+				pstmt.setInt(1, kategorieId);
+				pstmt.executeUpdate();
+			} catch (Exception ex) {
+				throw new ServletException(ex.getMessage());
+			}
+		try (Connection con = ds.getConnection();
 			 PreparedStatement pstmt = con.prepareStatement("DELETE FROM kategorie WHERE kategorieID = ?")){
 			pstmt.setInt(1, kategorieId);
 			pstmt.executeUpdate();
@@ -55,15 +62,6 @@ public class ServletKategorieLoeschen extends HttpServlet {
 		try (Connection con = ds.getConnection();
 				 PreparedStatement pstmt = con.prepareStatement("DELETE FROM anzeige WHERE kategorie = ?")){
 				pstmt.setString(1, kategorie);
-				pstmt.executeUpdate();
-			} catch (Exception ex) {
-				throw new ServletException(ex.getMessage());
-			}
-		
-		
-		try (Connection con = ds.getConnection();
-				 PreparedStatement pstmt = con.prepareStatement("DELETE FROM gebuchte WHERE gebuchte.anzeigeID IN(SELECT anzeige.anzeigeID FROM kategorie JOIN anzeige ON anzeige.kategorie = kategorie.kategorie WHERE kategorie.kategorieID = ?)")){
-				pstmt.setInt(1, kategorieId);
 				pstmt.executeUpdate();
 			} catch (Exception ex) {
 				throw new ServletException(ex.getMessage());
