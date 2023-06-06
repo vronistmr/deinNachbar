@@ -11,6 +11,7 @@
 body {
  width: 100%;
  padding: 20px;
+ margin: 0px;
 }
 
 main {
@@ -28,6 +29,8 @@ header {
   padding: 20px;
 }
 
+
+/*Navigation*/
 nav {
   display: flex;
   justify-content: space-between;
@@ -47,6 +50,8 @@ nav a:hover {
   color: #666;
 }
 
+
+/*Buttons*/
 button {
   padding: 8px 16px;
   text-align: center;
@@ -54,6 +59,7 @@ button {
   border-radius: 15px;
   background-color: #3498db;
   border: none;
+  color: #333;
 }
 
 button:hover {
@@ -61,24 +67,45 @@ button:hover {
 }
 
 #buttonLogOut {
-  padding: 6px 14px;
+  padding: 4px 9px;
   text-align: center;
   text-decoration: none;
   border-radius: 15px;
   background-color: transparent;
   border: 2px solid #3498db;
   color: #3498db;
+  font-size: 13px;
 }
 
 #buttonLogOut:hover {
   background-color:#005fa3;
   border: 2px solid #005fa3;
   color: #333;
+  font-size: 13px;
 }
 
+/*Klasse für Links, die wie Buttons ausehen sollen*/
+.button {
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 15px;
+  background-color: #3498db;
+  border: none;
+  color: #333;
+  font-size: 13px;
+}
+
+.button:hover {
+  background-color: #005fa3;
+   color: #333;
+   font-size: 13px;
+}
+
+
+/*Footer*/
 footer {
   background-color: #fff;
-  color: #333;
   padding: 20px;
   position: fixed;
   bottom: 0;
@@ -98,6 +125,19 @@ footer a {
 }
 
 footer a:hover {
+  color: #005fa3;
+  text-decoration: none;
+}
+
+
+/*Links:*/
+a {
+  color: #3498db;
+  text-decoration: underline;
+  margin-right: 5px;
+}
+
+a:hover {
   color: #005fa3;
   text-decoration: none;
 }

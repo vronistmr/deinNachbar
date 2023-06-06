@@ -24,15 +24,11 @@
 		
 	<!-- Lukas -->
 	<c:if test="${AnzeigeForm.benutzerID != loginForm.benutzerID}">
-		<form action="./../ServletAnzeigeBuchen?id=${AnzeigeForm.anzeigeID}" method="post">
-			<button type="submit" name="buchung" value="neu">Buchen</button>
-		</form>
+		<a href="./../ServletAnzeigeBuchen?id=${AnzeigeForm.anzeigeID}" class = "button">Buchen</a>
 	</c:if>
 	
 	<c:if test="${AnzeigeForm.benutzerID == loginForm.benutzerID}">
-		<form action="./../ServletAnzeigeLoeschen?id=${AnzeigeForm.anzeigeID}" method="post">
-			<button type="submit" name="löschen" value="neu">Löschen</button>
-		</form>
+		<a href="./../ServletAnzeigeLoeschen?id=${AnzeigeForm.anzeigeID}" class = "button">Löschen</a>
 	</c:if>
 	
 </main>

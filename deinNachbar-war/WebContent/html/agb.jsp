@@ -34,7 +34,7 @@
 	</p>
 	<p>
 		7. Schlussbestimmungen<br /> Es gilt das Recht der Bundesrepublik
-		Deutschland. Gerichtsstand ist der Sitz des Unternehmens.
+		Deutschland und der Europäischen Union. Gerichtsstand ist der Sitz des Unternehmens.
 	</p>
 
 </main>
