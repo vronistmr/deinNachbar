@@ -1,6 +1,6 @@
 //Veronika
-package servlets.formulare;
 
+package servlets.formulare;
 import jakarta.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.sql.Connection;
@@ -17,9 +17,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ServletBuchungLöschen
- */
 @WebServlet("/ServletBuchungLoeschen")
 public class ServletBuchungLoeschen extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = 1L;
@@ -27,9 +24,6 @@ public class ServletBuchungLoeschen extends HttpServlet implements Servlet {
 	@Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		int anzeigeID = Integer.parseInt(request.getParameter("anzeigeID"));
@@ -55,10 +49,6 @@ public class ServletBuchungLoeschen extends HttpServlet implements Servlet {
 		}
 	}
 
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

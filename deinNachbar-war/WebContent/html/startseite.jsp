@@ -15,12 +15,9 @@
 			<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
 					<li>${currentKategorie.kategorie}</li>
 				<c:if test="${sessionScope.loginForm.istAdmin}">
-					<form action="./../ServletKategorieLoeschen" method="GET">
-						<button name="update" value="${currentKategorie.kategorieID}" formaction="./../ServletKategorieBearbeiten">Bearbeiten</button>
-  						<!--  <button type="submit" name="kategorieID" value="${currentKategorie.kategorieID}">Löschen</button>-->
+					
+						<a href="./../ServletKategorieBearbeiten?kategorieID=${currentKategorie.kategorieID}">Bearbeiten</a>
   						<a href="./../ServletKategorieLoeschen?kategorieID=${currentKategorie.kategorieID}&kategorie=${currentKategorie.kategorie}">Löschen</a>
-  		
-					</form>
 					
 					</c:if>
 			</c:forEach>
@@ -59,7 +56,7 @@
 					<li>${currentSucheAnzeige.preis} €</li>
 					<li>${currentSucheAnzeige.preiskategorie}</li>
 					<li>${currentSucheAnzeige.standort}</li>
-					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentSucheAnzeige.anzeigeID}"">Zur Anzeige</a></li>
+					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentSucheAnzeige.anzeigeID}" class="button">Zur Anzeige</a></li>
 				</ul>
 		</c:forEach>
 	</div>
@@ -73,7 +70,7 @@
 					<li>${currentBieteAnzeige.preis} €</li>
 					<li>${currentBieteAnzeige.preiskategorie}</li>
 					<li>${currentBieteAnzeige.standort}</li>
-					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentBieteAnzeige.anzeigeID}"">Zur Anzeige</a></li>
+					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentBieteAnzeige.anzeigeID}" class="button">Zur Anzeige</a></li>
 				</ul>
 		</c:forEach>
 	</div>
