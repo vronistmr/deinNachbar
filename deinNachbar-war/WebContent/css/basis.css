@@ -92,6 +92,7 @@ button:hover {
 /*Klasse für Links, die wie Buttons ausehen sollen*/
 .button {
   padding: 8px 13px;
+  margin-right: 10px;
   text-align: center;
   text-decoration: none;
   border-radius: 15px;
@@ -125,7 +126,6 @@ footer nav {
 footer a {
   color: #3498db;
   text-decoration: underline;
-  margin-right: 20px;
 }
 
 footer a:hover {
@@ -142,7 +142,6 @@ footer a:hover {
 a {
   color: #3498db;
   text-decoration: underline;
-  margin-right: 5px;
 }
 
 a:hover {
@@ -160,4 +159,9 @@ input[type="email"] {
   border-radius: 15px;
   background-color: #eaeaea;
   width: 30em;
+}
+
+/*Klasse für Abstand*/
+.space{
+	margin-right: 15px;
 }

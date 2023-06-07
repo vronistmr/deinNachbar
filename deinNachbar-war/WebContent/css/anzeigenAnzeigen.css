@@ -13,7 +13,7 @@ div#flexanzeige aside{
 	padding-bottom: 25px;
 }
 
-/*setztn preis in rot*/
+/*setzt preis in rot*/
 .preis{
 	 font-weight: bold;
      background-color: rgba(255, 102, 102, 0.5);
