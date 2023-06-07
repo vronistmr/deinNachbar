@@ -42,12 +42,11 @@
 				darauf konzentriert, innovative Lösungen für unsere Kunden zu
 				entwickeln. Mit unserer Leidenschaft für Technologie und unserem
 				Engagement für Spitzenleistungen setzen wir uns für die Erreichung
-				unserer Ziele ein.Falls Fragen bestehen oder Wünsche bzw. Anregungen
-				beigetragen werden wollen, Bitten wir um Rückmeldung.</td>
+				unserer Ziele ein. Falls Fragen bestehen oder Wünsche bzw. Anregungen
+				beigetragen werden wollen, Bitten wir um Rückmeldung via unserer eMail-Adressen.</td>
 				
 		</tr>
 	</table>
-	<br />
 
 </main>
 
