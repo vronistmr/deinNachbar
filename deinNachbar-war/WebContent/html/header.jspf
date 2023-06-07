@@ -19,6 +19,7 @@
 	<c:choose>
     <c:when test="${pageContext.request.servletPath == '/index.jsp'}"><!--in dieser Zeile in Klammern: chatGPT-->
         <link rel="stylesheet" href="./css/basis.css">
+        <link rel="stylesheet" href="./css/index.css">
     </c:when>
     <c:otherwise>
     	<link rel="stylesheet" href="./../css/anzeigenAnzeigen.css">
