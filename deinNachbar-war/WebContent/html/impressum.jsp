@@ -30,7 +30,6 @@
 		Esplanade 10
 	<br />
 		85049 Ingolstadt
-	<br />
 </main>
 
 
