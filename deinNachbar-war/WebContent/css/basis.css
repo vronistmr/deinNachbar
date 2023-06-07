@@ -2,7 +2,7 @@
 
 @charset "ISO-8859-1";
 
-
+/*Allgemein*/
 * {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   box-sizing: border-box;
@@ -140,4 +140,16 @@ a {
 a:hover {
   color: #005fa3;
   text-decoration: none;
+}
+
+/*Eingabefelder*/
+input[type="text"],
+input[type="password"], 
+input[type="number"],
+input[type ="email"] {
+  padding: 9px;
+  border: none;
+  border-radius: 15px;
+  background-color: #eaeaea;
+  width: 30em;
 }
