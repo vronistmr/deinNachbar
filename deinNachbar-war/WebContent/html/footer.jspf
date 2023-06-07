@@ -9,11 +9,13 @@
 			
 			<c:choose>
     			<c:when test="${pageContext.request.servletPath == '/index.jsp'}">
-        			<a href="./html/agb.jsp">AGB</a> <a href="./html/impressum.jsp">Impressum</a>
+        			<a href="./html/agb.jsp" class="space">AGB</a> 
+        			<a href="./html/impressum.jsp" class="space">Impressum</a>
 					<a href="./html/überUns.jsp">Über uns</a>
     			</c:when>
     			<c:otherwise>
-        			<a href="./agb.jsp">AGB</a> <a href="./impressum.jsp">Impressum</a>
+        			<a href="./agb.jsp" class="space">AGB</a> 
+        			<a href="./impressum.jsp" class="space">Impressum</a>
 					<a href="./überUns.jsp">Über uns</a>
     			</c:otherwise>
 			</c:choose>

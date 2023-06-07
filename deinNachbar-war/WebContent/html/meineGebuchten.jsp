@@ -20,8 +20,8 @@
 					<li>${currentGebuchte.preis} €</li>
 					<li>${currentGebuchte.preiskategorie}</li>
 					<li>${currentGebuchte.standort}</li>
-					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentGebuchte.anzeigeID}"">Zur Anzeige</a></li>
-					<li><a href="./../ServletBuchungLoeschen?anzeigeID=${currentGebuchte.anzeigeID}"">Buchung löschen</a></li>
+					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentGebuchte.anzeigeID}" class = "button">Zur Anzeige</a></li>
+					<li><a href="./../ServletBuchungLoeschen?anzeigeID=${currentGebuchte.anzeigeID}" class = "button">Buchung löschen</a></li>
 				</ul>
 				</div>
 			</c:forEach>
