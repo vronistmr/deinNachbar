@@ -11,24 +11,31 @@
 	
 	<h1>Juhu! Deine Anzeige ist jetzt online!</h1>
 	<br>
-	
-		<p>
-		<b>Anzeige-ID: </b>${anzeigeNeu.anzeigeID}
-		<br><b>Art der Anzeige: </b>${anzeigeNeu.anzeigeArt}
-		<br><b>Titel der Anzeige:</b>${anzeigeNeu.titelAnzeige}
-		<br><b>Preis: </b>${anzeigeNeu.preis} Euro
-		<br><b>Preiskategorie: </b>${anzeigeNeu.preiskategorie}
-		<br><b>Kategorie: </b>${anzeigeNeu.kategorie}
-		<br><b>Standort: </b>${anzeigeNeu.standort}
-		<br><b>Umkreis: </b>${anzeigeNeu.umkreis} Kilometer
-		<br><b>Beschreibung: </b>${anzeigeNeu.beschreibung}
-		<br><b>Bild: </b><img src="./../ServletBildAnzeige?anzeigeID=${anzeigeNeu.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/blume.png';"> <!--onerror: https://bit.ly/3N6GpwJ  --> 
-		</p>
+
+		<div id="flexanzeige">
+			<aside>
+					<img src="./../ServletBildAnzeige?anzeigeID=${anzeigeNeu.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/blume.png';"> <!--onerror: https://bit.ly/3N6GpwJ  -->
+			</aside>
+			<article>
+					<h2>${anzeigeNeu.titelAnzeige}</h2>
+					<h3> in ${anzeigeNeu.kategorie}<br/>
+						${anzeigeNeu.anzeigeArt}</h3>
+			</article>
+			</div>
+			<article>
+				<div class="preis">
+					${anzeigeNeu.preis}€
+					${anzeigeNeu.preiskategorie}
+				</div>
+				<br/><p class="blocksatz"><b>Beschreibung: </b><br/>
+					       ${anzeigeNeu.beschreibung}</p>
+				<br/><b>${anzeigeNeu.standort} im Umkreis von ${anzeigeNeu.umkreis} Kilometern</b>
+				<br/>
+			</article>
 		
-		<form>
-		<button formaction="../ServletMeineAnzeigen">Zu all meinen Anzeigen</button>
-		</form>
-	
+		<div class="unten">
+				<a href="../ServletMeineAnzeigen" class="button">Meine Anzeigen</a>
+		</div>
 </main>
 
 

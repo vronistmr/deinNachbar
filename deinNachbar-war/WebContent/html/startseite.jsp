@@ -10,7 +10,7 @@
 		<!-- Veronika -->
 		
 		<aside>
-			<h3>Kategorien</h3>
+			<h2>Kategorien</h2>
 			
 			<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
 					<li>${currentKategorie.kategorie}</li>
