@@ -9,7 +9,7 @@
 <main>
 	<h1>Über uns</h1>
 	<h2>Unsere Vision</h2>
-	<p>Willkommen bei deineNachbar.de! Wir sind eine Plattform, auf der
+	<p class="blocksatz">Willkommen bei deineNachbar.de! Wir sind eine Plattform, auf der
 		Nachbarschaftsanzeigen aufgenommen und vermittelt werden. Sei es, du möchstest etwas anbieten oder 
 		du suchst nach etwas ganz bestimmtes: 
 		Hier bist du richtig. Unser Ziel ist es, Menschen in der Nachbarschaft zu vernetzen und dabei zu
@@ -36,17 +36,13 @@
 		<tr>
 			<td><br />
 			</td>
-		</tr>
-		<tr>
-			<td colspan="3">Wir sind ein Team von Entwicklern, das sich
+	</table>
+	<p class="blocksatz">Wir sind ein Team von Entwicklern, das sich
 				darauf konzentriert, innovative Lösungen für unsere Kunden zu
 				entwickeln. Mit unserer Leidenschaft für Technologie und unserem
 				Engagement für Spitzenleistungen setzen wir uns für die Erreichung
 				unserer Ziele ein. Falls Fragen bestehen oder Wünsche bzw. Anregungen
-				beigetragen werden wollen, Bitten wir um Rückmeldung via unserer eMail-Adressen.</td>
-				
-		</tr>
-	</table>
+				beigetragen werden wollen, Bitten wir um Rückmeldung via unserer eMail-Adressen.</p>
 
 </main>
 
