@@ -8,16 +8,15 @@
 
 <main>
 	<h1>Über uns</h1>
+	<h2>Unsere Vision</h2>
 	<p>Willkommen bei deineNachbar.de! Wir sind eine Plattform, auf der
 		Nachbarschaftsanzeigen aufgenommen und vermittelt werden. Sei es, du möchstest etwas anbieten oder 
 		du suchst nach etwas ganz bestimmtes: 
 		Hier bist du richtig. Unser Ziel ist es, Menschen in der Nachbarschaft zu vernetzen und dabei zu
 		helfen, lokale Dienstleistungen und Angebote zu finden. Unser Dienst ist vollumfänglich kostenfrei
 		und richtet sich an Jeden! 100% made in Germany</p>
-	<br />
 	<p>Wir Wünschen viel Spaß und Erfolg bei deiner Suche oder deinem Angebot!</p>
-	<br />
-	<h1>Wir</h1>
+	<h2>Wir</h2>
 	<table>
 		<tr>
 			<td>Veronika Stemmer</td>
