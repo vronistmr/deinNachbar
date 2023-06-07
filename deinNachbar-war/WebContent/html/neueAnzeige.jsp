@@ -34,7 +34,7 @@
 			</article>
 		
 		<div class="unten">
-				<a href="../ServletMeineAnzeigen" class="button">Meine Anzeigen</a>
+				<a href="../ServletMeineAnzeigen" class="button">zu Meine Anzeigen</a>
 		</div>
 </main>
 

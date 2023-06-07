@@ -25,7 +25,8 @@ div#flexanzeige aside{
 /*setzt den Button in die Mitte unten und ist dort fix*/
 .unten {
   position: fixed;
-  left: 50%;
-  bottom: 100px;
+    text-align: center;
+    width: 100%;
+    bottom: 100px;
 }
 
