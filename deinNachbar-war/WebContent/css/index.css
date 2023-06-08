@@ -2,78 +2,34 @@
 
 @charset "ISO-8859-1";
 
-/*.centered {
-	
-	text-align:centered;
-	display: flex;
-  	flex-direction: column;
-  	align-items: center;
-  	justify-content: center;
-}
-
-
-#regnav {
-	
-}
-
-
-.centered {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-input,
-button,
-a {
-  margin-top:5px;
-  margin-bottom: 10px;
-}
-
-button {
-  padding: 10px 20px;
-}
-
-nav {
-  text-align: center;
-}
-*/
+/*Zentrale Positionierung desFlex-Box-Conatiners und Abstand nach oben 100px */
 
 .centeredflex {
-	text-align:center;
-  display: flex;
-  flex-flow:column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  	text-align:center;
+  	display: flex;
+  	flex-flow:column wrap; /*vertikale Anordnung der Kindelemente*/
+  	align-items:center; /*-> align-center steuert vertikale ausrcihtung der Flex-Box-Kindelemente, hier:mittig*/
+  	margin-top:100px;
 }
 
 
+/*Abstände zwichen den Kindelementen der Flex-Box*/
 
-.login,
+.email {
+	padding:10px;
+}
+
 .pwd {
-
-  margin-bottom: 10px;
-  padding:10px;
+  	padding:10px;
 }
 
 .loginbutton{
-  padding: 20px 20px;
+  	padding: 20px;
 }
 
-
-
-
+nav#regnav{
+	font-weight:bold;
+}
 
 
 

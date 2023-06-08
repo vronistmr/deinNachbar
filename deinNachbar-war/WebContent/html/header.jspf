@@ -24,6 +24,8 @@
     <c:otherwise>
     	<link rel="stylesheet" href="./../css/anzeigenAnzeigen.css">
        	<link rel="stylesheet" href="./../css/basis.css">
+       	<link rel="stylesheet" href="./../css/registrieren.css">
+       	<link rel="stylesheet" href="./../css/anzeigeAufgeben.css">
     </c:otherwise>
 	</c:choose>
 </head>

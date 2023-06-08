@@ -10,7 +10,7 @@
 	<div class="centeredflex">
 	<form method="POST" action="./ServletIndex">
 		<h1>Login</h1>
-		<div class="login">
+		<div class="email">
 		<input autofocus type="text"
 			id="email" name="email" maxlength="40"
 			title="Bitte geben sie ihre Email-Adresse ein, mit der sie sich registriert haben!"
