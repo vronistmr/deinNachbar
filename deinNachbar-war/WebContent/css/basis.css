@@ -153,13 +153,16 @@ a:hover {
 input[type="text"],
 input[type="password"], 
 input[type="number"],
-input[type="email"] {
+input[type="email"],
+select {
   padding: 9px;
   border: none;
   border-radius: 15px;
   background-color: #eaeaea;
   width: 30em;
 }
+
+
 
 /*Klasse für Abstand*/
 .space{
