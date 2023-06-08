@@ -7,20 +7,26 @@
 
 <main>
 	<!-- Tobi -->
-	<div class="centered">
+	<div class="centeredflex">
 	<form method="POST" action="./ServletIndex">
 		<h1>Login</h1>
+		<div class="login">
 		<input autofocus type="text"
 			id="email" name="email" maxlength="40"
 			title="Bitte geben sie ihre Email-Adresse ein, mit der sie sich registriert haben!"
 			required placeholder="eMail"> 
+		</div>
+		<div class="pwd">
 		<input
 			type="password" id="passwort" name="passwort" maxlength="20"
 			title="Bitte geben sie ihr Passwort ein, mit dem sie sich registriert haben!"
 			required placeholder="Passwort">
+		</div>
+		<div class="loginbutton">
 		<button type="submit">OK</button>
+		</div>
 	</form>
-	<nav>
+	<nav id="regnav">
 			<a href="./html/registrieren.jsp">Hier
 				registrieren</a>
 	</nav>
