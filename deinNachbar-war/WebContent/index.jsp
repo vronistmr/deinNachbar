@@ -5,35 +5,32 @@
 
 <%@ include file="./html/header.jspf"%>
 
-
 <main>
 	<!-- Tobi -->
-	
+	<div class="centeredflex">
 	<form method="POST" action="./ServletIndex">
-		<h2>Login</h2>
-
-		<label for="email">Email:</label> 
+		<h1>Login</h1>
+		<div class="email">
 		<input autofocus type="text"
-			id="email" name="email" size="30" maxlength="40"
+			id="email" name="email" maxlength="40"
 			title="Bitte geben sie ihre Email-Adresse ein, mit der sie sich registriert haben!"
-			required> 
-		<label for="passwort">Passwort:</label> 
+			required placeholder="eMail"> 
+		</div>
+		<div class="pwd">
 		<input
-			type="password" id="passwort" name="passwort"
-			size="30" maxlength="20"
+			type="password" id="passwort" name="passwort" maxlength="20"
 			title="Bitte geben sie ihr Passwort ein, mit dem sie sich registriert haben!"
-			required>
-
+			required placeholder="Passwort">
+		</div>
+		<div class="loginbutton">
 		<button type="submit">OK</button>
+		</div>
 	</form>
-
-	<nav>
-		<p>
-			Noch nicht registriert? <a href="./html/registrieren.jsp">Hier
+	<nav id="regnav">
+			<a href="./html/registrieren.jsp">Hier
 				registrieren</a>
-		</p>
 	</nav>
-
+	</div>
 </main>
 
 

@@ -1,1 +1,32 @@
+/*Lukas*/
+
 @charset "UTF-8";
+
+div#flexanzeige{
+	display: flex;
+	flex-flow: row wrap;
+}
+
+div#flexanzeige aside{
+	padding-right: 50px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+/*setzt preis in rot*/
+.preis{
+	 font-weight: bold;
+     background-color: rgba(255, 102, 102, 0.5);
+     padding: 20px;
+     border-radius: 30px;
+     display: inline-block;
+}
+
+/*setzt den Button in die Mitte unten und ist dort fix*/
+.unten {
+  position: fixed;
+    text-align: center;
+    width: 100%;
+    bottom: 100px;
+}
+

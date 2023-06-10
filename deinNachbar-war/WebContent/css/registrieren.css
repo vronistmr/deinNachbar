@@ -1,1 +1,69 @@
+/*Tobi*/
+
 @charset "UTF-8";
+
+/*Zentrale Positionierung desFlex-Box-Conatiners und Abstand nach oben 100px */
+
+.centeredflex {
+  	text-align:center;
+  	display: flex;
+  	flex-flow:column wrap; /*vertikale Anordnung der Kindelemente*/
+  	align-items:center; /*-> align-center steuert vertikale ausrcihtung der Flex-Box-Kindelemente, hier:mittig*/
+  	margin-top:50px;
+}
+
+
+/*Abstände zwichen den Kindelementen der Flex-Box*/
+
+.vorname {
+	padding:10px;
+}
+
+.email {
+	padding:10px;
+}
+
+.pwd {
+  	padding:10px;
+}
+
+.pwdwdh {
+  	padding:10px;
+}
+
+.standort{
+	padding:10px;
+}
+
+.regbutton{
+  	padding: 20px;
+}
+
+label{
+	display:block; /*Label soll über dem Eingabefeld stehen*/
+	margin-bottom:10px; /*Abstand von Labeln zu Eingabe-Feldern*/
+}
+
+/*optische Spielereien: Markierung als Pflichfelde und wenn korrekte Eingaben für jeweiliges Feld --> :) statt * */
+
+input[type="email"]:valid + span::after{
+	color:green;
+	content:":)";
+}
+
+input[type="password"]:valid + span::after{
+	color:green;
+	content:":)";
+}
+
+input[type="text"]:valid + span::after{
+	color:green;
+	content:":)";
+}
+
+
+input:required + span::after{
+	color:red;
+	content:"*";
+}
+

@@ -8,9 +8,7 @@
 
 <main>
 	<h1>Impressum</h1>
-	<h2>Angaben gemäß 5 TMG</h2>
-		deinNachbar.de
-	<br />
+	<h2>Angaben gemäß § 5 TMG</h2>
 		Esplanade 10
 	<br />
 		85049 Ingolstadt
@@ -26,13 +24,12 @@
 		Mahl<br />
 	</p>
 	
-	<h2>Verantwortlich für den Inhalt nach Â§ 55 Abs. 2 RStV:</h2>
+	<h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</h2>
 	
-	<p>Veronika Stemmer, Tobias Mayer, Llukas Mahl</p>
+	<p>Veronika Stemmer, Tobias Mayer, Lukas Mahl</p>
 		Esplanade 10
 	<br />
 		85049 Ingolstadt
-	<br />
 </main>
 
 
