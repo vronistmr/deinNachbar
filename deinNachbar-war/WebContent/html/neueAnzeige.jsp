@@ -14,7 +14,7 @@
 
 		<div id="flexanzeige">
 			<aside>
-					<img src="./../ServletBildAnzeige?anzeigeID=${anzeigeNeu.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/blume.png';"> <!--onerror: https://bit.ly/3N6GpwJ  -->
+					<img src="./../ServletBildAnzeige?anzeigeID=${anzeigeNeu.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';"> <!--onerror: https://bit.ly/3N6GpwJ  -->
 			</aside>
 			<article>
 					<h2>${anzeigeNeu.titelAnzeige}</h2>

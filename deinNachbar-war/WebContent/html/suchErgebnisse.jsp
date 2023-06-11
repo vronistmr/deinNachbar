@@ -14,11 +14,13 @@
 				<div class="anzeigeBox">
 				<ul>
 					<li>
-					<img src="./../ServletBildAnzeige?anzeigeID=${gesuchteAnzeige.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/blume.png';"></li> <!--onerror: https://bit.ly/3N6GpwJ  -->
+					<img src="./../ServletBildAnzeige?anzeigeID=${gesuchteAnzeige.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';"></li> <!--onerror: https://bit.ly/3N6GpwJ  -->
+					<li>${gesuchteAnzeige.anzeigeArt}</li>
 					<li><h4>${gesuchteAnzeige.titelAnzeige}</h4></li>
 					<li>${gesuchteAnzeige.preis} €</li>
 					<li>${gesuchteAnzeige.preiskategorie}</li>
 					<li>${gesuchteAnzeige.standort}</li>
+					</br>
 					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${gesuchteAnzeige.anzeigeID}" class="button">Zur Anzeige</a></li>
 				</ul>
 				</div>
