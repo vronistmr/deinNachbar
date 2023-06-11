@@ -35,7 +35,8 @@
 					<option value="Gratis">Zu verschenken</option>
 				</select> 
 				
-				<select name="kategorie" size="1">
+				<select name="kategorie" size="1" required>
+				      <option value="" disabled selected>Wähle eine Kategorie, in die deine Anzeige passt</option>
 				<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
 					<option value="${currentKategorie.kategorie}">${currentKategorie.kategorie}</option>  <!-- Scope Session für Kategorie!! -->
 				</c:forEach>
