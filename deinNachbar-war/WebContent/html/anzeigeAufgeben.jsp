@@ -29,13 +29,15 @@
 				
 					<input type="number" name="umkreis" size="50" max="999" placeholder="Umkreis" required>
 				
-				<select name="preiskategorie" size="1">
+				<select name="preiskategorie" size="1" required>
+					<option value="" disabled selected>Wähle eine Preiskategorie</option> <!-- http://bitly.ws/I3mp -->
 					<option value="Fix">Festpreis</option>
 					<option value="VB">Verhandlungsbasis</option>
 					<option value="Gratis">Zu verschenken</option>
 				</select> 
 				
-				<select name="kategorie" size="1">
+				<select name="kategorie" size="1" required>
+				      <option value="" disabled selected>Wähle eine Kategorie, in die deine Anzeige passt</option> <!-- http://bitly.ws/I3mp -->
 				<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
 					<option value="${currentKategorie.kategorie}">${currentKategorie.kategorie}</option>  <!-- Scope Session für Kategorie!! -->
 				</c:forEach>

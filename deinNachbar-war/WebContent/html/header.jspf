@@ -39,17 +39,31 @@
 			
 			<c:choose>
     			<c:when test="${pageContext.request.servletPath == '/index.jsp'}">
-        			<a href="./index.jsp">deinNachbar.de</a>
+    		  <div class="logoimg">
+        			 <a href="./index.jsp">
+       				 <img src="./img/logoheader.jpeg" width="150" height="48">
+       				 deinNachbar.de
+    				</a>
+        	</div>
     			</c:when>
     			<c:otherwise>
-        			<a href="./../index.jsp">deinNachbar.de</a>
+    			  <div class="logoimg">
+        			<a href="./../index.jsp">
+        			<img  src="./../img/logoheader.jpeg" width="150" height="48">
+        			deinNachbar.de
+        			</a>
+        		</div>
     			</c:otherwise>
 			</c:choose>
 			
 		</c:when>
 		<c:otherwise>
-			<a href="./../ServletStartseite">deinNachbar.de</a>
-				<div class=navRechts>
+		     <div class="logoimg">
+				<a href="./../ServletStartseite">
+				<img  src="./../img/logoheader.jpeg" width="150" height="48">
+				deinNachbar.de</a>
+			 </div>
+				<div class="navRechts">
 					<a href="./anzeigeAufgeben.jsp" class="button">Neue Anzeige aufgeben</a>
 					<a href="./../ServletMeineAnzeigen" class="button">Meine Anzeigen</a>
 					<a href="./../ServletMeineGebuchten" class="button">Meine Gebuchten</a>	
