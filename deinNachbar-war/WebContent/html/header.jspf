@@ -26,6 +26,7 @@
        	<link rel="stylesheet" href="./../css/basis.css">
        	<link rel="stylesheet" href="./../css/registrieren.css">
        	<link rel="stylesheet" href="./../css/anzeigeAufgeben.css">
+       	<link rel="stylesheet" href="./../css/startseite.css">
     </c:otherwise>
 	</c:choose>
 </head>
@@ -39,7 +40,7 @@
 			
 			<c:choose>
     			<c:when test="${pageContext.request.servletPath == '/index.jsp'}">
-    		  <div class="logoimg">
+    		  <div class="logoheader">
         			 <a href="./index.jsp">
        				 <img src="./img/logoheader.jpeg" width="150" height="48">
        				 deinNachbar.de
@@ -47,7 +48,7 @@
         	</div>
     			</c:when>
     			<c:otherwise>
-    			  <div class="logoimg">
+    			  <div class="logoheader">
         			<a href="./../index.jsp">
         			<img  src="./../img/logoheader.jpeg" width="150" height="48">
         			deinNachbar.de
@@ -58,7 +59,7 @@
 			
 		</c:when>
 		<c:otherwise>
-		     <div class="logoimg">
+		     <div class="logoheader">
 				<a href="./../ServletStartseite">
 				<img  src="./../img/logoheader.jpeg" width="150" height="48">
 				deinNachbar.de</a>

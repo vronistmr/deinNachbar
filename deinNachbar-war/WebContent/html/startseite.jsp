@@ -70,7 +70,7 @@
 	<c:if test="${sessionScope.loginForm.istAdmin}">
     	<!-- Hier der Code für Admin - Kategorien bearbeiten  -->
     	<form action="./../ServletKategorieNeu" method="POST" class="spaceTop">
-    	<input type="text" name="neueKategorie" size="50" maxlength="50" placeholder="Neue Kategorie" required> 
+    	<input type="text" name="neueKategorie" size="30" maxlength="30" placeholder="Neue Kategorie" required> 
     	</br>
     	<button type="submit" value="neu" name="action">Kategorie ergänzen</button>
     	</form>

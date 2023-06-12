@@ -30,12 +30,18 @@ header {
   padding: 15px 50px;
 }
 
+/*Für Logo bild im Header Platz zischen Bild und Link und vertikal mittig ausrichten */
+.logoheader img {
+  margin-right: 10px;
+ vertical-align: middle;
+}
+
 h3 {
    font-size: 1.3em; 
    font-weight: normal;
 }
 
-/*Navigation*/
+/*Navigation im Header*/
 nav {
   display: flex;
   justify-content: space-between;
@@ -176,7 +182,8 @@ select {
 
 /*Veronika*/
 
-/*Boxen für die Anzeigen: Float left, um Fluss Boxen zu erzeugen - grauer Rand 1px außen - Breite der Box inkl border - margin: Abstand um die Box - Text zentriert - Schatten 1px breit und Farbe -  padding bottom um Abstand zum Link zu haben*/
+/*Boxen für die Anzeigen: 
+Float left, um Fluss Boxen zu erzeugen - graue Umrandung - Breite der Box inkl border - margin: Abstand um die Box - Text zentriert - Schatten -  padding bottom um Abstand zum Link zu haben*/
 .anzeigeBox {
 float:left;
   border: 1px solid gray;
@@ -200,6 +207,7 @@ float:left;
   list-style: none;
   padding: 0;
   margin: 0;
+  
 }
  /*Abstand nach unten zum nächsten Element*/
 .anzeigeBox li {
@@ -209,6 +217,10 @@ float:left;
  /*Browser-Standard Margin überschreiben*/
 .anzeigeBox h4 {
   margin: 0;
+  /*http://bitly.ws/Ibzb  - Zeilenumbruch verhindern, mit ... beenden*/
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .anzeigeBox a {
@@ -216,64 +228,5 @@ float:left;
 	margin: 20px;
 }
 
-/*Für Logo bild im Header Platz zischen Bild und Link und vertikal mittig ausrichten */
-.logoimg img {
-  margin-right: 10px;
- vertical-align: middle;
-}
 
 
-.startseiteFlex{
-	display: flex;
-	flex-flow: row wrap;
-}
-
-.sidebar{
-flex: 1;
- }
-
-.mainStartseite{
-	flex: 5;
-}
-
-.navStartseite{
-  margin-top: 45px;
-  padding: 10px;
-  padding-top: 20px;
-  justify-content: center;
-  align-items: center;  
-  border-radius: 10px;
-  }
-  
-  .sidebar li {
-    list-style: none;
-    line-height: 2.5;
-    padding-left: 25px;
-  }
-  
- .tabsSucheBiete {
-    list-style: none;
- 	padding: 0;
- 	padding-right: 40px;
- }
-
-/*Umrandung für Suche/Biete Filter - inline block - damit die beiden <li> nebeneinander stehen */
-.tabsSucheBiete li {
-  background-color: #f5f5f5;
-  padding: 10px;
-  border-radius: 10px;
-  /*http://bitly.ws/I33H*/
- display: inline-block;
- }
-
-.tabsSucheBiete a {
-  text-decoration: none;
-  color: black;
-}
-
-.tabsSucheBiete a:hover {
-  text-decoration: none;
-}
-
-
- 
