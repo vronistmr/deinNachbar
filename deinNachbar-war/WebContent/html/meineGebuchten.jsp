@@ -27,10 +27,7 @@
 				</ul>
 				</div>
 			</c:forEach>
-			
 			<!-- Lukas -->
-			
-		<br/>
 	</main>
 
 
