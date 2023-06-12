@@ -11,7 +11,7 @@ Positionierung der Anzeigen und Kategorien -> Flex boxen
 }
 
 .sidebar{
-flex: 1;
+	flex: 1;
  }
 
 .mainStartseite{
