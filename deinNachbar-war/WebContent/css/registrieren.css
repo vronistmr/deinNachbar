@@ -13,7 +13,7 @@
 }
 
 
-/*Abstände zwichen den Kindelementen der Flex-Box*/
+/*Abstände zwischen den Kindelementen der Flex-Box*/
 
 .vorname {
 	padding:10px;
@@ -40,7 +40,8 @@
 }
 
 label{
-	display:block; /*Label soll über dem Eingabefeld stehen*/
+	min-width:6em;
+	display:inline-block; /*Label soll vor dem Eingabefeld stehen*/
 	margin-bottom:10px; /*Abstand von Labeln zu Eingabe-Feldern*/
 }
 
