@@ -1,65 +1,38 @@
+@charset "UTF-8";
 /*Tobi*/
 
-@charset "UTF-8";
-
 /*Zentrale Positionierung desFlex-Box-Conatiners und Abstand nach oben 100px */
-
 .centeredflex {
   	text-align:center;
   	display: flex;
   	flex-flow:column wrap; /*vertikale Anordnung der Kindelemente*/
   	align-items:center; /*-> align-center steuert vertikale ausrcihtung der Flex-Box-Kindelemente, hier:mittig*/
-  	margin-top:50px;
+  	margin-top:80px;
 }
 
-
-/*Abst�nde zwischen den Kindelementen der Flex-Box*/
-
-.vorname {
-	padding:10px;
-}
-
-.email {
-	padding:10px;
-}
-
-.pwd {
-  	padding:10px;
-}
-
-.pwdwdh {
-  	padding:10px;
-}
-
-.standort{
-	padding:10px;
+/*Abstände zwischen den Kindelementen der Flex-Box*/
+.spaceReg {
+	padding:5px;
 }
 
 .regbutton{
   	padding: 20px;
 }
 
-label{
-	min-width:6em;
-	display:inline-block; /*Label soll vor dem Eingabefeld stehen*/
-	margin-bottom:10px; /*Abstand von Labeln zu Eingabe-Feldern*/
-}
-
-/*optische Spielereien: Markierung als Pflichfelde und wenn korrekte Eingaben f�r jeweiliges Feld --> :) statt * */
-
+/*optische Spielereien:*/
 input[type="email"]:valid + span::after{
 	color:green;
-	content:":)";
+	content:"✔";
 }
 
 input[type="password"]:valid + span::after{
 	color:green;
-	content:":)";
+	content:"✔";
 }
 
 input[type="text"]:valid + span::after{
 	color:green;
-	content:":)";
+	content:"✔";
 }
 
 
@@ -67,4 +40,3 @@ input:required + span::after{
 	color:red;
 	content:"*";
 }
-

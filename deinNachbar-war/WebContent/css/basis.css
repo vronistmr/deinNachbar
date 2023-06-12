@@ -1,232 +1,250 @@
 @charset "ISO-8859-1";
-/* vor @charset darf kein Leerzeichen/anderes Zeichen stehen*/
 /*Lukas*/
 
-
 /*Allgemein*/
-* {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-sizing: border-box;
-}
-
-body {
- width: 100%;
- padding: 50px;
- margin: 0px;
-}
-
-main {
-  padding-top: 30px;
-  padding-bottom: 90px;
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #fff;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.18);
-  padding: 15px 50px;
-}
-
-/*Für Logo bild im Header Platz zischen Bild und Link und vertikal mittig ausrichten */
-.logoheader img {
-  margin-right: 10px;
- vertical-align: middle;
-}
-
-h3 {
-   font-size: 1.3em; 
-   font-weight: normal;
-}
+	* {
+	  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	  box-sizing: border-box;
+	}
+	
+	body {
+	 width: 100%;
+	 padding: 50px;
+	 margin: 0px;
+	}
+	
+	main {
+	  padding-top: 30px;
+	  padding-bottom: 100px;
+	}
+	
+	header {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  background-color: #fff;
+	  box-shadow: 0px 2px 4px rgba(0,0,0,0.18);
+	  padding: 15px 50px;
+	}
+	
+	/*Für Logo bild im Header Platz zischen Bild und Link und vertikal mittig ausrichten */
+	.logoheader img {
+	  margin-right: 10px;
+	  vertical-align: middle;
+	}
+	
+	h3 {
+	   font-size: 1.3em; 
+	   font-weight: normal;
+	}
 
 /*Navigation im Header*/
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navRechts{
-  display: flex;
-  justify-content: right;
-}
-
-nav a {
-  color: #333;
-  text-decoration: none;
-}
-
-nav a:hover {
-  color: #666;
-}
+	nav {
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	}
+	
+	.navRechts{
+	  display: flex;
+	  justify-content: right;
+	}
+	
+	nav a {
+	  color: #333;
+	  text-decoration: none;
+	}
+	
+	nav a:hover {
+	  color: #666;
+	}
 
 
 /*Buttons*/
-button {
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 15px;
-  background-color: #3498db;
-  border: none;
-  color: #333;
-}
-
-button:hover {
-  background-color: #005fa3;
-}
-
-#buttonLogOut {
-  padding: 6px 11px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 15px;
-  background-color: transparent;
-  border: 2px solid #3498db;
-  color: #3498db;
-  font-size: 13px;
-}
-
-#buttonLogOut:hover {
-  background-color:#005fa3;
-  border: 2px solid #005fa3;
-  color: #333;
-  font-size: 13px;
-}
+	button {
+	  padding: 8px 16px;
+	  text-align: center;
+	  text-decoration: none;
+	  border-radius: 15px;
+	  background-color: #3498db;
+	  border: none;
+	  color: #333;
+	}
+	
+	button:hover {
+	  background-color: #005fa3;
+	}
+	
+	.buttonWeiss {
+	  padding: 6px 11px;
+	  text-align: center;
+	  text-decoration: none;
+	  border-radius: 15px;
+	  background-color: transparent;
+	  border: 2px solid #3498db;
+	  color: #3498db;
+	  font-size: 13px;
+	}
+	
+	.buttonWeiss:hover {
+	  background-color:#005fa3;
+	  border: 2px solid #005fa3;
+	  color: #333;
+	  font-size: 13px;
+	}
+	
+	/*setzt den Button in die Mitte unten und ist dort fix*/
+	.unten {
+		position: fixed;
+	    text-align: center;
+	    width: 100%;
+	    bottom: 100px;
+	    left: 0;
+        right: 0;
+	}
 
 /*Klasse für Links, die wie Buttons ausehen sollen*/
-.button {
-  padding: 8px 13px;
-  margin-right: 10px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 15px;
-  background-color: #3498db;
-  border: none;
-  color: #333;
-  font-size: 13px;
-}
-
-.button:hover {
-  background-color: #005fa3;
-   color: #333;
-   font-size: 13px;
-}
+	.button {
+	  padding: 8px 13px;
+	  margin-right: 10px;
+	  text-align: center;
+	  text-decoration: none;
+	  border-radius: 15px;
+	  background-color: #3498db;
+	  border: none;
+	  color: #333;
+	  font-size: 13px;
+	}
+	
+	.button:hover {
+	  background-color: #005fa3;
+	   color: #333;
+	   font-size: 13px;
+	}
 
 
 /*Footer*/
-footer {
-  background-color: #fff;
-  padding: 20px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-}
-
-footer nav {
-  justify-content: center;
-}
-
-footer a {
-  color: #3498db;
-  text-decoration: underline;
-}
-
-footer a:hover {
-  color: #005fa3;
-  text-decoration: none;
-}
+	footer {
+	  background-color: #fff;
+	  padding: 20px;
+	  position: fixed;
+	  bottom: 0;
+	  left: 0;
+      right: 0;
+	  width: 100%;
+	  text-align: center;
+	}
+	
+	footer nav {
+	  justify-content: center;
+	}
+	
+	footer a {
+	  color: #3498db;
+	  text-decoration: underline;
+	}
+	
+	footer a:hover {
+	  color: #005fa3;
+	  text-decoration: none;
+	}
 
 /*Blocksatz*/
-.blocksatz {
-        text-align: justify;
-    }
+	.blocksatz {
+	        text-align: justify;
+	    }
 
 /*Links:*/
-a {
-  color: #3498db;
-  text-decoration: underline;
-}
-
-a:hover {
-  color: #005fa3;
-  text-decoration: none;
-}
+	a {
+	  color: #3498db;
+	  text-decoration: underline;
+	}
+	
+	a:hover {
+	  color: #005fa3;
+	  text-decoration: none;
+	}
 
 /*Eingabefelder*/
-input[type="text"],
-input[type="password"], 
-input[type="number"],
-input[type="email"],
-select {
-  padding: 9px;
-  border: none;
-  border-radius: 15px;
-  background-color: #eaeaea;
-  width: 30em;
-}
-
-
+	input[type="text"],
+	input[type="password"], 
+	input[type="number"],
+	input[type="email"],
+	select {
+	  border: none;
+	  border-radius: 15px;
+	  background-color: #eaeaea;
+	  width: 30em;
+	  height: 3em;
+	  margin: 7px;
+	  padding: 10px;
+	}
+	
+	textarea{
+	  max-width: 1233px;
+	  width: 100%;
+	  height: 9em;
+	  background-color: #eaeaea;
+	  border: none;
+	  border-radius: 15px;
+	  margin: 7px;
+	  padding: 10px;
+	}
 
 /*Klasse für Abstand*/
-.space{
-	margin-right: 15px;
-}
+	.space{
+		margin-right: 15px;
+	}
+	
+	.spaceTop{
+		margin-top: 15px;
+	}
 
-.spaceTop{
-	margin-top: 15px;
-}
 
 /*Veronika*/
 
 /*Boxen für die Anzeigen: 
-Float left, um Fluss Boxen zu erzeugen - graue Umrandung - Breite der Box inkl border - margin: Abstand um die Box - Text zentriert - Schatten -  padding bottom um Abstand zum Link zu haben*/
-.anzeigeBox {
-float:left;
-  border: 1px solid gray;
-  width: 300px;
-  margin: 10px;
-  text-align: center;
-  box-sizing: border-box;
-  box-shadow: 1px 1px rgba(0,0,0,0.18);
-  padding-bottom: 20px;
-}
-
-.anzeigeBox img {
-  width: 100%;
-  /*https://web.dev/aspect-ratio/*/
-  aspect-ratio: 4/3;
-  object-fit: cover;
-}
-
-/*padding und margin 0, um padding Regel body zu überschreiben - Listen-Punkt deaktivieren*/
-.anzeigeBox ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  
-}
- /*Abstand nach unten zum nächsten Element*/
-.anzeigeBox li {
-  margin-bottom: 5px;
-}
-
- /*Browser-Standard Margin überschreiben*/
-.anzeigeBox h4 {
-  margin: 0;
-  /*http://bitly.ws/Ibzb  - Zeilenumbruch verhindern, mit ... beenden*/
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.anzeigeBox a {
-	box-sizing: border-box;
-	margin: 20px;
-}
-
-
-
+	Float left, um Fluss Boxen zu erzeugen - graue Umrandung - Breite der Box inkl border - margin: Abstand um die Box - Text zentriert - Schatten -  padding bottom um Abstand zum Link zu haben*/
+	.anzeigeBox {
+	float:left;
+	  border: 1px solid gray;
+	  width: 300px;
+	  margin: 10px;
+	  text-align: center;
+	  box-shadow: 1px 1px rgba(0,0,0,0.18);
+	  padding-bottom: 20px;
+	}
+	
+	.anzeigeBox img {
+	  width: 100%;
+	  /*https://web.dev/aspect-ratio/*/
+	  aspect-ratio: 4/3;
+	  object-fit: cover;
+	}
+	
+	/*padding und margin 0, um padding Regel body zu überschreiben - Listen-Punkt deaktivieren*/
+	.anzeigeBox ul {
+	  list-style: none;
+	  padding: 0;
+	  margin: 0;
+	  
+	}
+	 /*Abstand nach unten zum nächsten Element*/
+	.anzeigeBox li {
+	  margin-bottom: 5px;
+	}
+	
+	 /*Browser-Standard Margin überschreiben*/
+	.anzeigeBox h4 {
+	  margin: 0;
+	  /*http://bitly.ws/Ibzb  - Zeilenumbruch verhindern, mit ... beenden*/
+	  white-space: nowrap;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	}
+	
+	.anzeigeBox a {
+		box-sizing: border-box;
+		margin: 20px;
+	}

@@ -24,9 +24,9 @@
 			<td>Lukas Mahl</td>
 		</tr>
 		<tr>
-			<td>thi, Wirtschaftsinformatik</td>
-			<td>thi, Wirtschaftsinformatik</td>
-			<td>thi, Wirtschaftsinformatik</td>
+			<td>thi, Wirtschaftsinformatik&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td>thi, Wirtschaftsinformatik&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td>thi, Wirtschaftsinformatik&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 		</tr>
 		<tr>
 			<td>ves5825@thi.de</td>
