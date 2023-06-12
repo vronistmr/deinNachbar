@@ -19,12 +19,12 @@
 	<c:choose>
     <c:when test="${pageContext.request.servletPath == '/index.jsp'}"><!--in dieser Zeile in Klammern: chatGPT-->
         <link rel="stylesheet" href="./css/basis.css">
-        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/indexRegistrieren.css">
     </c:when>
     <c:otherwise>
+    	<link rel="stylesheet" href="./../css/basis.css">
+    	<link rel="stylesheet" href="./../css/indexRegistrieren.css">
     	<link rel="stylesheet" href="./../css/anzeigenAnzeigen.css">
-       	<link rel="stylesheet" href="./../css/basis.css">
-       	<link rel="stylesheet" href="./../css/registrieren.css">
        	<link rel="stylesheet" href="./../css/anzeigeAufgeben.css">
        	<link rel="stylesheet" href="./../css/startseite.css">
     </c:otherwise>
@@ -68,7 +68,7 @@
 					<a href="./anzeigeAufgeben.jsp" class="button">Neue Anzeige aufgeben</a>
 					<a href="./../ServletMeineAnzeigen" class="button">Meine Anzeigen</a>
 					<a href="./../ServletMeineGebuchten" class="button">Meine Gebuchten</a>	
-					<a href="./../ServletLogout" id="buttonLogOut">LogOut</a>
+					<a href="./../ServletLogout" class="buttonWeiss">LogOut</a>
 				</div>
 		</c:otherwise>
 		

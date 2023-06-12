@@ -10,9 +10,8 @@
 	<main>
 		<h1>Meine Gebuchten</h1>
 		<!-- Veronika -->
-		
 		<c:forEach var="currentGebuchte" items="${anzeigen}" varStatus="status">
-				<div class="anzeigeBox">
+			<div class="anzeigeBox">
 				<ul>
 					<li>
 					<img src="./../ServletBildAnzeige?anzeigeID=${currentGebuchte.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';"></li><!--onerror: https://bit.ly/3N6GpwJ  --> 
@@ -25,10 +24,9 @@
 					</br>
 					<li><a href="./../ServletBuchungLoeschen?anzeigeID=${currentGebuchte.anzeigeID}" class = "button">Buchung löschen</a></li>
 				</ul>
-				</div>
-			</c:forEach>
-			<!-- Lukas -->
+			</div>
+		</c:forEach>
 	</main>
 
-
+<!-- Lukas -->
 <%@ include file="footer.jspf" %> 

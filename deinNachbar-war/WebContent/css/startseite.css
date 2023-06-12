@@ -1,5 +1,4 @@
 @charset "ISO-8859-1";
-
 /*Veronika*/
 
 /*AnzeigeBoxen werden aus der Basis css gezogen
@@ -56,7 +55,4 @@ flex: 1;
 
 .tabsSucheBiete a:hover {
   text-decoration: none;
-}
-
-
- 
+} 

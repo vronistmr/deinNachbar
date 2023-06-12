@@ -1,13 +1,12 @@
+@charset "UTF-8";
 /*Lukas*/
 
-@charset "UTF-8";
-
-div#flexanzeige{
+#flexanzeige{
 	display: flex;
 	flex-flow: row wrap;
 }
 
-div#flexanzeige aside{
+#flexanzeige aside{
 	padding-right: 50px;
 	padding-top: 25px;
 	padding-bottom: 25px;
@@ -21,12 +20,3 @@ div#flexanzeige aside{
      border-radius: 30px;
      display: inline-block;
 }
-
-/*setzt den Button in die Mitte unten und ist dort fix*/
-.unten {
-  position: fixed;
-    text-align: center;
-    width: 100%;
-    bottom: 100px;
-}
-
