@@ -25,7 +25,7 @@
 				</div>
 				<br/><p class="blocksatz"><b>Beschreibung: </b><br/>
 					       ${AnzeigeForm.beschreibung}</p>
-				<br/><b>${AnzeigeForm.standort} im Umkreis von ${AnzeigeForm.umkreis} Kilometern</b>
+				<br/><b>${AnzeigeForm.standort} und im Umkreis von ${AnzeigeForm.umkreis} Kilometern</b>
 				<br/>
 			</article>
 		

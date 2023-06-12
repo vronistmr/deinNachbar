@@ -10,7 +10,6 @@
 <!-- Veronika -->
 <main>
 	<h1>Meine Anzeigen</h1>
-	<div class="flexContainerAnzeigeBox">
 	<c:forEach var="currentAnzeige" items="${anzeigen}" varStatus="status">
 				<div class="anzeigeBox">
 				<ul>
@@ -26,10 +25,7 @@
 				</div>
 			</c:forEach>
 			</div>
-			
 	<!-- Lukas -->
-	<br />
-
 </main>
 
 

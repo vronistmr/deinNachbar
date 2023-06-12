@@ -29,7 +29,7 @@
 				</div>
 				<br/><p class="blocksatz"><b>Beschreibung: </b><br/>
 					       ${anzeigeNeu.beschreibung}</p>
-				<br/><b>${anzeigeNeu.standort} im Umkreis von ${anzeigeNeu.umkreis} Kilometern</b>
+				<br/><b>${anzeigeNeu.standort} und im Umkreis von ${anzeigeNeu.umkreis} Kilometern</b>
 				<br/>
 			</article>
 		
