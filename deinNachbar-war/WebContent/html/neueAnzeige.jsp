@@ -14,7 +14,7 @@
 
 		<div id="flexanzeige">
 			<aside>
-					<img src="./../ServletBildAnzeige?anzeigeID=${anzeigeNeu.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/blume.png';"> <!--onerror: https://bit.ly/3N6GpwJ  -->
+					<img src="./../ServletBildAnzeige?anzeigeID=${anzeigeNeu.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';"> <!--onerror: https://bit.ly/3N6GpwJ  -->
 			</aside>
 			<article>
 					<h2>${anzeigeNeu.titelAnzeige}</h2>
@@ -29,7 +29,7 @@
 				</div>
 				<br/><p class="blocksatz"><b>Beschreibung: </b><br/>
 					       ${anzeigeNeu.beschreibung}</p>
-				<br/><b>${anzeigeNeu.standort} im Umkreis von ${anzeigeNeu.umkreis} Kilometern</b>
+				<br/><b>${anzeigeNeu.standort} und im Umkreis von ${anzeigeNeu.umkreis} Kilometern</b>
 				<br/>
 			</article>
 		

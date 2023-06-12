@@ -1,6 +1,7 @@
+@charset "ISO-8859-1";
+/* vor @charset darf kein Leerzeichen/anderes Zeichen stehen*/
 /*Lukas*/
 
-@charset "ISO-8859-1";
 
 /*Allgemein*/
 * {
@@ -29,12 +30,18 @@ header {
   padding: 15px 50px;
 }
 
+/*Für Logo bild im Header Platz zischen Bild und Link und vertikal mittig ausrichten */
+.logoheader img {
+  margin-right: 10px;
+ vertical-align: middle;
+}
+
 h3 {
    font-size: 1.3em; 
    font-weight: normal;
 }
 
-/*Navigation*/
+/*Navigation im Header*/
 nav {
   display: flex;
   justify-content: space-between;
@@ -89,7 +96,7 @@ button:hover {
   font-size: 13px;
 }
 
-/*Klasse fÃ¼r Links, die wie Buttons ausehen sollen*/
+/*Klasse für Links, die wie Buttons ausehen sollen*/
 .button {
   padding: 8px 13px;
   margin-right: 10px;
@@ -164,7 +171,62 @@ select {
 
 
 
-/*Klasse fÃ¼r Abstand*/
+/*Klasse für Abstand*/
 .space{
 	margin-right: 15px;
 }
+
+.spaceTop{
+	margin-top: 15px;
+}
+
+/*Veronika*/
+
+/*Boxen für die Anzeigen: 
+Float left, um Fluss Boxen zu erzeugen - graue Umrandung - Breite der Box inkl border - margin: Abstand um die Box - Text zentriert - Schatten -  padding bottom um Abstand zum Link zu haben*/
+.anzeigeBox {
+float:left;
+  border: 1px solid gray;
+  width: 300px;
+  margin: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: 1px 1px rgba(0,0,0,0.18);
+  padding-bottom: 20px;
+}
+
+.anzeigeBox img {
+  width: 100%;
+  /*https://web.dev/aspect-ratio/*/
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+/*padding und margin 0, um padding Regel body zu überschreiben - Listen-Punkt deaktivieren*/
+.anzeigeBox ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+}
+ /*Abstand nach unten zum nächsten Element*/
+.anzeigeBox li {
+  margin-bottom: 5px;
+}
+
+ /*Browser-Standard Margin überschreiben*/
+.anzeigeBox h4 {
+  margin: 0;
+  /*http://bitly.ws/Ibzb  - Zeilenumbruch verhindern, mit ... beenden*/
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.anzeigeBox a {
+	box-sizing: border-box;
+	margin: 20px;
+}
+
+
+

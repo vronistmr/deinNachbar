@@ -9,12 +9,15 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="./../css/basis.css">
 		<title>Fehlerseite</title>
 	</head>
 
 	<body>
-		<h1>Fehlerseite</h1>
+		<h1>Oooops! Hier ist etwas schief gelaufen. </h1>
 		Es ist ein Fehler aufgetreten!
+		</br>
+		<img src="./../img/dog.jpeg" width="612" height="408">
 		<br />Bitte benachrichtigen Sie den Web-Administrator unter <b>admin@demo.org</b>.
 		<br />Die Fehlermeldung lautet: ${pageContext.exception}
 		<p><b>Stack trace:</b>

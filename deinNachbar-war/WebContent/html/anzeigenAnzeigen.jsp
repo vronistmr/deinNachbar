@@ -10,7 +10,7 @@
 	<!-- Tobi -->	
 		<div id="flexanzeige">
 			<aside>
-					<img src="./../ServletBildAnzeige?anzeigeID=${AnzeigeForm.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/blume.png';"> <!--onerror: https://bit.ly/3N6GpwJ  -->
+					<img src="./../ServletBildAnzeige?anzeigeID=${AnzeigeForm.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';"> <!--onerror: https://bit.ly/3N6GpwJ  -->
 			</aside>
 			<article>
 					<h1>${AnzeigeForm.titelAnzeige}</h1>
@@ -25,7 +25,7 @@
 				</div>
 				<br/><p class="blocksatz"><b>Beschreibung: </b><br/>
 					       ${AnzeigeForm.beschreibung}</p>
-				<br/><b>${AnzeigeForm.standort} im Umkreis von ${AnzeigeForm.umkreis} Kilometern</b>
+				<br/><b>${AnzeigeForm.standort} und im Umkreis von ${AnzeigeForm.umkreis} Kilometern</b>
 				<br/>
 			</article>
 		

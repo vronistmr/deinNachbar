@@ -26,6 +26,7 @@
        	<link rel="stylesheet" href="./../css/basis.css">
        	<link rel="stylesheet" href="./../css/registrieren.css">
        	<link rel="stylesheet" href="./../css/anzeigeAufgeben.css">
+       	<link rel="stylesheet" href="./../css/startseite.css">
     </c:otherwise>
 	</c:choose>
 </head>
@@ -39,17 +40,31 @@
 			
 			<c:choose>
     			<c:when test="${pageContext.request.servletPath == '/index.jsp'}">
-        			<a href="./index.jsp">deinNachbar.de</a>
+    		  <div class="logoheader">
+        			 <a href="./index.jsp">
+       				 <img src="./img/logoheader.jpeg" width="150" height="48">
+       				 deinNachbar.de
+    				</a>
+        	</div>
     			</c:when>
     			<c:otherwise>
-        			<a href="./../index.jsp">deinNachbar.de</a>
+    			  <div class="logoheader">
+        			<a href="./../index.jsp">
+        			<img  src="./../img/logoheader.jpeg" width="150" height="48">
+        			deinNachbar.de
+        			</a>
+        		</div>
     			</c:otherwise>
 			</c:choose>
 			
 		</c:when>
 		<c:otherwise>
-			<a href="./../ServletStartseite">deinNachbar.de</a>
-				<div class=navRechts>
+		     <div class="logoheader">
+				<a href="./../ServletStartseite">
+				<img  src="./../img/logoheader.jpeg" width="150" height="48">
+				deinNachbar.de</a>
+			 </div>
+				<div class="navRechts">
 					<a href="./anzeigeAufgeben.jsp" class="button">Neue Anzeige aufgeben</a>
 					<a href="./../ServletMeineAnzeigen" class="button">Meine Anzeigen</a>
 					<a href="./../ServletMeineGebuchten" class="button">Meine Gebuchten</a>	
