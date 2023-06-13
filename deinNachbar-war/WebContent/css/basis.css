@@ -218,7 +218,7 @@
 	Float left, um Fluss Boxen zu erzeugen - graue Umrandung - Breite der Box inkl border - margin: Abstand um die Box - Text zentriert - Schatten -  padding bottom um Abstand zum Link zu haben*/
 	.anzeigeBox {
 	float:left;
-	  border: 1px solid gray;
+	  border: 1px solid #eaeaea;
 	  width: 300px;
 	  margin: 10px;
 	  text-align: center;
