@@ -13,29 +13,32 @@
 		<h1>Registrieren</h1>
 		<div class="spaceReg">
 		<input autofocus type="text"
-			id="vorname" name="vorname" size="30" maxlength="40" required Placeholder="Name"><span></span> 
+			id="vorname" name="vorname" size="30" maxlength="40" required Placeholder="Name"
+			title="Gib deinen Vor- und oder Nahchnamen ein"><span></span> 
 		</div>
 		<div class="spaceReg">
 		<input type="email" id="email"
 			name="email" size="30" maxlength="50"
 			pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-			title="Bitte geben sie eine g&uuml;ltige Email-Adresse der Form: characters@characters.domain ein!"
+			title="Gib eine gültige Email-Adresse ein"
 			required placeholder="E-Mail"><span></span>
 		</div>
 		<div class="spaceReg">
 		    <input
 			type="password" id="passwort" name="passwort" size="30"
 			maxlength="255" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-			title="Das Passwort muss mindestens einen Gro&szlig;buchstaben, einen Kleinbuchstaben, eine Nummer und mindestens 8 Zeichen enthalten!"
+			title="Das Passwort muss mindestens einen Großbuchstaben, einen Kleinbuchstaben, eine Nummer und mindestens 8 Zeichen enthalten"
 			required placeholder="Passwort"><span></span>
 		</div>
 		<div class="spaceReg">
 		<input type="password" id="passwortwdh"
-			name="passwortwdh" size="30" maxlength="255" required placeholder="Passwort wiederholen"><span></span>
+			name="passwortwdh" size="30" maxlength="255" required placeholder="Passwort wiederholen"
+			title="Wiederhole bitte das zuvor eingegebene Passwort"><span></span>
 		</div>
 		<div class="spaceReg">
 		<input type="text" id="standort"
-			name="standort" size="30" maxlength="50" required placeholder="Dein Standort"><span></span>
+			name="standort" size="30" maxlength="50" required placeholder="Dein Standort"
+			title="Gib bitte deinen Wohnort ein"><span></span>
 		</div>
 		<div class="regbutton">
 		<button type="submit" name="registrierung" value="neu">Registrieren</button>
