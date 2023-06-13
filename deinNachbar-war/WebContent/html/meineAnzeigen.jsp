@@ -9,9 +9,10 @@
 
 <!-- Veronika -->
 <main>
+<article>
 	<h1>Meine Anzeigen</h1>
 	<c:forEach var="currentAnzeige" items="${anzeigen}" varStatus="status">
-				<div class="anzeigeBox">
+			<div class="anzeigeBox">
 				<ul>
 					<li>
 					<img src="./../ServletBildAnzeige?anzeigeID=${currentAnzeige.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';"></li><!--onerror: https://bit.ly/3N6GpwJ  --> 
@@ -22,11 +23,10 @@
 					</br>
 					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentAnzeige.anzeigeID}" class = "button">Zur Anzeige</a></li>
 				</ul>
-				</div>
-			</c:forEach>
 			</div>
-	<!-- Lukas -->
+	</c:forEach>
+</article>
 </main>
 
-
+<!-- Lukas -->
 <%@ include file="footer.jspf"%>

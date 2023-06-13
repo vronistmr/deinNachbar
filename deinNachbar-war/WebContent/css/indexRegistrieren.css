@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/*Tobi*/
+
+/*Zentrale Positionierung desFlex-Box-Conatiners und Abstand nach oben 100px */
+.centeredflex {
+  	text-align:center;
+  	display: flex;
+  	flex-flow:column wrap; /*vertikale Anordnung der Kindelemente*/
+  	align-items:center; /*-> align-center steuert vertikale ausrcihtung der Flex-Box-Kindelemente, hier:mittig*/
+  	margin-top:80px;
+}
+
+/*Abstände zwischen den Kindelementen der Flex-Box*/
+.spaceReg {
+	padding:5px;
+}
+
+.regbutton{
+  	padding: 20px;
+}
+
+/*optische Spielereien:*/
+input[type="email"]:valid + span::after{
+	color: rgb(73, 182, 117);
+	content:" ✔";
+}
+
+input[type="password"]:valid + span::after{
+	color: rgb(73, 182, 117);
+	content:" ✔";
+}
+
+input[type="text"]:valid + span::after{
+	color: rgb(73, 182, 117);
+	content:" ✔";
+}
+
+
+input:required + span::after{
+	color: rgb(255, 105, 97);
+	content:" ✱";
+}
