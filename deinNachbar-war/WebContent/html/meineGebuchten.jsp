@@ -7,6 +7,8 @@
 <!-- Lukas -->
 <%@ include file="header.jspf" %> 
 
+<div class="startseiteFlex">
+
 	<main>
 		<h1>Meine Gebuchten</h1>
 		<!-- Veronika -->
@@ -27,6 +29,6 @@
 			</div>
 		</c:forEach>
 	</main>
-
+</div>
 <!-- Lukas -->
 <%@ include file="footer.jspf" %> 
