@@ -62,7 +62,7 @@ public class ServletAnzeigeAnzeigen extends HttpServlet {
 		// DB-Zugriff
 
 		try (Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("SELECT * FROM anzeige WHERE anzeigeID = ?")) {
+				PreparedStatement pstmt = con.prepareStatement("SELECT anzeige.*, benutzer.vorname FROM anzeige JOIN benutzer ON anzeige.benutzerID = benutzer.benutzerID WHERE anzeigeID = ?")) {
 
 			pstmt.setInt(1, anzeigeid);
 			try (ResultSet rs = pstmt.executeQuery()) {
@@ -108,6 +108,9 @@ public class ServletAnzeigeAnzeigen extends HttpServlet {
 
 					byte[] foto = rs.getBinaryStream("foto").readAllBytes();
 					anzeige.setFoto(foto);
+					
+					String vorname = rs.getString("vorname");
+					anzeige.setVorname(vorname);
 
 				}
 			}

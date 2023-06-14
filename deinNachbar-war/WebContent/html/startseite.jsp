@@ -58,7 +58,7 @@
 			<h2>Kategorien</h2>
 			<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
 					<li>${currentKategorie.kategorie}</li>
-				<c:if test="${sessionScope.loginForm.istAdmin}">
+			<c:if test="${sessionScope.loginForm.istAdmin}">
 					
 						<a href="./../ServletKategorieBearbeiten?kategorieID=${currentKategorie.kategorieID}">Bearbeiten</a>
   						<a href="./../ServletKategorieLoeschen?kategorieID=${currentKategorie.kategorieID}&kategorie=${currentKategorie.kategorie}">Löschen</a>
@@ -68,12 +68,12 @@
 		
 			
 	<c:if test="${sessionScope.loginForm.istAdmin}">
-    	<!-- Hier der Code für Admin - Kategorien bearbeiten  -->
-    	<form action="./../ServletKategorieNeu" method="POST" class="spaceTop">
+    	<!--  Admin Kategorien bearbeiten  -->
+    <form action="./../ServletKategorieNeu" method="POST" class="spaceTop">
     	<input type="text" name="neueKategorie" size="50" maxlength="50" placeholder="Neue Kategorie" required> 
     	</br>
     	<button type="submit" value="neu" name="action">Kategorie ergänzen</button>
-    	</form>
+    </form>
     	
 	</c:if>
 

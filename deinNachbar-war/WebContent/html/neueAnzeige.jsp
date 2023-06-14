@@ -17,9 +17,9 @@
 					<img src="./../ServletBildAnzeige?anzeigeID=${anzeigeNeu.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';"> <!--onerror: https://bit.ly/3N6GpwJ  -->
 			</aside>
 			<article>
-					<h2>${anzeigeNeu.titelAnzeige}</h2>
-					<h3> in ${anzeigeNeu.kategorie}<br/>
-						${anzeigeNeu.anzeigeArt}</h3>
+					<h3>${anzeigeNeu.anzeigeArt} </h3>
+					<h1>${anzeigeNeu.titelAnzeige}</h1>
+					<h3>in ${anzeigeNeu.kategorie}</h3>
 			</article>
 			</div>
 			<article>
@@ -27,14 +27,20 @@
 					${anzeigeNeu.preis}€
 					${anzeigeNeu.preiskategorie}
 				</div>
-				<br/><p class="blocksatz"><b>Beschreibung: </b><br/>
+				<br/>
+				<p class="blocksatz">
+				<span class="fett">Beschreibung: </span>
+				<br/>
 					       ${anzeigeNeu.beschreibung}</p>
-				<br/><b>${anzeigeNeu.standort} und im Umkreis von ${anzeigeNeu.umkreis} Kilometern</b>
+				<p class="blocksatz">
+				<span class="fett">${anzeigeNeu.standort} und im Umkreis von ${anzeigeNeu.umkreis} Kilometern</span> </p> </br>
+				<p class="blocksatz">
+				Anzeige veröffentlicht von <span class="fett">${anzeigeNeu.vorname}</span> </p>
 				<br/>
 			</article>
 		
 		<div class="unten">
-				<a href="../ServletMeineAnzeigen" class="button">zu Meine Anzeigen</a>
+				<a href="../ServletMeineAnzeigen" class="button">zu allen meinen Anzeigen</a>
 		</div>
 </main>
 
