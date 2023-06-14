@@ -21,22 +21,22 @@
 
 /*optische Spielereien:*/
 input[type="email"]:valid + span::after{
-	color:green;
-	content:"✔";
+	color: rgb(73, 182, 117);
+	content:" ✔";
 }
 
 input[type="password"]:valid + span::after{
-	color:green;
-	content:"✔";
+	color: rgb(73, 182, 117);
+	content:" ✔";
 }
 
 input[type="text"]:valid + span::after{
-	color:green;
-	content:"✔";
+	color: rgb(73, 182, 117);
+	content:" ✔";
 }
 
 
 input:required + span::after{
-	color:red;
-	content:"*";
+	color: rgb(255, 105, 97);
+	content:" ✱";
 }

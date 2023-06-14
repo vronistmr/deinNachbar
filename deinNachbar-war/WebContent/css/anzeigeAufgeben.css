@@ -12,6 +12,11 @@ label {
     padding:10px;
 }
 
+/*roter Rahmen für ungültige Eingaben*/
+input.rahmenRot:invalid, select.rahmenRot:invalid{
+		outline: 3px solid rgb(255, 105, 97);
+	}
+
 .beschreibung{
 	width:100%;
 	height:100%;
