@@ -18,9 +18,9 @@
 		Es ist ein Fehler aufgetreten!
 		</br>
 		<img src="./../img/dog.jpeg" width="612" height="408">
-		<br />Bitte benachrichtigen Sie den Web-Administrator unter <b>admin@demo.org</b>.
+		<br />Bitte benachrichtigen Sie den Web-Administrator unter <span class="fett">admin@demo.org</span>.
 		<br />Die Fehlermeldung lautet: ${pageContext.exception}
-		<p><b>Stack trace:</b>
+		<p><span class="fett">Stack trace:</span>
 			<c:forEach var="trace" items="${pageContext.exception.stackTrace}">
 				<br />${trace}
 			</c:forEach>

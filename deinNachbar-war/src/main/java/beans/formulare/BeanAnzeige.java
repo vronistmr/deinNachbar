@@ -19,9 +19,9 @@ public class BeanAnzeige implements Serializable{
 	private int umkreis;
 	private String beschreibung;
 	private int benutzerID;
+	private String vorname;
 	private Date datum;
 	private Time zeit;
-	//private Date datetime;
 	private Timestamp datetime;
 	private int anzeigeID;
 	private byte[] foto;
@@ -108,6 +108,14 @@ public class BeanAnzeige implements Serializable{
 		this.benutzerID = benutzerID;
 	}
 	
+	public String getVorname() {
+		return vorname;
+	}
+
+	public void setVorname(String vorname) {
+		this.vorname = vorname;
+	}
+
 	public Date getDatum() {
 		return datum;
 	}

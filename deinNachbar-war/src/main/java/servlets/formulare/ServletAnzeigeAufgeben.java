@@ -54,6 +54,8 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 		beanAnzeigeAufgeben.setDatum(Date.valueOf(LocalDate.now()));
 		beanAnzeigeAufgeben.setZeit(Time.valueOf(LocalTime.now()));
 		beanAnzeigeAufgeben.setBenutzerID(Integer.valueOf(((BeanBenutzerdaten) request.getSession().getAttribute("loginForm")).getBenutzerID()));
+		beanAnzeigeAufgeben.setVorname(((BeanBenutzerdaten) request.getSession().getAttribute("loginForm")).getVorname());
+
 
 
 		
