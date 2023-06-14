@@ -19,7 +19,7 @@
 					<li><h4>${currentAnzeige.titelAnzeige}</h4></li>
 					<li>${currentAnzeige.preis} € ${currentAnzeige.preiskategorie}</li>
 					<li>${currentAnzeige.standort}</li>
-					</br>
+					<br>
 					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentAnzeige.anzeigeID}" class = "button">Zur Anzeige</a></li>
 				</ul>
 			</div>
