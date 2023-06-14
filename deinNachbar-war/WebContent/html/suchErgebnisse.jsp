@@ -20,7 +20,7 @@
 					<li>${gesuchteAnzeige.preis} €</li>
 					<li>${gesuchteAnzeige.preiskategorie}</li>
 					<li>${gesuchteAnzeige.standort}</li>
-					</br>
+					<br>
 					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${gesuchteAnzeige.anzeigeID}" class="button">Zur Anzeige</a></li>
 				</ul>
 				</div>

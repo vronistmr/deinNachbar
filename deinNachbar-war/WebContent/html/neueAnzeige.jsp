@@ -27,16 +27,16 @@
 					${anzeigeNeu.preis}€
 					${anzeigeNeu.preiskategorie}
 				</div>
-				<br/>
+				<br>
 				<p class="blocksatz">
 				<span class="fett">Beschreibung: </span>
-				<br/>
+				<br>
 					       ${anzeigeNeu.beschreibung}</p>
 				<p class="blocksatz">
-				<span class="fett">${anzeigeNeu.standort} und im Umkreis von ${anzeigeNeu.umkreis} Kilometern</span> </p> </br>
+				<span class="fett">${anzeigeNeu.standort} und im Umkreis von ${anzeigeNeu.umkreis} Kilometern</span> </p> <br>
 				<p class="blocksatz">
 				Anzeige veröffentlicht von <span class="fett">${anzeigeNeu.vorname}</span> </p>
-				<br/>
+				<br>
 			</article>
 		
 		<div class="unten">

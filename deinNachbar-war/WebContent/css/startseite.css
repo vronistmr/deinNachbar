@@ -27,7 +27,7 @@ Positionierung der Anzeigen und Kategorien -> Flex boxen
   border-radius: 10px;
   }
   
-  .sidebar li {
+  .sidebar span {
     list-style: none;
     line-height: 2.5;
     padding-left: 25px;
