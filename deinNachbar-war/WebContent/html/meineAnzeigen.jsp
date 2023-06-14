@@ -8,6 +8,7 @@
 
 
 <!-- Veronika -->
+<div class="startseiteFlex">
 <main>
 	<h1>Meine Anzeigen</h1>
 	<c:forEach var="currentAnzeige" items="${anzeigen}" varStatus="status">
@@ -25,6 +26,7 @@
 			</div>
 	</c:forEach>
 </main>
+</div>
 
 <!-- Lukas -->
 <%@ include file="footer.jspf"%>

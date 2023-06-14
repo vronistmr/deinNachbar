@@ -5,7 +5,7 @@
 
 <%@ include file="header.jspf"%>
 
-
+<div class="startseiteFlex">
 <main>
 
 	<h1>Gesuchte Anzeigen</h1>
@@ -26,10 +26,10 @@
 				</div>
 			</c:forEach>
 			
-	<br />
+	<br>
 	
 </main>
-
+</div>
 
 <!-- Lukas -->
 <%@ include file="footer.jspf"%>
