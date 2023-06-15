@@ -19,7 +19,7 @@
 				<article>
 					<input type="text" name="titelAnzeige" size="50" maxlength="200" placeholder="Titel der Anzeige" required class="rahmenRot" title="Gibe einen aussagekräftigen Titel für deine Anzeige ein"> 
 					<input type="number" name="preis" max="999" placeholder="Preis in Euro" required class="rahmenRot" title="Gib ein, wie viel du verlangen willst bzw. wie viel du zahlen willst"> <br/>
-					<!-- Zeile: Lukas --><input type="text" name="standort" size="50" maxlength="50" value="${loginForm.standort}" placeholder="Dein Standort" required class="rahmenRot" title="Falls der Ort für deine Anzeige nicht mit deinem Wohnort nicht übereinstimmt, kannst du ihn ändern">
+					<!-- Zeile: Lukas --><input type="text" name="standort" size="50" maxlength="50" value="${loginForm.standort}" placeholder="Dein Standort" required class="rahmenRot" title="Falls der Ort für deine Anzeige mit deinem Wohnort nicht übereinstimmt, kannst du ihn ändern">
 					<input type="number" name="umkreis" size="50" max="999" placeholder="Umkreis in Kilometer" required class="rahmenRot" title="Gib einen Umkreis an, in welchem du Suchst, bzw. Bietest. Falls fachlich unlogisch, gib 0 ein">
 				</article>
 				<article>
@@ -43,6 +43,7 @@
 					<textarea name="beschreibung" maxlength="1000" placeholder="Beschreibung deiner Anzeige..." title="Gib eine aussagekräftige Beschreibung für deine Anzeige an"></textarea>
 				</article>
 				<article title="Lade ein Bild hoch, um dich von anderen Anzeigen abzuheben">
+					<p>Füge ein Bild hinzu, um deine Reichweite zu erhöhen:</p>
 					<input type="file" id="foto" name="foto" accept="image/*" class="buttonWeiss"> 
 				</article>
 			</div>

@@ -15,7 +15,8 @@
 			<article>
 					<h3>${AnzeigeForm.anzeigeArt} </h3>
 					<h1>${AnzeigeForm.titelAnzeige}</h1>
-					<h3>in ${AnzeigeForm.kategorie}</h3>
+					<br/>
+					<h3>in Kategorie ${AnzeigeForm.kategorie}</h3>
 			</article>
 			</div>
 			<article>
