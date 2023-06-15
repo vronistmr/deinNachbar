@@ -12,6 +12,7 @@ label {
     padding:10px;
 }
 
+/*Lukas*/
 /*roter Rahmen für ungültige Eingaben*/
 input.rahmenRot:invalid, select.rahmenRot:invalid{
 		outline: 3px solid rgb(240, 190, 192);

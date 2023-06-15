@@ -43,11 +43,11 @@
 		<c:if test="${AnzeigeForm.benutzerID == loginForm.benutzerID}">
 			<a href="./../ServletAnzeigeLoeschen?id=${AnzeigeForm.anzeigeID}" class = "button">Löschen</a>
 		</c:if>
-			<!-- Veronika -->
+	<!-- Veronika -->
 		<c:if test="${AnzeigeForm.benutzerID != loginForm.benutzerID && loginForm.istAdmin}">
 			<a href="./../ServletAnzeigeLoeschen?id=${AnzeigeForm.anzeigeID}" class = "button">Anzeige von ${AnzeigeForm.vorname} löschen</a>
 		</c:if>
-			<!-- Lukas -->
+	<!-- Lukas -->
 	</div>
 </main>
 
