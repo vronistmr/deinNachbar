@@ -9,7 +9,7 @@
 			<!-- Tobi -->
 			<form action="./../SuchServlet" method="post">
 				<input type="text" name="suchstring" size="50" maxlength="50" placeholder="Was suchtst du?">
-				<button name= "submit" type="submit">Suchen</button>
+				<button name= "submit" type="submit">🔎 Suchen</button>
 			</form>
 	</nav>
 		
@@ -71,7 +71,7 @@
     <form action="./../ServletKategorieNeu" method="POST" class="spaceTop">
     	<input type="text" name="neueKategorie" size="50" maxlength="50" placeholder="Neue Kategorie" required> 
     	<br>
-    	<button type="submit" value="neu" name="action">Kategorie ergänzen</button>
+    	<button type="submit" value="neu" name="action">➕ Kategorie ergänzen</button>
     </form>
     	
 	</c:if>

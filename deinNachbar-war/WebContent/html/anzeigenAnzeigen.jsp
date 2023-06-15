@@ -15,7 +15,8 @@
 			<article>
 					<h3>${AnzeigeForm.anzeigeArt} </h3>
 					<h1>${AnzeigeForm.titelAnzeige}</h1>
-					<h3>in ${AnzeigeForm.kategorie}</h3>
+					<br/>
+					<h3>in Kategorie ${AnzeigeForm.kategorie}</h3>
 			</article>
 			</div>
 			<article>
@@ -43,11 +44,11 @@
 		<c:if test="${AnzeigeForm.benutzerID == loginForm.benutzerID}">
 			<a href="./../ServletAnzeigeLoeschen?id=${AnzeigeForm.anzeigeID}" class = "button">Löschen</a>
 		</c:if>
-			<!-- Veronika -->
+	<!-- Veronika -->
 		<c:if test="${AnzeigeForm.benutzerID != loginForm.benutzerID && loginForm.istAdmin}">
 			<a href="./../ServletAnzeigeLoeschen?id=${AnzeigeForm.anzeigeID}" class = "button">Anzeige von ${AnzeigeForm.vorname} löschen</a>
 		</c:if>
-			<!-- Lukas -->
+	<!-- Lukas -->
 	</div>
 </main>
 
