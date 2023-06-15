@@ -65,7 +65,7 @@
 				deinNachbar.de</a>
 			 </div>
 				<div class="navRechts">
-					<a href="./anzeigeAufgeben.jsp" class="button">Neue Anzeige aufgeben</a>
+					<a href="./anzeigeAufgeben.jsp" class="button">➕ Neue Anzeige aufgeben</a>
 					<a href="./../ServletMeineAnzeigen" class="button">Meine Anzeigen</a>
 					<a href="./../ServletMeineGebuchten" class="button">Meine Gebuchten</a>	
 					<a href="./../ServletLogout" class="buttonWeiss">LogOut</a>

@@ -8,6 +8,7 @@
 
 
 <!-- Veronika -->
+<div class="startseiteFlex">
 <main>
 	<h1>Meine Anzeigen</h1>
 	<c:forEach var="currentAnzeige" items="${anzeigen}" varStatus="status">
@@ -19,12 +20,13 @@
 					<li><h4>${currentAnzeige.titelAnzeige}</h4></li>
 					<li>${currentAnzeige.preis} € ${currentAnzeige.preiskategorie}</li>
 					<li>${currentAnzeige.standort}</li>
-					</br>
+					<br>
 					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentAnzeige.anzeigeID}" class = "button">Zur Anzeige</a></li>
 				</ul>
 			</div>
 	</c:forEach>
 </main>
+</div>
 
 <!-- Lukas -->
 <%@ include file="footer.jspf"%>

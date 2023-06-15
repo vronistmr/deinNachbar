@@ -7,6 +7,8 @@
 <!-- Lukas -->
 <%@ include file="header.jspf" %> 
 
+<div class="startseiteFlex">
+
 	<main>
 		<h1>Meine Gebuchten</h1>
 		<!-- Veronika -->
@@ -19,14 +21,14 @@
 					<li><h4>${currentGebuchte.titelAnzeige}</h4></li>
 					<li>${currentGebuchte.preis} € ${currentGebuchte.preiskategorie}</li>
 					<li>${currentGebuchte.standort}</li>				
-					</br>
+					<br>
 					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentGebuchte.anzeigeID}" class = "button" style="margin-bottom: 60px;">Zur Anzeige</a></li>
-					</br>
+					<br>
 					<li><a href="./../ServletBuchungLoeschen?anzeigeID=${currentGebuchte.anzeigeID}" class = "button">Buchung löschen</a></li>
 				</ul>
 			</div>
 		</c:forEach>
 	</main>
-
+</div>
 <!-- Lukas -->
 <%@ include file="footer.jspf" %> 

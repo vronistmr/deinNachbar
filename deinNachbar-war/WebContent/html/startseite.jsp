@@ -9,7 +9,7 @@
 			<!-- Tobi -->
 			<form action="./../SuchServlet" method="post">
 				<input type="text" name="suchstring" size="50" maxlength="50" placeholder="Was suchtst du?">
-				<button name= "submit" type="submit">Suchen</button>
+				<button name= "submit" type="submit">🔎 Suchen</button>
 			</form>
 	</nav>
 		
@@ -32,7 +32,7 @@
 					<li><h4>${currentSucheAnzeige.titelAnzeige}</h4></li>
 					<li>${currentSucheAnzeige.preis} € ${currentSucheAnzeige.preiskategorie}</li>
 					<li>${currentSucheAnzeige.standort}</li>
-					</br>
+					<br>
 					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentSucheAnzeige.anzeigeID}" class="button">Zur Anzeige</a></li>
 				</ul>
 			</div>
@@ -48,7 +48,7 @@
 					<li><h4>${currentBieteAnzeige.titelAnzeige}</h4></li>
 					<li>${currentBieteAnzeige.preis} € ${currentBieteAnzeige.preiskategorie}</li>
 					<li>${currentBieteAnzeige.standort}</li>
-					</br>
+					<br>
 					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentBieteAnzeige.anzeigeID}" class="button">Zur Anzeige</a></li>
 				</ul>
 			</div>
@@ -57,12 +57,11 @@
 	<aside class="sidebar">
 			<h2>Kategorien</h2>
 			<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
-					<li>${currentKategorie.kategorie}</li>
+					<span>${currentKategorie.kategorie}</span><br>
 			<c:if test="${sessionScope.loginForm.istAdmin}">
-					
 						<a href="./../ServletKategorieBearbeiten?kategorieID=${currentKategorie.kategorieID}">Bearbeiten</a>
   						<a href="./../ServletKategorieLoeschen?kategorieID=${currentKategorie.kategorieID}&kategorie=${currentKategorie.kategorie}">Löschen</a>
-					
+					<br>
 					</c:if>
 			</c:forEach>
 		
@@ -71,8 +70,8 @@
     	<!--  Admin Kategorien bearbeiten  -->
     <form action="./../ServletKategorieNeu" method="POST" class="spaceTop">
     	<input type="text" name="neueKategorie" size="50" maxlength="50" placeholder="Neue Kategorie" required> 
-    	</br>
-    	<button type="submit" value="neu" name="action">Kategorie ergänzen</button>
+    	<br>
+    	<button type="submit" value="neu" name="action">➕ Kategorie ergänzen</button>
     </form>
     	
 	</c:if>

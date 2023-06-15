@@ -5,7 +5,7 @@
 
 <%@ include file="header.jspf"%>
 
-
+<div class="startseiteFlex">
 <main>
 
 	<h1>Gesuchte Anzeigen</h1>
@@ -20,16 +20,16 @@
 					<li>${gesuchteAnzeige.preis} €</li>
 					<li>${gesuchteAnzeige.preiskategorie}</li>
 					<li>${gesuchteAnzeige.standort}</li>
-					</br>
+					<br>
 					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${gesuchteAnzeige.anzeigeID}" class="button">Zur Anzeige</a></li>
 				</ul>
 				</div>
 			</c:forEach>
 			
-	<br />
+	<br>
 	
 </main>
-
+</div>
 
 <!-- Lukas -->
 <%@ include file="footer.jspf"%>

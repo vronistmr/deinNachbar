@@ -29,7 +29,7 @@
 					 ${AnzeigeForm.beschreibung}
 				</p>
 				<p class="blocksatz">
-				<span class="fett">${AnzeigeForm.standort} und im Umkreis von ${AnzeigeForm.umkreis} Kilometern</span> </p> </br>
+				<span class="fett">${AnzeigeForm.standort} und im Umkreis von ${AnzeigeForm.umkreis} Kilometern</span> </p> <br>
 				<p class="blocksatz">
 				Anzeige veröffentlicht von <span class="fett">${AnzeigeForm.vorname}</span> </p>
 			</article>
@@ -43,11 +43,11 @@
 		<c:if test="${AnzeigeForm.benutzerID == loginForm.benutzerID}">
 			<a href="./../ServletAnzeigeLoeschen?id=${AnzeigeForm.anzeigeID}" class = "button">Löschen</a>
 		</c:if>
-			<!-- Veronika -->
+	<!-- Veronika -->
 		<c:if test="${AnzeigeForm.benutzerID != loginForm.benutzerID && loginForm.istAdmin}">
 			<a href="./../ServletAnzeigeLoeschen?id=${AnzeigeForm.anzeigeID}" class = "button">Anzeige von ${AnzeigeForm.vorname} löschen</a>
 		</c:if>
-			<!-- Lukas -->
+	<!-- Lukas -->
 	</div>
 </main>
 
