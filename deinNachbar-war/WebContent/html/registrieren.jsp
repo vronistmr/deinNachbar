@@ -5,6 +5,7 @@
 
 <%@ include file="header.jspf"%>
 
+<script type="text/javascript" src="./../js/registrieren.js"></script>
 
 <main>
 	<!-- Tobi -->
@@ -41,7 +42,7 @@
 			title="Gib bitte deinen Wohnort ein"><span></span>
 		</div>
 		<div class="regbutton">
-		<button type="submit" name="registrierung" value="neu">Registrieren</button>
+		<button type="submit" id="regbutton" name="registrierung" value="neu">Registrieren</button>
 		</div>
 	</form>
 	</div>
