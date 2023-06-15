@@ -43,7 +43,7 @@
 		</div>
 		<div class="regbutton">
 		<button type="submit" id="registrierenButton" name="registrierung" value="neu">Registrieren</button>
-		<p id="meinTest"></p>
+		<p id="fehlerText"></p>
 		</div>
 	</form>
 	</div>
