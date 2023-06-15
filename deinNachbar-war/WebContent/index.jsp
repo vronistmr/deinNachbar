@@ -27,8 +27,8 @@
 		</div>
 	</form>
 	<nav>
-			<a href="./html/registrieren.jsp">neu
-				registrieren</a>
+			<a href="./html/registrieren.jsp">Neu
+				Registrieren</a>
 	</nav>
 	</div>
 </main>
