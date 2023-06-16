@@ -27,7 +27,7 @@
 			<div  class="anzeigeBox"> <!-- id="tabSuche" -->
 				<ul>
 					<li>
-					<img src="./../ServletBildAnzeige?anzeigeID=${currentSucheAnzeige.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';"></li>  <!--onerror: https://bit.ly/3N6GpwJ  -->
+					<img src="./../ServletBildAnzeige?anzeigeID=${currentSucheAnzeige.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';" alt="Kein Bild vorhanden"></li>  <!--onerror: https://bit.ly/3N6GpwJ  -->
 					<li>${currentSucheAnzeige.anzeigeArt}</li>
 					<li><h4>${currentSucheAnzeige.titelAnzeige}</h4></li>
 					<li>${currentSucheAnzeige.preis} € ${currentSucheAnzeige.preiskategorie}</li>
@@ -43,7 +43,7 @@
 		
 				<ul>
 					<li>
-					<img src="./../ServletBildAnzeige?anzeigeID=${currentBieteAnzeige.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';"></li> <!--onerror: https://bit.ly/3N6GpwJ  -->
+					<img src="./../ServletBildAnzeige?anzeigeID=${currentBieteAnzeige.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';" alt="Kein Bild vorhanden"></li> <!--onerror: https://bit.ly/3N6GpwJ  -->
 					<li>${currentBieteAnzeige.anzeigeArt}</li>
 					<li><h4>${currentBieteAnzeige.titelAnzeige}</h4></li>
 					<li>${currentBieteAnzeige.preis} € ${currentBieteAnzeige.preiskategorie}</li>
@@ -56,15 +56,15 @@
 	</main>
 	<aside class="sidebar">
 			<h2>Kategorien</h2>
-			<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
-					<span>${currentKategorie.kategorie}</span><br>
+			
+<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
+	<span>${currentKategorie.kategorie}</span>
 			<c:if test="${sessionScope.loginForm.istAdmin}">
-						<a href="./../ServletKategorieBearbeiten?kategorieID=${currentKategorie.kategorieID}">Bearbeiten</a>
-  						<a href="./../ServletKategorieLoeschen?kategorieID=${currentKategorie.kategorieID}&kategorie=${currentKategorie.kategorie}">Löschen</a>
-					<br>
-					</c:if>
-			</c:forEach>
-		
+				<a href="./../ServletKategorieBearbeiten?kategorieID=${currentKategorie.kategorieID}"><img src="./../img/pencil.png" width="17px" height="17px"></a> <!--Bildquelle: http://bitly.ws/IDup-->
+  				<a href="./../ServletKategorieLoeschen?kategorieID=${currentKategorie.kategorieID}&kategorie=${currentKategorie.kategorie}"><img src="./../img/bin.png" width="17px" height="17px"></a><!--Bildquelle: http://bitly.ws/IDuh-->
+			</c:if>
+			<br>
+</c:forEach>
 			
 	<c:if test="${sessionScope.loginForm.istAdmin}">
     	<!--  Admin Kategorien bearbeiten  -->
@@ -77,7 +77,6 @@
 	</c:if>
 
 		</aside>
-	</div>
 	
 
 

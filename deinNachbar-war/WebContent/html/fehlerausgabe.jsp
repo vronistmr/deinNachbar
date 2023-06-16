@@ -17,7 +17,7 @@
 		<h1>Oooops! Hier ist etwas schief gelaufen. </h1>
 		Es ist ein Fehler aufgetreten!
 		<br>
-		<img src="./../img/dog.jpeg" width="612" height="408">
+		<img src="./../img/dog.jpeg" width="612" height="408"> <!-- Bildquelle: http://bitly.ws/IDv8 -->
 		<br />Bitte benachrichtigen Sie den Web-Administrator unter <span class="fett">admin@demo.org</span>.
 		<br />Die Fehlermeldung lautet: ${pageContext.exception}
 		<p><span class="fett">Stack trace:</span>
