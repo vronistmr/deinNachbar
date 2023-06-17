@@ -15,7 +15,7 @@
 			<div class="anzeigeBox">
 				<ul>
 					<li>
-					<img src="./../ServletBildAnzeige?anzeigeID=${currentAnzeige.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';"></li><!--onerror: https://bit.ly/3N6GpwJ  --> 
+					<img src="./../ServletBildAnzeige?anzeigeID=${currentAnzeige.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';" alt="Kein Bild vorhanden"></li><!--onerror: https://bit.ly/3N6GpwJ  --> 
 					<li>${currentAnzeige.anzeigeArt}</li>
 					<li><h4>${currentAnzeige.titelAnzeige}</h4></li>
 					<li>${currentAnzeige.preis} € ${currentAnzeige.preiskategorie}</li>

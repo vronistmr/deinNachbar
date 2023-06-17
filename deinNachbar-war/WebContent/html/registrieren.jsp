@@ -5,11 +5,12 @@
 
 <%@ include file="header.jspf"%>
 
+<script type="text/javascript" src="./../js/registrieren.js"></script>
 
 <main>
 	<!-- Tobi -->
 	<div class="centeredflex">
-	<form method="POST" action="./../ServletRegistrierung">
+	<form id="registrierenForm" method="POST" action="./../ServletRegistrierung">
 		<h1>Registrieren</h1>
 		<div class="spaceReg">
 		<input autofocus type="text"
@@ -41,7 +42,8 @@
 			title="Gib bitte deinen Wohnort ein"><span></span>
 		</div>
 		<div class="regbutton">
-		<button type="submit" name="registrierung" value="neu">Registrieren</button>
+		<button type="submit" id="registrierenButton" name="registrierung" value="neu">Registrieren</button>
+		<p id="fehlerText"></p>
 		</div>
 	</form>
 	</div>

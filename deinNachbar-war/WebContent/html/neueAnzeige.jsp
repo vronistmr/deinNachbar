@@ -14,7 +14,7 @@
 
 		<div id="flexanzeige">
 			<aside>
-					<img src="./../ServletBildAnzeige?anzeigeID=${anzeigeNeu.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';"> <!--onerror: https://bit.ly/3N6GpwJ  -->
+					<img src="./../ServletBildAnzeige?anzeigeID=${anzeigeNeu.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';" alt="Kein Bild vorhanden"> <!--onerror: https://bit.ly/3N6GpwJ  -->
 			</aside>
 			<article>
 					<h3>${anzeigeNeu.anzeigeArt} </h3>
