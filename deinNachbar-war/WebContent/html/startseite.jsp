@@ -5,11 +5,13 @@
 
 <!-- Lukas -->
 <%@ include file="header.jspf" %>
+<script type="text/javascript" src="./../js/startseite.js"></script>
+
 	<nav class="navStartseite">
 			<!-- Tobi -->
 			<form action="./../SuchServlet" method="post">
 				<input type="text" name="suchstring" size="50" maxlength="50" placeholder="Was suchtst du?">
-				<button name= "submit" type="submit">🔎 Suchen</button>
+				<button name= "suche" value="neu" type="submit">🔎 Suchen</button>
 			</form>
 	</nav>
 		
@@ -61,7 +63,7 @@
 	<span>${currentKategorie.kategorie}</span>
 			<c:if test="${sessionScope.loginForm.istAdmin}">
 				<a href="./../ServletKategorieBearbeiten?kategorieID=${currentKategorie.kategorieID}"><img src="./../img/pencil.png" width="17px" height="17px"></a> <!--Bildquelle: http://bitly.ws/IDup-->
-  				<a href="./../ServletKategorieLoeschen?kategorieID=${currentKategorie.kategorieID}&kategorie=${currentKategorie.kategorie}"><img src="./../img/bin.png" width="17px" height="17px"></a><!--Bildquelle: http://bitly.ws/IDuh-->
+  				<a href="./../ServletKategorieLoeschen?kategorieID=${currentKategorie.kategorieID}&kategorie=${currentKategorie.kategorie}" id="loeschLink"><img src="./../img/bin.png" width="17px" height="17px"></a><!--Bildquelle: http://bitly.ws/IDuh-->
 			</c:if>
 			<br>
 </c:forEach>
@@ -71,7 +73,7 @@
     <form action="./../ServletKategorieNeu" method="POST" class="spaceTop">
     	<input type="text" name="neueKategorie" size="50" maxlength="50" placeholder="Neue Kategorie" required> 
     	<br>
-    	<button type="submit" value="neu" name="action">➕ Kategorie ergänzen</button>
+    	<button type="submit" value="neu" name="kategorie">➕ Kategorie ergänzen</button>
     </form>
     	
 	</c:if>

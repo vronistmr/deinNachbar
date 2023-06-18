@@ -4,7 +4,6 @@
 <%@ page errorPage="fehlerausgabe.jsp"%>
 
 <%@ include file="header.jspf"%>
-
 <script type="text/javascript" src="./../js/registrieren.js"></script>
 
 <main>
