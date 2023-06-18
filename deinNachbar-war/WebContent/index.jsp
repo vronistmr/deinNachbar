@@ -23,7 +23,7 @@
 			required placeholder="Passwort">
 		</div>
 		<div class="regbutton">
-		<button type="submit">OK</button>
+		<button type="submit" name="logIn" value="neu">OK</button>
 		</div>
 	</form>
 	<nav>
