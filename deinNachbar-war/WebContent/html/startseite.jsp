@@ -5,11 +5,13 @@
 
 <!-- Lukas -->
 <%@ include file="header.jspf" %>
+<script type="text/javascript" src="./../js/startseite.js"></script>
+
 	<nav class="navStartseite">
 			<!-- Tobi -->
 			<form action="./../SuchServlet" method="post">
 				<input type="text" name="suchstring" size="50" maxlength="50" placeholder="Was suchtst du?">
-				<button name= "submit" type="submit">🔎 Suchen</button>
+				<button name= "suche" value="neu" type="submit">🔎 Suchen</button>
 			</form>
 	</nav>
 		
@@ -63,7 +65,7 @@
 			
 	<c:if test="${sessionScope.loginForm.istAdmin}">
     	<!--  Admin Kategorien bearbeiten  -->
-    <form action="./../ServletKategorieNeu" method="POST" class="spaceTop">
+        <form action="./../ServletKategorieNeu" method="POST" class="spaceTop">
     	<input type="text" name="neueKategorie" size="50" maxlength="50" placeholder="Neue Kategorie" pattern="[A-Z].*" title="Kategorie muss mit einem Großbuchstaben beginnen" required> 
     	<br />
     	<button type="submit" value="neu" name="action">➕ Kategorie ergänzen</button>
