@@ -17,10 +17,10 @@
 			
 			<div id="FormularAufgebenFlex">
 				<article>
-					<input type="text" name="titelAnzeige" size="50" maxlength="200" placeholder="Titel der Anzeige" required class="rahmenRot" title="Gibe einen aussagekräftigen Titel für deine Anzeige ein"> 
+					<input type="text" name="titelAnzeige" size="50" maxlength="200" placeholder="Titel der Anzeige" required class="rahmenRot" title="Gib einen aussagekräftigen Titel für deine Anzeige ein"> 
 					<input type="number" name="preis" max="999" placeholder="Preis in Euro" required class="rahmenRot" title="Gib ein, wie viel du verlangen willst bzw. wie viel du zahlen willst"> <br/>
 					<!-- Zeile: Lukas --><input type="text" name="standort" size="50" maxlength="50" value="${loginForm.standort}" placeholder="Dein Standort" required class="rahmenRot" title="Falls der Ort für deine Anzeige mit deinem Wohnort nicht übereinstimmt, kannst du ihn ändern">
-					<input type="number" name="umkreis" size="50" max="999" placeholder="Umkreis in Kilometer" required class="rahmenRot" title="Gib einen Umkreis an, in welchem du Suchst, bzw. Bietest. Falls fachlich unlogisch, gib 0 ein">
+					<input type="number" name="umkreis" max="999" placeholder="Umkreis in Kilometer" required class="rahmenRot" title="Gib einen Umkreis an, in welchem du Suchst, bzw. Bietest. Falls fachlich unlogisch, gib 0 ein">
 				</article>
 				<article>
 					<select name="preiskategorie" size="1" required class="rahmenRot">

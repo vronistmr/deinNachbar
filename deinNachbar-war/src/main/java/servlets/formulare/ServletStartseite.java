@@ -39,7 +39,7 @@ public class ServletStartseite extends HttpServlet implements Servlet {
 		List<BeanKategorie> kategorien = readKategorien();
 		
 		
-		//Kategorie-Daten in Session, da für Kategorie bearbeiten, Kategorie löschen und Kategorie bei Anzeige anlegen notwendig - 
+		//Kategorie-Daten in Session, da für Kategorie bearbeiten, Kategorie löschen und Kategorie bei Anzeige aufgeben notwendig - 
 		request.setAttribute("suchenAnzeigen", sucheAnzeigen);
  		request.setAttribute("bieteAnzeigen", bieteAnzeigen);
  		HttpSession session = request.getSession();
