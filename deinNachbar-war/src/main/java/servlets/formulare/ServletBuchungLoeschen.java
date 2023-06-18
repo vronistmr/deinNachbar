@@ -10,7 +10,6 @@ import javax.sql.DataSource;
 
 import beans.formulare.BeanBenutzerdaten;
 import jakarta.annotation.Resource;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -31,8 +30,7 @@ public class ServletBuchungLoeschen extends HttpServlet implements Servlet {
 
 		delete(anzeigeID, benutzerID);
 		
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("./ServletMeineGebuchten");
-		dispatcher.forward(request, response);
+		response.sendRedirect("./ServletMeineGebuchten");
 	
 	}
 	

@@ -16,7 +16,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 
 @WebServlet("/ServletKategorieNeu")
@@ -36,8 +35,7 @@ public class ServletKategorieNeu extends HttpServlet implements Servlet {
 		if(kategorieNeuPruefen(beanKategorie.getKategorie())){
 		persist(beanKategorie);
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("KategorieNeu", beanKategorie);
+		
 		response.sendRedirect("./ServletStartseite");
 	}else {
 		response.sendRedirect("html/fehlerausgabe.jsp");

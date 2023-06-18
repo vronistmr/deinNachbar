@@ -14,18 +14,16 @@
 		<!-- Veronika -->
 		<c:forEach var="currentGebuchte" items="${anzeigen}" varStatus="status">
 			<div class="anzeigeBox">
-				<ul>
-					<li>
-					<img src="./../ServletBildAnzeige?anzeigeID=${currentGebuchte.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';"></li><!--onerror: https://bit.ly/3N6GpwJ  --> 
-					<li>${currentGebuchte.anzeigeArt}</li>				
-					<li><h4>${currentGebuchte.titelAnzeige}</h4></li>
-					<li>${currentGebuchte.preis} € ${currentGebuchte.preiskategorie}</li>
-					<li>${currentGebuchte.standort}</li>				
-					<br>
-					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentGebuchte.anzeigeID}" class = "button" style="margin-bottom: 60px;">Zur Anzeige</a></li>
-					<br>
-					<li><a href="./../ServletBuchungLoeschen?anzeigeID=${currentGebuchte.anzeigeID}" class = "button">Buchung löschen</a></li>
-				</ul>
+				<span><img src="./../ServletBildAnzeige?anzeigeID=${currentGebuchte.anzeigeID}" width="300" height="200" onerror="this.src='./../img/logo.jpeg';" alt="Kein Bild vorhanden"></span><br /><!--onerror: https://bit.ly/3N6GpwJ  -->
+					<span>${currentGebuchte.anzeigeArt}</span><br />
+					<h4>${currentGebuchte.titelAnzeige}</h4><br />
+					<span>${currentGebuchte.preis} € 
+					      ${currentGebuchte.preiskategorie}</span><br />
+					<span>${currentGebuchte.standort}</span><br />
+					<br />
+					<span><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentGebuchte.anzeigeID}" class="button">Zur Anzeige</a></span><br />
+					<br />
+					<span><a href="./../ServletBuchungLoeschen?anzeigeID=${currentGebuchte.anzeigeID}" class = "button">Buchung löschen</a></span><br />
 			</div>
 		</c:forEach>
 	</main>

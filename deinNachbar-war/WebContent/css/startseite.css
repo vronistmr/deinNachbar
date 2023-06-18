@@ -31,8 +31,13 @@ Positionierung der Anzeigen und Kategorien -> Flex boxen
     list-style: none;
     line-height: 2.5;
     padding-left: 25px;
+    padding-right: 10px;
   }
   
+ .sidebar a{
+  margin: 3px;
+ } 
+ 
  .tabsSucheBiete {
     list-style: none;
  	padding: 0;

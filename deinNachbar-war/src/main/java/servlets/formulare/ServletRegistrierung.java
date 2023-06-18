@@ -17,7 +17,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/ServletRegistrierung")
 public class ServletRegistrierung extends HttpServlet implements Servlet {
@@ -42,8 +41,7 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 			persist(beanRegistrieren);
 
 			
-			HttpSession session = request.getSession();
-			session.setAttribute("registrierenForm", beanRegistrieren);
+			request.setAttribute("registrierenForm", beanRegistrieren);
 			response.sendRedirect("./index.jsp");
 		}else {
 			response.sendRedirect("html/fehlerausgabe.jsp");

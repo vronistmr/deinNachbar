@@ -6,6 +6,7 @@
 <%@ include file="header.jspf"%>
 
 
+
 <main>
 	<!-- Veronika -->
 	
@@ -14,12 +15,12 @@
 
 		<div id="flexanzeige">
 			<aside>
-					<img src="./../ServletBildAnzeige?anzeigeID=${anzeigeNeu.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';"> <!--onerror: https://bit.ly/3N6GpwJ  -->
+					<img class="imganzeige" src="./../ServletBildAnzeige?anzeigeID=${anzeigeNeu.anzeigeID}" width="300" height="1000" onerror="this.src='./../img/logo.jpeg';" alt="Kein Bild vorhanden"> <!--onerror: https://bit.ly/3N6GpwJ  -->
 			</aside>
 			<article>
 					<h3>${anzeigeNeu.anzeigeArt} </h3>
 					<h1>${anzeigeNeu.titelAnzeige}</h1>
-					<h3>in ${anzeigeNeu.kategorie}</h3>
+					<h3>in Kategorie ${anzeigeNeu.kategorie}</h3>
 			</article>
 			</div>
 			<article>
