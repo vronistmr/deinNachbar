@@ -64,6 +64,8 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 		// Datenbank Zugriff
 		persist(beanAnzeigeAufgeben, foto);
 
+		//Redirect, da Insert in DB
+		//!Redirect braucht immer Session -> Reload der 2. URL -> Daten wären nicht mehr in request Scope
 		HttpSession session = request.getSession();
 		session.setAttribute("anzeigeNeu", beanAnzeigeAufgeben);
 		response.sendRedirect("./html/neueAnzeige.jsp");
@@ -78,7 +80,7 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 				PreparedStatement pstmt = con.prepareStatement(
 						"INSERT INTO anzeige (anzeigeArt,titelAnzeige, preis, preiskategorie, kategorie, standort, umkreis, beschreibung, foto, benutzerID, datum)"
 								+ "VALUES (?,?,?,?,?,?,?,?,?,?,?)",generatedKeys)) {
-			//Benutzer ID aktuell noch Festwert!
+
 			pstmt.setString(1, beanAnzeigeAufgeben.getAnzeigeArt());
 			pstmt.setString(2, beanAnzeigeAufgeben.getTitelAnzeige());
 			pstmt.setInt(3, beanAnzeigeAufgeben.getPreis());

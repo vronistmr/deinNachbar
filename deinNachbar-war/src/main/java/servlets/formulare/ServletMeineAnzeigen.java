@@ -40,10 +40,6 @@ public class ServletMeineAnzeigen extends HttpServlet implements Servlet {
 		//DB-Zugriff
 		List<BeanAnzeige> meineAnzeigen = read(benutzerID);
 		
-		//HttpSession session = request.getSession();
-		//session.setAttribute("anzeigen", meineAnzeigen);
-		//response.sendRedirect("./html/meineAnzeigen.jsp");
-		
 				request.setAttribute("anzeigen", meineAnzeigen);
 
 				final RequestDispatcher dispatcher = request.getRequestDispatcher("./html/meineAnzeigen.jsp");

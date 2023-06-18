@@ -226,7 +226,7 @@
 /*Boxen für die Anzeigen: 
 	Float left, um Fluss Boxen zu erzeugen - graue Umrandung - Breite der Box inkl border - margin: Abstand um die Box - Text zentriert - Schatten -  padding bottom um Abstand zum Link zu haben*/
 	.anzeigeBox {
-	float:left;
+	  float:left;
 	  border: 1px solid #eaeaea;
 	  width: 300px;
 	  margin: 10px;
@@ -240,23 +240,18 @@
 	  /*https://web.dev/aspect-ratio/*/
 	  aspect-ratio: 4/3;
 	  object-fit: cover;
+	  margin-bottom: 10px;
 	}
 	
-	/*padding und margin 0, um padding Regel body zu überschreiben - Listen-Punkt deaktivieren*/
-	.anzeigeBox ul {
-	  list-style: none;
-	  padding: 0;
-	  margin: 0;
-	  
-	}
 	 /*Abstand nach unten zum nächsten Element*/
-	.anzeigeBox li {
-	  margin-bottom: 5px;
+	.anzeigeBox span {
+		line-height: 1.3;
 	}
 	
 	 /*Browser-Standard Margin überschreiben*/
 	.anzeigeBox h4 {
-	  margin: 0;
+	 margin: 0;
+	  line-height: 1.3;
 	  /*http://bitly.ws/Ibzb  - Zeilenumbruch verhindern, mit ... beenden*/
 	  white-space: nowrap;
 	  overflow: hidden;
@@ -267,3 +262,7 @@
 		box-sizing: border-box;
 		margin: 20px;
 	}
+	
+.imganzeige {
+  height: auto;
+}

@@ -12,12 +12,12 @@ import javax.sql.DataSource;
 
 import beans.formulare.BeanAnzeige;
 import jakarta.annotation.Resource;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 
 @WebServlet("/ServletAnzeigeAnzeigen")
@@ -36,18 +36,13 @@ public class ServletAnzeigeAnzeigen extends HttpServlet {
 
 		BeanAnzeige anzeigebean = anzeigen(anzeigeid);
 		
-		//anzeigebean in request-Scope (wegen Such-/Leseoperation) hinterlegen und an anzeigenAnzeigen.jsp dispatchen/weiterleiten:
-		/*
+		//request Scope ausreichend - Bean wird durch DB-Select neu befüllt 
+		//forward ausreichend da nur Lesender Zugriff
 		request.setAttribute("AnzeigeForm", anzeigebean);
 		RequestDispatcher disp = request.getRequestDispatcher("html/anzeigenAnzeigen.jsp");
 		disp.forward(request, response);
-		*/
 		
-		//in Session Scope hinterlegen (zwar Suchoperation, aber Bean muss auch nach dem Request für Übergabe der anzeigid an ServletAnzeigeBuchen 
-		//noch vorhanden sein!:
-		HttpSession session = request.getSession();
-		session.setAttribute("AnzeigeForm", anzeigebean);
-		response.sendRedirect("./html/anzeigenAnzeigen.jsp");
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

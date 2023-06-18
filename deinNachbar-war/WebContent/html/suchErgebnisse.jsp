@@ -12,17 +12,14 @@
 	
 	<c:forEach items="${Anzeigen}" var="gesuchteAnzeige" varStatus="status">
 				<div class="anzeigeBox">
-				<ul>
-					<li>
-					<img src="./../ServletBildAnzeige?anzeigeID=${gesuchteAnzeige.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';" alt="Kein Bild vorhanden"></li> <!--onerror: https://bit.ly/3N6GpwJ  -->
-					<li>${gesuchteAnzeige.anzeigeArt}</li>
-					<li><h4>${gesuchteAnzeige.titelAnzeige}</h4></li>
-					<li>${gesuchteAnzeige.preis} €</li>
-					<li>${gesuchteAnzeige.preiskategorie}</li>
-					<li>${gesuchteAnzeige.standort}</li>
-					<br>
-					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${gesuchteAnzeige.anzeigeID}" class="button">Zur Anzeige</a></li>
-				</ul>
+					<span><img src="./../ServletBildAnzeige?anzeigeID=${gesuchteAnzeige.anzeigeID}" width="300" height="200" onerror="this.src='./../img/logo.jpeg';" alt="Kein Bild vorhanden"></span><br /><!--onerror: https://bit.ly/3N6GpwJ  -->
+					<span>${gesuchteAnzeige.anzeigeArt}</span><br />
+					<h4>${gesuchteAnzeige.titelAnzeige}</h4><br />
+					<span>${gesuchteAnzeige.preis} € 
+					      ${gesuchteAnzeige.preiskategorie}</span><br />
+					<span>${gesuchteAnzeige.standort}</span><br />
+					<br />
+					<span><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${gesuchteAnzeige.anzeigeID}" class="button">Zur Anzeige</a></span><br />
 				</div>
 			</c:forEach>
 			

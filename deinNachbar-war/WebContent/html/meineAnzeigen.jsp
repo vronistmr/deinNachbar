@@ -13,16 +13,14 @@
 	<h1>Meine Anzeigen</h1>
 	<c:forEach var="currentAnzeige" items="${anzeigen}" varStatus="status">
 			<div class="anzeigeBox">
-				<ul>
-					<li>
-					<img src="./../ServletBildAnzeige?anzeigeID=${currentAnzeige.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';" alt="Kein Bild vorhanden"></li><!--onerror: https://bit.ly/3N6GpwJ  --> 
-					<li>${currentAnzeige.anzeigeArt}</li>
-					<li><h4>${currentAnzeige.titelAnzeige}</h4></li>
-					<li>${currentAnzeige.preis} € ${currentAnzeige.preiskategorie}</li>
-					<li>${currentAnzeige.standort}</li>
-					<br>
-					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentAnzeige.anzeigeID}" class = "button">Zur Anzeige</a></li>
-				</ul>
+				<span><img src="./../ServletBildAnzeige?anzeigeID=${currentAnzeige.anzeigeID}" width="300" height="200" onerror="this.src='./../img/logo.jpeg';" alt="Kein Bild vorhanden"></span><br /><!--onerror: https://bit.ly/3N6GpwJ  -->
+					<span>${currentAnzeige.anzeigeArt}</span><br />
+					<h4>${currentAnzeige.titelAnzeige}</h4><br />
+					<span>${currentAnzeige.preis} € 
+					      ${currentAnzeige.preiskategorie}</span><br />
+					<span>${currentAnzeige.standort}</span><br />
+					<br />
+					<span><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentAnzeige.anzeigeID}" class="button">Zur Anzeige</a></span><br />
 			</div>
 	</c:forEach>
 </main>

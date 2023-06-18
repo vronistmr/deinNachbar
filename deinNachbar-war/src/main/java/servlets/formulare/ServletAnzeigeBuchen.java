@@ -16,7 +16,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 
 @WebServlet("/ServletAnzeigeBuchen")
@@ -36,8 +35,9 @@ public class ServletAnzeigeBuchen extends HttpServlet implements Servlet {
 		// DB-Zugriff
 		persist(beanAnzeigeBuchen);
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("buchenForm", beanAnzeigeBuchen);
+		//request scope ausreichend - Daten werden nach Buchen nicht mehr benötigt
+		//redirect, da Insert DB-Zugfriff
+		request.setAttribute("buchenForm", beanAnzeigeBuchen);
 		response.sendRedirect("./ServletMeineGebuchten");
 	}
 	

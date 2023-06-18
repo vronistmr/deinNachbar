@@ -42,7 +42,7 @@
     			<c:when test="${pageContext.request.servletPath == '/index.jsp'}">
     		  <div class="logoheader">
         			 <a href="./index.jsp">
-       				 <img src="./img/logoheader.jpeg" width="150" height="48">
+       				 <img src="./img/logoheader.jpeg" width="150" height="48" alt="Logo deinNachbar">
        				 deinNachbar.de
     				</a>
         	</div>
@@ -50,7 +50,7 @@
     			<c:otherwise>
     			  <div class="logoheader">
         			<a href="./../index.jsp">
-        			<img  src="./../img/logoheader.jpeg" width="150" height="48">
+        			<img  src="./../img/logoheader.jpeg" width="150" height="48" alt="Logo deinNachbar">
         			deinNachbar.de
         			</a>
         		</div>
@@ -61,7 +61,7 @@
 		<c:otherwise>
 		     <div class="logoheader">
 				<a href="./../ServletStartseite">
-				<img  src="./../img/logoheader.jpeg" width="150" height="48">
+				<img  src="./../img/logoheader.jpeg" width="150" height="48" alt="Logo deinNachbar">
 				deinNachbar.de</a>
 			 </div>
 				<div class="navRechts">
