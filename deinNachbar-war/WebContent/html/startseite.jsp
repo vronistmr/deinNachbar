@@ -11,7 +11,7 @@
 			<!-- Tobi -->
 			<form action="./../SuchServlet" method="post">
 				<input type="text" name="suchstring" size="50" maxlength="50" placeholder="Was suchtst du?">
-				<button name= "suche" value="neu" type="submit">🔎 Suchen</button>
+				<button type="submit" name= "suche" value="neu">🔎 Suchen</button>
 			</form>
 	</nav>
 		
@@ -57,8 +57,9 @@
 <c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
 	<span>${currentKategorie.kategorie}</span>
 			<c:if test="${sessionScope.loginForm.istAdmin}">
+
 				<a href="./../ServletKategorieBearbeiten?kategorieID=${currentKategorie.kategorieID}"><img src="./../img/pencil.png" width="17" height="17" alt="Bearbeiten"></a> <!--Bildquelle: http://bitly.ws/IDup-->
-  				<a href="./../ServletKategorieLoeschen?kategorieID=${currentKategorie.kategorieID}&kategorie=${currentKategorie.kategorie}"><img src="./../img/bin.png" width="17" height="17" alt="löschen"></a><!--Bildquelle: http://bitly.ws/IDuh-->
+  				<a href="./../ServletKategorieLoeschen?kategorieID=${currentKategorie.kategorieID}&kategorie=${currentKategorie.kategorie}" class="loeschLink"><img src="./../img/bin.png" width="17" height="17" alt="löschen"></a><!--Bildquelle: http://bitly.ws/IDuh-->
 			</c:if>
 			<br />
 </c:forEach>
