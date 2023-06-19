@@ -126,7 +126,24 @@
 	   color: #333;
 	   font-size: 13px;
 	}
-
+	
+	.loeschButton {
+	  padding: 8px 13px;
+	  margin-right: 10px;
+	  text-align: center;
+	  text-decoration: none;
+	  border-radius: 15px;
+	  background-color: #3498db;
+	  border: none;
+	  color: #333;
+	  font-size: 13px;
+	}
+	
+	.loeschButton:hover {
+	  background-color: #005fa3;
+	   color: #333;
+	   font-size: 13px;
+	}
 
 /*Footer*/
 	footer {

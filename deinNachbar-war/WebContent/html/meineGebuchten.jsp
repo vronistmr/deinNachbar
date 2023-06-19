@@ -6,6 +6,7 @@
 
 <!-- Lukas -->
 <%@ include file="header.jspf" %> 
+<script type="text/javascript" src="./../js/meineGebuchten.js"></script>
 
 <div class="startseiteFlex">
 
@@ -21,10 +22,10 @@
 					<li><h4>${currentGebuchte.titelAnzeige}</h4></li>
 					<li>${currentGebuchte.preis} € ${currentGebuchte.preiskategorie}</li>
 					<li>${currentGebuchte.standort}</li>				
+					<brs>
+					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentGebuchte.anzeigeID}" class = "button">Zur Anzeige</a></li>
 					<br>
-					<li><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentGebuchte.anzeigeID}" class = "button" style="margin-bottom: 60px;">Zur Anzeige</a></li>
-					<br>
-					<li><a href="./../ServletBuchungLoeschen?anzeigeID=${currentGebuchte.anzeigeID}" class = "button">Buchung löschen</a></li>
+					<li><a href="./../ServletBuchungLoeschen?anzeigeID=${currentGebuchte.anzeigeID}" class = "loeschButton" id="loeschBuchung">Buchung löschen</a></li>
 				</ul>
 			</div>
 		</c:forEach>

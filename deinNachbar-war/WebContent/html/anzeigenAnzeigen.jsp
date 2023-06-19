@@ -4,7 +4,7 @@
 <%@ page errorPage="fehlerausgabe.jsp"%>
 
 <%@ include file="header.jspf"%>
-
+<script type="text/javascript" src="./../js/anzeigeAnzeigen.js"></script>
 
 <main>
 	<!-- Tobi -->	
@@ -42,11 +42,11 @@
 		</c:if>
 		
 		<c:if test="${AnzeigeForm.benutzerID == loginForm.benutzerID}">
-			<a href="./../ServletAnzeigeLoeschen?id=${AnzeigeForm.anzeigeID}" class = "button">Löschen</a>
+			<a href="./../ServletAnzeigeLoeschen?id=${AnzeigeForm.anzeigeID}" class = "loeschButton">Löschen</a>
 		</c:if>
 	<!-- Veronika -->
 		<c:if test="${AnzeigeForm.benutzerID != loginForm.benutzerID && loginForm.istAdmin}">
-			<a href="./../ServletAnzeigeLoeschen?id=${AnzeigeForm.anzeigeID}" class = "button">Anzeige von ${AnzeigeForm.vorname} löschen</a>
+			<a href="./../ServletAnzeigeLoeschen?id=${AnzeigeForm.anzeigeID}" class = "loeschButton">Anzeige von ${AnzeigeForm.vorname} löschen</a>
 		</c:if>
 	<!-- Lukas -->
 	</div>
