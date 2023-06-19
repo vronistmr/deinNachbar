@@ -14,12 +14,12 @@ import javax.sql.DataSource;
 
 import beans.formulare.BeanAnzeige;
 import jakarta.annotation.Resource;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 
 @WebServlet("/SuchServlet")
@@ -39,17 +39,11 @@ public class SuchServlet extends HttpServlet {
 		
 		List<BeanAnzeige> anzeigen = search(suchString);
 		
-		// Anzeigen-Liste in Request Scope (wegen Such-/Leseoperation)hinterlegen:
-		/*
+		
 		request.setAttribute("Anzeigen", anzeigen);
 		RequestDispatcher disp = request.getRequestDispatcher("html/suchErgebnisse.jsp");
 		disp.forward(request, response);
-		*/
-		//in Session Scope hinterlegen (zwar Suchoperation, aber Bean muss auch nach dem Request für Übergabe der anzeigid an ServletAnzeigeAnzeigen 
-		//und zur Ausgabe an anzeigenAnzeigen.jsp vorhanden sein!:
-		HttpSession session = request.getSession();
-		session.setAttribute("Anzeigen", anzeigen);
-		response.sendRedirect("html/suchErgebnisse.jsp");
+		
 		
 	}
 

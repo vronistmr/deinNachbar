@@ -10,7 +10,7 @@
 	<!-- Tobi -->	
 		<div id="flexanzeige">
 			<aside>
-					<img src="./../ServletBildAnzeige?anzeigeID=${AnzeigeForm.anzeigeID}" width="300" height="auto" onerror="this.src='./../img/logo.jpeg';" alt="Kein Bild vorhanden"> <!--onerror: https://bit.ly/3N6GpwJ  -->
+					<img class="imganzeige" src="./../ServletBildAnzeige?anzeigeID=${AnzeigeForm.anzeigeID}" width="400" height="1000" onerror="this.src='./../img/logo.jpeg';" alt="Kein Bild vorhanden"> <!--onerror: https://bit.ly/3N6GpwJ  -->
 			</aside>
 			<article>
 					<h3>${AnzeigeForm.anzeigeArt} </h3>

@@ -12,6 +12,7 @@ import javax.sql.DataSource;
 import beans.formulare.BeanBenutzerdaten;
 import beans.formulare.BeanLogindaten;
 import jakarta.annotation.Resource;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -43,7 +44,8 @@ public class ServletIndex extends HttpServlet implements Servlet {
 			//Erfolgreicher Login
 			HttpSession session = request.getSession();
 		    session.setAttribute("loginForm", benutzer);
-		    response.sendRedirect("./ServletStartseite");
+		    RequestDispatcher disp = request.getRequestDispatcher("./ServletStartseite");
+			disp.forward(request, response);
 		} else {
 			//Login fehlgeschlagen: mit Java Script Meldung anzeigen
 			response.sendRedirect("html/fehlerausgabe.jsp");
