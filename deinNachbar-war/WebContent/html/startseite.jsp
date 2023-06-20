@@ -58,7 +58,7 @@
 	<span>${currentKategorie.kategorie}</span>
 			<c:if test="${sessionScope.loginForm.istAdmin}">
 
-				<a href="./../ServletKategorieBearbeiten?kategorieID=${currentKategorie.kategorieID}"><img src="./../img/pencil.png" width="17" height="17" alt="Bearbeiten"></a> <!--Bildquelle: http://bitly.ws/IDup-->
+				<a href="./../ServletKategorieBearbeiten?kategorieID=${currentKategorie.kategorieID}"><img src="./../img/pencil.png" width="17" height="17" alt="bearbeiten"></a> <!--Bildquelle: http://bitly.ws/IDup-->
   				<a href="./../ServletKategorieLoeschen?kategorieID=${currentKategorie.kategorieID}&kategorie=${currentKategorie.kategorie}" class="loeschLink"><img src="./../img/bin.png" width="17" height="17" alt="löschen"></a><!--Bildquelle: http://bitly.ws/IDuh-->
 			</c:if>
 			<br />
