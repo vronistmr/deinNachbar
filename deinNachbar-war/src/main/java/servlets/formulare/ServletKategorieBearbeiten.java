@@ -25,7 +25,7 @@ public class ServletKategorieBearbeiten extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		int kategorieID = Integer.parseInt(request.getParameter("kategorieID"));
-		String eingabe = " ";
+		String eingabe = request.getParameter("neuerName");
 		
 		update(kategorieID, eingabe);
 		
@@ -39,6 +39,19 @@ public class ServletKategorieBearbeiten extends HttpServlet {
 	}
 	
 	private void update(int kategorieID, String NeueKategorie) throws ServletException{
+		//in Anzeigen-Tabelle neuen Namen hinterlegen 
+		try(Connection con = ds.getConnection();
+				PreparedStatement pstmt = con.prepareStatement("UPDATE anzeige SET anzeige.kategorie = ? WHERE anzeige.kategorie = (SELECT kategorie.kategorie FROM kategorie WHERE kategorie.kategorieID = ?)")){
+			
+				pstmt.setString(1, NeueKategorie);
+				pstmt.setInt(2, kategorieID);
+				pstmt.executeUpdate();
+				
+		} catch (Exception ex) {
+			throw new ServletException(ex.getMessage());
+		}
+		
+		// in Kategorie-Tabelle neuen Namen hinterlegen 
 		try(Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("UPDATE kategorie SET kategorie = ? WHERE kategorieID = ?")){
 			
@@ -49,5 +62,6 @@ public class ServletKategorieBearbeiten extends HttpServlet {
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
+		
 	}
 }

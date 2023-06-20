@@ -32,7 +32,9 @@
 				<p class="blocksatz">
 				<span class="fett">${AnzeigeForm.standort} und im Umkreis von ${AnzeigeForm.umkreis} Kilometern</span> </p> <br>
 				<p class="blocksatz">
-				Anzeige veröffentlicht von <span class="fett">${AnzeigeForm.vorname}</span> </p>
+				Anzeige veröffentlicht von <span class="fett">${AnzeigeForm.vorname}</span><br /> 
+				E-Mail des Inserenten: ${AnzeigeForm.email}
+				</p>
 			</article>
 		
 	<!-- Lukas -->
