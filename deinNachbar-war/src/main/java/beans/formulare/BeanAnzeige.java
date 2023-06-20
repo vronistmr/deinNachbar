@@ -19,6 +19,7 @@ public class BeanAnzeige implements Serializable{
 	private int umkreis;
 	private String beschreibung;
 	private int benutzerID;
+	private String email;
 	private String vorname;
 	private Date datum;
 	private Time zeit;
@@ -103,10 +104,19 @@ public class BeanAnzeige implements Serializable{
 	public int getBenutzerID() {
 		return benutzerID;
 	}
-
+	
 	public void setBenutzerID(int benutzerID) {
 		this.benutzerID = benutzerID;
 	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
 	
 	public String getVorname() {
 		return vorname;

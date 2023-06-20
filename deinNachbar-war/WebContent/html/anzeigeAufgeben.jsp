@@ -43,7 +43,7 @@
 					<textarea name="beschreibung" maxlength="1000" placeholder="Beschreibung deiner Anzeige..." title="Gib eine aussagekräftige Beschreibung für deine Anzeige an"></textarea>
 				</article>
 				<article title="Lade ein Bild hoch, um dich von anderen Anzeigen abzuheben">
-					<p>Füge ein Bild hinzu, um deine Reichweite zu erhöhen:</p>
+					<p>Füge ein Bild hinzu, um deine Anzeige für Andere interessanter wirken zu lassen:</p>
 					<input type="file" id="foto" name="foto" accept="image/*" class="buttonWeiss"> 
 				</article>
 			</div>

@@ -18,7 +18,6 @@
 		<!-- Veronika -->
 		
 <div class="startseiteFlex">
-		<!-- Veronika -->
 		<main class="mainStartseite">
 				<ul class="tabsSucheBiete">
 					<!-- Navigation zu IDs - ausblenden der anderen Liste mit JavaScript -->
@@ -57,9 +56,16 @@
 <c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
 	<span>${currentKategorie.kategorie}</span>
 			<c:if test="${sessionScope.loginForm.istAdmin}">
-
-				<a href="./../ServletKategorieBearbeiten?kategorieID=${currentKategorie.kategorieID}"><img src="./../img/pencil.png" width="17" height="17" alt="bearbeiten"></a> <!--Bildquelle: http://bitly.ws/IDup-->
+  				<a class="bearbeitungsLink"><img src="./../img/pencil.png" width="17" height="17" alt="bearbeiten"></a> <!--Bildquelle: http://bitly.ws/IDup-->
   				<a href="./../ServletKategorieLoeschen?kategorieID=${currentKategorie.kategorieID}&kategorie=${currentKategorie.kategorie}" class="loeschLink"><img src="./../img/bin.png" width="17" height="17" alt="löschen"></a><!--Bildquelle: http://bitly.ws/IDuh-->
+				
+<!-- Lukas -->
+				<form action="./../ServletKategorieBearbeiten?kategorieID=${currentKategorie.kategorieID}" method="POST" class="hide">
+	    			<input type="text" name="neuerName" size="50" maxlength="50" placeholder="Neuer Name" pattern="[A-Z].*" title="Kategorie muss mit einem Großbuchstaben beginnen" required> 
+	    			<br />
+	    			<button type="submit" value="neu" name="bearbeiten">🖊️ Kategorie umbenennen</button>
+	    		</form><br />
+ <!-- Veronika -->
 			</c:if>
 			<br />
 </c:forEach>
@@ -69,7 +75,7 @@
         <form action="./../ServletKategorieNeu" method="POST" class="spaceTop">
     	<input type="text" name="neueKategorie" size="50" maxlength="50" placeholder="Neue Kategorie" pattern="[A-Z].*" title="Kategorie muss mit einem Großbuchstaben beginnen" required> 
     	<br />
-    	<button type="submit" value="neu" name="action">➕ Kategorie ergänzen</button>
+    	<button type="submit" value="neu" name="hinzufuegen">➕ Kategorie ergänzen</button>
     </form>
     	
 	</c:if>

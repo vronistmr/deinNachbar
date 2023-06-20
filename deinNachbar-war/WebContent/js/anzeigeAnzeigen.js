@@ -12,7 +12,7 @@ function init(){
 }
 
 function warnung(evt){
-	var really = confirm("⚠️ Möchtest du diese Anzeige wirklich löschen?");
+	var really = confirm("⚠️ Möchtest du diese Anzeige wirklich endgültig löschen?");
 	if(!really){
 		evt.preventDefault();
 	}

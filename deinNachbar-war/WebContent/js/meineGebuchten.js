@@ -12,7 +12,7 @@ function init(){
 }
 
 function warnung(evt){
-	var really = confirm("⚠️ Möchtest du diese Buchung wirklich löschen?");
+	var really = confirm("⚠️ Möchtest du deine Buchung wirklich endgültig löschen?");
 	if(!really){
 		evt.preventDefault();
 	}
