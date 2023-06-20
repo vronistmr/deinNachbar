@@ -57,7 +57,7 @@ public class ServletAnzeigeAnzeigen extends HttpServlet {
 		// DB-Zugriff
 
 		try (Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("SELECT anzeige.*, benutzer.vorname FROM anzeige JOIN benutzer ON anzeige.benutzerID = benutzer.benutzerID WHERE anzeigeID = ?")) {
+				PreparedStatement pstmt = con.prepareStatement("SELECT anzeige.*, benutzer.vorname, benutzer.email FROM anzeige JOIN benutzer ON anzeige.benutzerID = benutzer.benutzerID WHERE anzeigeID = ?")) {
 
 			pstmt.setInt(1, anzeigeid);
 			try (ResultSet rs = pstmt.executeQuery()) {
@@ -73,6 +73,9 @@ public class ServletAnzeigeAnzeigen extends HttpServlet {
 
 					Integer benutzerID = Integer.valueOf(rs.getInt("benutzerID"));
 					anzeige.setBenutzerID(benutzerID);
+					
+					String email = rs.getString("email");
+					anzeige.setEmail(email);
 
 					String beschreibung = rs.getString("beschreibung");
 					anzeige.setBeschreibung(beschreibung);
