@@ -43,7 +43,7 @@ public class ServletAnzeigeLoeschen extends HttpServlet {
 			throw new ServletException(ex.getMessage());
 		}
 		try (Connection con = ds.getConnection();
-				 PreparedStatement pstmt = con.prepareStatement("DELETE FROM gebuchte WHERE anzeigeID = ?")){
+				PreparedStatement pstmt = con.prepareStatement("DELETE FROM gebuchte WHERE anzeigeID = ?")){
 				pstmt.setInt(1, id);
 				pstmt.executeUpdate();
 			} catch (Exception ex) {
