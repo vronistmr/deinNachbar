@@ -45,7 +45,7 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 
 		beanAnzeigeAufgeben.setAnzeigeArt(request.getParameter("anzeigeArt"));
 		beanAnzeigeAufgeben.setTitelAnzeige(request.getParameter("titelAnzeige"));
-		beanAnzeigeAufgeben.setPreis(Integer.valueOf(request.getParameter("preis")));
+		beanAnzeigeAufgeben.setPreis(Integer.parseInt(request.getParameter("preis")));
 		beanAnzeigeAufgeben.setPreiskategorie(request.getParameter("preiskategorie"));
 		beanAnzeigeAufgeben.setKategorie(request.getParameter("kategorie"));
 		beanAnzeigeAufgeben.setStandort(request.getParameter("standort"));

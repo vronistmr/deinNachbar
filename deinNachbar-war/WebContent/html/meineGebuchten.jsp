@@ -18,8 +18,13 @@
 				<span><img src="./../ServletBildAnzeige?anzeigeID=${currentGebuchte.anzeigeID}" width="300" height="200" onerror="this.src='./../img/logo.jpeg';" alt="Kein Bild vorhanden"></span><br /><!--onerror: https://bit.ly/3N6GpwJ  -->
 					<span>${currentGebuchte.anzeigeArt}</span><br />
 					<h4>${currentGebuchte.titelAnzeige}</h4><br />
-					<span>${currentGebuchte.preis} € 
-					      ${currentGebuchte.preiskategorie}</span><br />
+					<c:if test="${currentGebuchte.preiskategorie == 'Gratis'}">
+							<span>Zu Verschenken</span><br />
+					 </c:if>
+					<c:if test="${currentGebuchte.preiskategorie != 'Gratis'}">
+							<span>${currentGebuchte.preis} € 
+								  ${currentGebuchte.preiskategorie}</span><br />
+					</c:if>
 					<span>${currentGebuchte.standort}</span><br />
 					<br />
 					<span><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentGebuchte.anzeigeID}" class="button">Zur Anzeige</a></span><br />

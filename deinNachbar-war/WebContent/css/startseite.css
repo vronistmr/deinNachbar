@@ -27,11 +27,18 @@ Positionierung der Anzeigen und Kategorien -> Flex boxen
   border-radius: 10px;
   }
   
-  .sidebar span {
-    list-style: none;
+  .kategorieButton {
+  	background-color: transparent;
     line-height: 2.5;
     padding-left: 25px;
     padding-right: 10px;
+    font-size: 15px;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .kategorieButton:hover {
+  	background-color: #ebebeb;
   }
   
  .sidebar a{
@@ -44,20 +51,34 @@ Positionierung der Anzeigen und Kategorien -> Flex boxen
  	padding-right: 40px;
  }
 
-/*Umrandung für Suche/Biete Filter - inline block - damit die beiden <li> nebeneinander stehen */
-.tabsSucheBiete li {
+/*Filter Formatierung - ausgewählter Filter wird durch JS der anderen Klasse zugewiesen */
+.inaktiverFilterButton {
   background-color: #f5f5f5;
+  color: black;
   padding: 10px;
+  width: 200px;
   border-radius: 10px;
-  /*http://bitly.ws/I33H*/
- display: inline-block;
+  font-size: 15px;
  }
 
-.tabsSucheBiete a {
-  text-decoration: none;
+.aktiverFilterButton {
+  background-color: #3498db;
   color: black;
+  padding: 10px;
+  width: 200px;
+  border-radius: 10px;
+  font-size: 15px;
 }
 
-.tabsSucheBiete a:hover {
-  text-decoration: none;
-} 
+.kategorieAktiv{
+	  background-color: #ebebeb;
+}
+
+
+/*Für Filter: nur SucheAnzeigen einblenden*/
+.ausgeblendet {
+	display: none;
+}
+.eingeblendet  {
+	display: block
+}
