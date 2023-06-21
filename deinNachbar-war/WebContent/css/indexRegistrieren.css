@@ -21,17 +21,17 @@
 
 /*optische Spielereien:*/
 input[type="email"]:valid + span::after{
-	color: rgb(73, 182, 117);
+	color: rgba(73,182,117,0.6);
 	content:" ✔";
 }
 
 input[type="password"]:valid + span::after{
-	color: rgb(73, 182, 117);
+	color: rgba(73,182,117,0.6);
 	content:" ✔";
 }
 
 input[type="text"]:valid + span::after{
-	color: rgb(73, 182, 117);
+	color: rgba(73,182,117,0.6);
 	content:" ✔";
 }
 

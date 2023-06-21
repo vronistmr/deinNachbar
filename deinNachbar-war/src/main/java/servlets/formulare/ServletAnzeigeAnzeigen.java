@@ -11,6 +11,7 @@ import java.sql.Timestamp;
 import javax.sql.DataSource;
 
 import beans.formulare.BeanAnzeige;
+import beans.formulare.BeanBenutzerdaten;
 import jakarta.annotation.Resource;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -26,7 +27,8 @@ public class ServletAnzeigeAnzeigen extends HttpServlet {
 
 	@Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
-
+	private int benutzerID;
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -35,6 +37,8 @@ public class ServletAnzeigeAnzeigen extends HttpServlet {
 		int anzeigeid = Integer.parseInt(request.getParameter("anzeigeid"));
 
 		BeanAnzeige anzeigebean = anzeigen(anzeigeid);
+		
+		benutzerID = Integer.valueOf(((BeanBenutzerdaten) request.getSession().getAttribute("loginForm")).getBenutzerID());
 		
 		//request Scope ausreichend - Bean wird durch DB-Select neu befüllt 
 		//forward ausreichend da nur Lesender Zugriff
@@ -114,6 +118,31 @@ public class ServletAnzeigeAnzeigen extends HttpServlet {
 			}
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
+		}
+		
+		//Lukas
+		//prüfen, ob gebucht
+		try (Connection con = ds.getConnection();
+				PreparedStatement pstmt = con.prepareStatement("SELECT COUNT(*) FROM gebuchte WHERE benutzerID = ? AND anzeigeID = ?")){
+				pstmt.setInt(1, benutzerID);
+				pstmt.setInt(2, anzeigeid);
+				
+				try (ResultSet rs = pstmt.executeQuery()) {
+		            if (rs.next()) {
+		                int count = rs.getInt(1);
+		                boolean entryExists = count > 0;
+	
+		                if (entryExists) {
+		                    boolean gebucht = true;
+		                    anzeige.setGebucht(gebucht);
+		                } else {
+		                	boolean gebucht = false;
+		                    anzeige.setGebucht(gebucht);
+		                }
+		            }
+				}
+		} catch (Exception ex) {
+		throw new ServletException(ex.getMessage());
 		}
 		return anzeige;
 	}
