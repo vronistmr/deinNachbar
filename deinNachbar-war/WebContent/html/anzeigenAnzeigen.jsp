@@ -32,12 +32,7 @@
 				<p class="blocksatz">
 				<span class="fett">${AnzeigeForm.standort} und im Umkreis von ${AnzeigeForm.umkreis} Kilometern</span> </p> <br>
 				<p class="blocksatz">
-				Anzeige veröffentlicht von <span class="fett">${AnzeigeForm.vorname}</span><br /><br /> 
-	<!-- Lukas -->			
-				<c:if test="${AnzeigeForm.benutzerID != loginForm.benutzerID}">
-					<a href= "mailto:${AnzeigeForm.email}?subject=deinNachbar.de: ${AnzeigeForm.titelAnzeige}&body=Guten Tag ${AnzeigeForm.vorname}," title="hierzu muss ein E-Mail-Programm installiert sein" class="button"><img src="./../img/mail.png" width="17" height="13" alt="mail"> Nachricht an Inserenten</a><!-- quelle:https://www.tutorialspoint.com/de/html/html_email_links.htm#:~:text=HTML%20Email%20Tag,Adresse%20zusammen%20mit%20href%20attribute. -->
-				</c:if>
-				
+				Anzeige veröffentlicht von <span class="fett">${AnzeigeForm.vorname}</span><br /><br /> 		
 				</p>
 			</article>
 		
@@ -46,7 +41,9 @@
 		<c:if test="${AnzeigeForm.benutzerID != loginForm.benutzerID}">
 			<a href="./../ServletAnzeigeBuchen?id=${AnzeigeForm.anzeigeID}" class = "button">Buchen</a>
 		</c:if>
-		
+		<c:if test="${AnzeigeForm.benutzerID != loginForm.benutzerID}">
+					<a href= "mailto:${AnzeigeForm.email}?subject=deinNachbar.de: ${AnzeigeForm.titelAnzeige}&body=Guten Tag ${AnzeigeForm.vorname}," title="hierzu muss ein E-Mail-Programm installiert sein" class="button"><img src="./../img/mail.png" width="17" height="13" alt="mail"> Nachricht an Inserenten</a><!-- quelle:https://www.tutorialspoint.com/de/html/html_email_links.htm#:~:text=HTML%20Email%20Tag,Adresse%20zusammen%20mit%20href%20attribute. -->
+		</c:if>
 		<c:if test="${AnzeigeForm.benutzerID == loginForm.benutzerID}">
 			<a href="./../ServletAnzeigeLoeschen?id=${AnzeigeForm.anzeigeID}" class = "loeschButton">Löschen</a>
 		</c:if>
