@@ -51,7 +51,7 @@ request.setCharacterEncoding("UTF-8");
 		try (Connection con = ds.getConnection();
 				 PreparedStatement pstmt = con.prepareStatement("SELECT DISTINCT * FROM anzeige JOIN gebuchte ON anzeige.anzeigeID=gebuchte.anzeigeID WHERE gebuchte.benutzerID = ?;")) {
 
-				pstmt.setInt(1, benutzerID);;
+				pstmt.setInt(1, benutzerID);
 				try (ResultSet rs = pstmt.executeQuery()) {
 					
 					while (rs != null && rs.next()) {
