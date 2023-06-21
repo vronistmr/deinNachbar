@@ -25,8 +25,13 @@
 			</div>
 			<article>
 				<div class="preis">
-					${anzeigeNeu.preis}€
-					${anzeigeNeu.preiskategorie}
+				<c:if test="${anzeigeNeu.preiskategorie == 'Gratis'}">
+					<span>Zu Verschenken</span><br />
+					 </c:if>
+				<c:if test="${anzeigeNeu.preiskategorie != 'Gratis'}">
+					<span>${anzeigeNeu.preis} € 
+					${anzeigeNeu.preiskategorie}</span><br />
+				</c:if>
 				</div>
 				<br>
 				<p class="blocksatz">
