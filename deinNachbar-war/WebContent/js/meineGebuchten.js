@@ -1,10 +1,10 @@
 //Lukas
-"use strict"
+"use strict";
 
 document.addEventListener("DOMContentLoaded", init);
     
 function init(){
-	var loeschButton = document.getElementsByClassName("loeschButton");
+	var loeschButton = document.getElementsByClassName("buchungLoeschen");
 	
 	for (var i=0; i<loeschButton.length; i++){
 		loeschButton[i].addEventListener("click",warnung)
@@ -12,7 +12,7 @@ function init(){
 }
 
 function warnung(evt){
-	var really = confirm("⚠️ Möchtest du wirklich löschen?");
+	var really = confirm("⚠️ Möchtest du deine Buchung wirklich endgültig löschen?");
 	if(!really){
 		evt.preventDefault();
 	}

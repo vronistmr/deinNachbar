@@ -29,7 +29,7 @@
 					<br />
 					<span><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${currentGebuchte.anzeigeID}" class="button">Zur Anzeige</a></span><br />
 					<br />
-					<span><a href="./../ServletBuchungLoeschen?anzeigeID=${currentGebuchte.anzeigeID}" class = "loeschButton">Buchung löschen</a></span><br />
+					<span><a href="./../ServletBuchungLoeschen?anzeigeID=${currentGebuchte.anzeigeID}" class = "button buchungLoeschen">Buchung löschen</a></span><br />
 			</div>
 		</c:forEach>
 	</main>
