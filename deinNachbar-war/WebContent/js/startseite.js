@@ -1,5 +1,5 @@
 //Lukas
-"use strict"
+"use strict";
 
 document.addEventListener("DOMContentLoaded", init);
 

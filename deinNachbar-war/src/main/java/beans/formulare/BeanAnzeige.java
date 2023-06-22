@@ -166,5 +166,4 @@ public class BeanAnzeige implements Serializable{
 	public void setDatetime(Timestamp datetime) {
 		this.datetime = datetime;
 	}
-
 }
