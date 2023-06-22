@@ -4,8 +4,8 @@
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-  var form = document.getElementById("registrierenForm");
-  form.addEventListener("submit", checkPasswordMatch);
+  var form = document.getElementById("passwortwdh");
+  form.addEventListener("change", checkPasswordMatch);
 }
 
 function checkPasswordMatch(event) {
@@ -15,7 +15,6 @@ function checkPasswordMatch(event) {
   var fehlerMessage = document.getElementById("fehlerText");
 
   if (password !== confirmPassword) {
-    
     event.preventDefault(); // Verhindert das Absenden des Formulars (Standardverhalten)
     fehlerMessage.innerHTML = "Die Passwörter stimmen nicht überein!";
   } else {
