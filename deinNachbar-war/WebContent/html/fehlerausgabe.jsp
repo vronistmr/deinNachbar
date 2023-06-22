@@ -10,6 +10,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="./../css/basis.css">
+		<link rel="stylesheet" href="./css/basis.css">
 		<title>Fehlerseite</title>
 	</head>
 
