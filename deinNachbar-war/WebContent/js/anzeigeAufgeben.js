@@ -9,10 +9,17 @@ function init() {
 }
 
 	
+	
+	
+	
 function zuVerschenken() {
+	let preisfeld = document.getElementById("preis");
 	if (document.getElementById("preiskategorie").value === "Gratis") {
-        document.getElementById("preis").outerHTML = '<input type="number" name="preis" id="preis" value="0" readonly>';
+         preisfeld.value = "0";
+         preisfeld.readOnly = true;
 	}else{
-		document.getElementById("preis").outerHTML = '<input type="number" name="preis" id="preis" max="999" placeholder="Preis in Euro" required class="rahmenRot" title="Gib ein, wie viel du verlangen willst bzw. wie viel du zahlen willst">';
+		preisfeld.readOnly = false;
+		preisfeld.removeAttribute("value");
+
 	}
 }

@@ -69,35 +69,43 @@
 	</main>
 	<aside class="sidebar">
 			<h2>Kategorien</h2>
+<!-- Sidebar für normalen Benutzer/nichtAdmin -->
+<c:if test="${not sessionScope.loginForm.istAdmin}">
 		<button type="button" class="kategorieButton kategorieAktiv" id="alleKategorien">Alle Kategorien</button>
 <c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
 	<button type="button" class="kategorieButton">${currentKategorie.kategorie}</button>
-			<c:if test="${sessionScope.loginForm.istAdmin}">
-  				<a class="bearbeitungsLink"><img src="./../img/pencil.png" width="17" height="17" alt="bearbeiten"></a> <!--Bildquelle: http://bitly.ws/IDup-->
-  				<a href="./../ServletKategorieLoeschen?kategorieID=${currentKategorie.kategorieID}&kategorie=${currentKategorie.kategorie}" class="loeschLink"><img src="./../img/bin.png" width="17" height="17" alt="löschen"></a><!--Bildquelle: http://bitly.ws/IDuh-->
-				
-<!-- Lukas -->
-				<form action="./../ServletKategorieBearbeiten?kategorieID=${currentKategorie.kategorieID}" method="POST" class="hide">
-	    			<input type="text" name="neuerName" size="50" maxlength="50" placeholder="Neuer Name" pattern="[A-Z].*" title="Kategorie muss mit einem Großbuchstaben beginnen" required> 
-	    			<br />
-	    			<button type="submit" value="neu" name="bearbeiten">🖊️ Kategorie umbenennen</button>
-	    		</form><br />
- <!-- Veronika -->
-			</c:if>
 			<br />
 </c:forEach>
-			
-	<c:if test="${sessionScope.loginForm.istAdmin}">
-    	<!--  Admin Kategorien bearbeiten  -->
-        <form action="./../ServletKategorieNeu" method="POST" class="spaceTop">
+</c:if>
+
+<!-- Sidebar für Admin -->
+<c:if test="${sessionScope.loginForm.istAdmin}">
+	<button type="button" class="kategorieButton kategorieAktiv kategorieButtonWidthAdmin" id="alleKategorien">Alle Kategorien</button>
+	<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
+		<button type="button" class="kategorieButton kategorieButtonWidthAdmin">${currentKategorie.kategorie}</button>
+  		<a href="./../ServletKategorieLoeschen?kategorieID=${currentKategorie.kategorieID}&kategorie=${currentKategorie.kategorie}" class="loeschLink"><img src="./../img/bin.png" width="17" height="17" alt="löschen"></a><!--Bildquelle: http://bitly.ws/IDuh-->
+  		<img src="./../img/pencil.png" width="17" height="17" alt="bearbeiten" class="kategorieBearbeiten"> <!--Bildquelle: http://bitly.ws/IDup-->
+<!-- Lukas -->
+		<form action="./../ServletKategorieBearbeiten?kategorieID=${currentKategorie.kategorieID}" method="POST" class="ausgeblendet bearbeitenForm">
+	    	<input type="text" name="neuerName" size="50" maxlength="50" placeholder="Neuer Name" pattern="[A-Z].*" title="Kategorie muss mit einem Großbuchstaben beginnen" required> 
+	    	<br />
+	    	<button type="submit" value="neu" name="bearbeiten">🖊️ Kategorie umbenennen</button>
+	    </form>
+ <!-- Veronika -->
+		<br />
+	</c:forEach>
+</c:if>
+		
+<!--  Admin Kategorien ergänzen  -->		
+<c:if test="${sessionScope.loginForm.istAdmin}">
+	<form action="./../ServletKategorieNeu" method="POST" class="spaceTop">
     	<input type="text" name="neueKategorie" size="50" maxlength="50" placeholder="Neue Kategorie" pattern="[A-Z].*" title="Kategorie muss mit einem Großbuchstaben beginnen" required> 
     	<br />
     	<button type="submit" value="neu" name="hinzufuegen">➕ Kategorie ergänzen</button>
     </form>
-    	
-	</c:if>
+</c:if>
 
-		</aside>
+</aside>
 </div>
 
 
