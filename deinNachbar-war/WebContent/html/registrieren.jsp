@@ -32,7 +32,7 @@
 		</div>
 		<div class="spaceReg">
 		<input type="password" id="passwortwdh"
-			name="passwortwdh" size="30" maxlength="255" required placeholder="Passwort wiederholen"
+			name="passwortwdh" size="30" maxlength="255" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required placeholder="Passwort wiederholen"
 			title="Wiederhole bitte das zuvor eingegebene Passwort"><span></span>
 		</div>
 		<div class="spaceReg">
