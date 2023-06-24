@@ -20,6 +20,7 @@
 			<article>
 					<h3>${anzeigeNeu.anzeigeArt} </h3>
 					<h1>${anzeigeNeu.titelAnzeige}</h1>
+					<br />
 					<h3>in Kategorie ${anzeigeNeu.kategorie}</h3>
 			</article>
 			</div>

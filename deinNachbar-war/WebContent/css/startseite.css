@@ -27,7 +27,7 @@ Positionierung der Anzeigen und Kategorien -> Flex boxen
   border-radius: 10px;
   }
   
-  .kategorieButton {
+   .kategorieButton {
   	background-color: transparent;
     line-height: 2.5;
     padding-left: 25px;
@@ -37,9 +37,15 @@ Positionierung der Anzeigen und Kategorien -> Flex boxen
     text-align: left;
   }
   
+  
+ .kategorieButtonWidthAdmin{
+     width: 80%;
+ }
+  
   .kategorieButton:hover {
   	background-color: #ebebeb;
   }
+  
   
  .sidebar a{
   margin: 3px;

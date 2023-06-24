@@ -4,6 +4,7 @@
 <%@ page errorPage="fehlerausgabe.jsp"%>
 
 <%@ include file="./html/header.jspf"%>
+<script type="text/javascript" src="./js/index.js"></script>
 
 <main>
 	<!-- Tobi -->
