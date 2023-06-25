@@ -25,6 +25,7 @@ public class BeanAnzeige implements Serializable{
 	private Time zeit;
 	private Timestamp datetime;
 	private int anzeigeID;
+	//prüft ob aktuell eingeloggte Benutzer die Anzeige gebucht hat (AnzeigeAnzeigen)
 	private boolean gebucht;
 	private byte[] foto;
 

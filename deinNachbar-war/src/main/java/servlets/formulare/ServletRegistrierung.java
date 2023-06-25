@@ -29,6 +29,7 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
+		//Bean nur für Speicherung Daten innerhalb des Servlets - Bean wird später nicht mehr ausgelesen
 		BeanBenutzerdaten beanRegistrieren = new BeanBenutzerdaten();
 
 		beanRegistrieren.setVorname(request.getParameter("vorname"));
@@ -39,9 +40,7 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 		if(emailNeuPruefen(beanRegistrieren.getEmail())){
 			// DB-Zugriff
 			persist(beanRegistrieren);
-
 			
-			request.setAttribute("registrierenForm", beanRegistrieren);
 			response.sendRedirect("./index.jsp");
 		}else {
 			response.sendRedirect("html/fehlerausgabe.jsp");
@@ -67,17 +66,13 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 
 			pstmt.executeUpdate();
 
-			// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)
-			try (ResultSet rs = pstmt.getGeneratedKeys()) {
-				while (rs.next()) {
-					beanRegistrieren.setBenutzerID(rs.getInt(1));
-				}
-			}
+			//Schlüssel auslesen nicht notwenig;
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
 	}
 
+	//Prüft ob, Email bereits registriert -> Ajax
 	private boolean emailNeuPruefen(String email) throws ServletException {
 		boolean emailneu;
 
