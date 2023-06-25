@@ -6,7 +6,8 @@
 	
 	<footer>
 		<nav>
-			
+			<!-- Prüfen ob auf Index - da andere Verweise -->
+			<!-- nicht relevant, ob User eingeloggt  -->
 			<c:choose>
     			<c:when test="${pageContext.request.servletPath == '/index.jsp'}">
         			<a href="./html/agb.jsp" class="space">AGB</a> 
