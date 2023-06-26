@@ -1,24 +1,23 @@
 @charset "UTF-8";
 /*Tobi*/
-
 #FormularAufgebenFlex {
 	display: flex;
-  	flex-flow:row wrap; /*horizontale Anordnung der Kindelemente*/
+	flex-flow: row wrap; /*horizontale Anordnung der Kindelemente*/
 }
 
 label {
-  	display:inline-block;
-    margin-bottom: 5px;
-    padding:10px;
+	display: inline-block;
+	margin-bottom: 5px;
+	padding: 10px;
 }
 
 /*Lukas*/
 /*roter Rahmen für ungültige Eingaben*/
-input.rahmenRot:invalid, select.rahmenRot:invalid{
-		outline: 3px solid rgb(240, 190, 192);
-	}
+input.rahmenRot:invalid, select.rahmenRot:invalid {
+	outline: 3px solid rgb(240, 190, 192);
+}
 
-.beschreibung{
-	width:100%;
-	height:100%;
+.beschreibung {
+	width: 100%;
+	height: 100%;
 }

@@ -1,6 +1,7 @@
 //Veronika
 
 package servlets.formulare;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
@@ -30,120 +31,122 @@ public class ServletStartseite extends HttpServlet implements Servlet {
 
 	@Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		//Servlet lädt Kategorien und Anzeigen für die Startseite 
+		// Servlet lädt Kategorien und Anzeigen für die Startseite
 		List<BeanAnzeige> sucheAnzeigen = readAnzeigen("suche");
 		List<BeanAnzeige> bieteAnzeigen = readAnzeigen("biete");
 		List<BeanKategorie> kategorien = readKategorien();
-		
-		
-		//Kategorie-Daten in Session, da für Kategorie bearbeiten, Kategorie löschen und Kategorie bei Anzeige aufgeben notwendig - 
+
+		// Kategorie-Daten in Session, da für Kategorie bearbeiten, Kategorie löschen
+		// und Kategorie bei Anzeige aufgeben notwendig -
 		request.setAttribute("suchenAnzeigen", sucheAnzeigen);
- 		request.setAttribute("bieteAnzeigen", bieteAnzeigen);
- 		HttpSession session = request.getSession();
- 	    session.setAttribute("kategorien", kategorien);
-		
+		request.setAttribute("bieteAnzeigen", bieteAnzeigen);
+		HttpSession session = request.getSession();
+		session.setAttribute("kategorien", kategorien);
 
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("./html/startseite.jsp");
-		dispatcher.forward(request, response);	
-		
+		dispatcher.forward(request, response);
+
 	}
-	
+
 	private List<BeanAnzeige> readAnzeigen(String anzeigeArtSQL) throws ServletException {
 		List<BeanAnzeige> anzeigen = new ArrayList<BeanAnzeige>();
-		
+
 		try (Connection con = ds.getConnection();
-				 PreparedStatement pstmt = con.prepareStatement("SELECT DISTINCT * FROM anzeige WHERE anzeigeArt = ? ORDER BY anzeigeID DESC;")) {
+				PreparedStatement pstmt = con.prepareStatement(
+						"SELECT DISTINCT * FROM anzeige WHERE anzeigeArt = ? ORDER BY anzeigeID DESC;")) {
 
-				pstmt.setString(1, anzeigeArtSQL);;
-				try (ResultSet rs = pstmt.executeQuery()) {
-					
-					while (rs != null && rs.next()) {
-						BeanAnzeige anzeige = new BeanAnzeige();
-						
-						Integer anzeigeID = Integer.valueOf(rs.getInt("anzeigeID"));
-						anzeige.setAnzeigeID(anzeigeID);
+			pstmt.setString(1, anzeigeArtSQL);
+			;
+			try (ResultSet rs = pstmt.executeQuery()) {
 
-						String anzeigeArt = rs.getString("anzeigeArt");
-						anzeige.setAnzeigeArt(anzeigeArt);
+				while (rs != null && rs.next()) {
+					BeanAnzeige anzeige = new BeanAnzeige();
 
-						Integer benutzerID = (rs.getInt("benutzerID"));
-						anzeige.setBenutzerID(benutzerID);
+					Integer anzeigeID = Integer.valueOf(rs.getInt("anzeigeID"));
+					anzeige.setAnzeigeID(anzeigeID);
 
-						String beschreibung = rs.getString("beschreibung");
-						anzeige.setBeschreibung(beschreibung);
+					String anzeigeArt = rs.getString("anzeigeArt");
+					anzeige.setAnzeigeArt(anzeigeArt);
 
-						Integer umkreis = (rs.getInt("umkreis"));
-						anzeige.setUmkreis(umkreis);
+					Integer benutzerID = (rs.getInt("benutzerID"));
+					anzeige.setBenutzerID(benutzerID);
 
-						String standort = rs.getString("standort");
-						anzeige.setStandort(standort);
+					String beschreibung = rs.getString("beschreibung");
+					anzeige.setBeschreibung(beschreibung);
 
-						String titelAnzeige = rs.getString("titelAnzeige");
-						anzeige.setTitelAnzeige(titelAnzeige);
+					Integer umkreis = (rs.getInt("umkreis"));
+					anzeige.setUmkreis(umkreis);
 
-						Integer preis = (rs.getInt("preis"));
-						anzeige.setPreis(preis);
+					String standort = rs.getString("standort");
+					anzeige.setStandort(standort);
 
-						String preiskategorie = rs.getString("preiskategorie");
-						anzeige.setPreiskategorie(preiskategorie);
+					String titelAnzeige = rs.getString("titelAnzeige");
+					anzeige.setTitelAnzeige(titelAnzeige);
 
-						String kategorie = rs.getString("kategorie");
-						anzeige.setKategorie(kategorie);
+					Integer preis = (rs.getInt("preis"));
+					anzeige.setPreis(preis);
 
-						Date datum = rs.getDate("datum");
-						anzeige.setDatum(datum);
+					String preiskategorie = rs.getString("preiskategorie");
+					anzeige.setPreiskategorie(preiskategorie);
 
-						Timestamp datetime = rs.getTimestamp("datum");
-						anzeige.setDatetime(datetime);
+					String kategorie = rs.getString("kategorie");
+					anzeige.setKategorie(kategorie);
 
-						byte[] foto = rs.getBinaryStream("foto").readAllBytes();
-						anzeige.setFoto(foto);
-						
-						anzeigen.add(anzeige);
-					} 
+					Date datum = rs.getDate("datum");
+					anzeige.setDatum(datum);
+
+					Timestamp datetime = rs.getTimestamp("datum");
+					anzeige.setDatetime(datetime);
+
+					byte[] foto = rs.getBinaryStream("foto").readAllBytes();
+					anzeige.setFoto(foto);
+
+					anzeigen.add(anzeige);
 				}
-			} catch (Exception ex) {
-				throw new ServletException(ex.getMessage());
 			}
-		
+		} catch (Exception ex) {
+			throw new ServletException(ex.getMessage());
+		}
+
 		return anzeigen;
-		
+
 	}
-	
-	
+
 	private List<BeanKategorie> readKategorien() throws ServletException {
 		List<BeanKategorie> kategorien = new ArrayList<BeanKategorie>();
-		
+
 		try (Connection con = ds.getConnection();
-				 PreparedStatement pstmt = con.prepareStatement("SELECT DISTINCT * FROM kategorie ORDER BY kategorie;")) {
+				PreparedStatement pstmt = con
+						.prepareStatement("SELECT DISTINCT * FROM kategorie ORDER BY kategorie;")) {
 
-				try (ResultSet rs = pstmt.executeQuery()) {
-					
-					while (rs != null && rs.next()) {
-						BeanKategorie kategorieBean = new BeanKategorie();
-						
-						Integer kategorieID = rs.getInt("kategorieID");
-						kategorieBean.setKategorieID(kategorieID);
-						
-						String kategorie = rs.getString("kategorie");
-						kategorieBean.setKategorie(kategorie);
+			try (ResultSet rs = pstmt.executeQuery()) {
 
-						kategorien.add(kategorieBean);
-					} 
+				while (rs != null && rs.next()) {
+					BeanKategorie kategorieBean = new BeanKategorie();
+
+					Integer kategorieID = rs.getInt("kategorieID");
+					kategorieBean.setKategorieID(kategorieID);
+
+					String kategorie = rs.getString("kategorie");
+					kategorieBean.setKategorie(kategorie);
+
+					kategorien.add(kategorieBean);
 				}
-			} catch (Exception ex) {
-				throw new ServletException(ex.getMessage());
 			}
-				
-		
+		} catch (Exception ex) {
+			throw new ServletException(ex.getMessage());
+		}
+
 		return kategorien;
-		
+
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

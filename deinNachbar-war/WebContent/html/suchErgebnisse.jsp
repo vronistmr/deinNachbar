@@ -5,9 +5,9 @@
 
 <%@ include file="header.jspf"%>
 
+
 <div class="startseiteFlex">
 <main>
-
 	<h1>Gesuchte Anzeigen</h1>
 	
 	<c:forEach items="${Anzeigen}" var="gesuchteAnzeige" varStatus="status">
@@ -27,7 +27,6 @@
 					<span><a href="./../ServletAnzeigeAnzeigen?anzeigeid=${gesuchteAnzeige.anzeigeID}" class="button">Zur Anzeige</a></span><br />
 				</div>
 			</c:forEach>
-			
 	<br>
 	
 </main>

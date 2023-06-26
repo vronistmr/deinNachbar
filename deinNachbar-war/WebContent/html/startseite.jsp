@@ -8,6 +8,7 @@
 <%@ include file="header.jspf"%>
 <script type="text/javascript" src="./../js/startseite.js"></script>
 
+
 <nav class="navStartseite">
 	<!-- Tobi -->
 	<form action="./../SuchServlet" method="post">
