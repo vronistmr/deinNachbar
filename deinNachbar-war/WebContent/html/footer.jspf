@@ -2,26 +2,27 @@
 
 <%@ page language="Java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
-	
-	<footer>
-		<nav>
-			
-			<c:choose>
-    			<c:when test="${pageContext.request.servletPath == '/index.jsp'}">
-        			<a href="./html/agb.jsp" class="space">AGB</a> 
-        			<a href="./html/impressum.jsp" class="space">Impressum</a>
-					<a href="./html/überUns.jsp">Über uns</a>
-    			</c:when>
-    			<c:otherwise>
-        			<a href="./agb.jsp" class="space">AGB</a> 
-        			<a href="./impressum.jsp" class="space">Impressum</a>
-					<a href="./überUns.jsp">Über uns</a>
-    			</c:otherwise>
-			</c:choose>
-	
-		</nav>
-	</footer>
-	
-	</body>
+
+
+<footer>
+	<nav>
+		<!-- Prüfen ob auf Index - da andere Verweise -->
+		<!-- nicht relevant, ob User eingeloggt  -->
+		<c:choose>
+			<c:when test="${pageContext.request.servletPath == '/index.jsp'}">
+				<a href="./html/agb.jsp" class="space">AGB</a>
+				<a href="./html/impressum.jsp" class="space">Impressum</a>
+				<a href="./html/überUns.jsp">Über uns</a>
+			</c:when>
+			<c:otherwise>
+				<a href="./agb.jsp" class="space">AGB</a>
+				<a href="./impressum.jsp" class="space">Impressum</a>
+				<a href="./überUns.jsp">Über uns</a>
+			</c:otherwise>
+		</c:choose>
+
+	</nav>
+</footer>
+
+</body>
 </html>

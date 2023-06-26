@@ -1,13 +1,13 @@
 //Tobi
 
 package beans.formulare;
+
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
 
-
-public class BeanAnzeige implements Serializable{
+public class BeanAnzeige implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String anzeigeArt;
@@ -25,10 +25,10 @@ public class BeanAnzeige implements Serializable{
 	private Time zeit;
 	private Timestamp datetime;
 	private int anzeigeID;
+	// prüft ob aktuell eingeloggte Benutzer die Anzeige gebucht hat
+	// (AnzeigeAnzeigen)
 	private boolean gebucht;
 	private byte[] foto;
-
-
 
 	public int getAnzeigeID() {
 		return anzeigeID;
@@ -105,20 +105,19 @@ public class BeanAnzeige implements Serializable{
 	public int getBenutzerID() {
 		return benutzerID;
 	}
-	
+
 	public void setBenutzerID(int benutzerID) {
 		this.benutzerID = benutzerID;
 	}
-	
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	public String getEmail() {
 		return email;
 	}
 
-	
 	public String getVorname() {
 		return vorname;
 	}
@@ -134,7 +133,7 @@ public class BeanAnzeige implements Serializable{
 	public void setDatum(Date datum) {
 		this.datum = datum;
 	}
-	
+
 	public byte[] getFoto() {
 		return foto;
 	}
@@ -150,7 +149,7 @@ public class BeanAnzeige implements Serializable{
 	public void setZeit(Time zeit) {
 		this.zeit = zeit;
 	}
-	
+
 	public boolean getGebucht() {
 		return gebucht;
 	}
@@ -158,7 +157,7 @@ public class BeanAnzeige implements Serializable{
 	public void setGebucht(boolean gebucht) {
 		this.gebucht = gebucht;
 	}
-	
+
 	public Timestamp getDatetime() {
 		return datetime;
 	}

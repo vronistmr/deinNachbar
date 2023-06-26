@@ -29,6 +29,8 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
+		// Bean nur für Speicherung Daten innerhalb des Servlets - Bean wird später
+		// nicht mehr ausgelesen
 		BeanBenutzerdaten beanRegistrieren = new BeanBenutzerdaten();
 
 		beanRegistrieren.setVorname(request.getParameter("vorname"));
@@ -36,18 +38,15 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 		beanRegistrieren.setPasswort(request.getParameter("passwort"));
 		beanRegistrieren.setStandort(request.getParameter("standort"));
 
-		if(emailNeuPruefen(beanRegistrieren.getEmail())){
+		if (emailNeuPruefen(beanRegistrieren.getEmail())) {
 			// DB-Zugriff
 			persist(beanRegistrieren);
 
-			
-			request.setAttribute("registrierenForm", beanRegistrieren);
 			response.sendRedirect("./index.jsp");
-		}else {
+		} else {
 			response.sendRedirect("html/fehlerausgabe.jsp");
 		}
-		
-		
+
 	}
 
 	private void persist(BeanBenutzerdaten beanRegistrieren) throws ServletException {
@@ -67,38 +66,34 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 
 			pstmt.executeUpdate();
 
-			// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)
-			try (ResultSet rs = pstmt.getGeneratedKeys()) {
-				while (rs.next()) {
-					beanRegistrieren.setBenutzerID(rs.getInt(1));
-				}
-			}
+			// Schlüssel auslesen nicht notwenig;
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
 	}
 
+	// Prüft ob, Email bereits registriert -> Ajax
 	private boolean emailNeuPruefen(String email) throws ServletException {
 		boolean emailneu;
 
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("SELECT * FROM benutzer WHERE email = ?;")) {
-			
+
 			pstmt.setString(1, email);
 
 			try (ResultSet rs = pstmt.executeQuery()) {
-			if(rs != null && rs.next()) {
-				emailneu=false;
-			} else {
-				emailneu=true;
-			}
+				if (rs != null && rs.next()) {
+					emailneu = false;
+				} else {
+					emailneu = true;
+				}
 			}
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
 
-	return emailneu;
-}
+		return emailneu;
+	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

@@ -103,21 +103,22 @@ function evtfilterAus() {
 }
 
 function kategorieBearbeitenEinblenden() {
-	var kategorieBearbeiten = this.nextElementSibling;
+	//nextSibling -> form für die Kategroie bearbeiten (nächstes Element nach dem Stift)
+	var kategorieBearbeitenForm = this.nextElementSibling;
 	var alleFormulareBearbeiten = document.querySelectorAll(".bearbeitenForm");
 	for (var i = 0; i < alleFormulareBearbeiten.length; i++) {
-		if (alleFormulareBearbeiten[i] !== kategorieBearbeiten) {
+		if (alleFormulareBearbeiten[i] !== kategorieBearbeitenForm) {
 			alleFormulareBearbeiten[i].classList.add("ausgeblendet");
 			alleFormulareBearbeiten[i].classList.remove("eingeblendet");
 		}
 	}
 	//wenn drauf geklickt wird, aber bereits eingeblendet ist -> wird wieder ausgeblendet
-	if (kategorieBearbeiten.classList.contains("eingeblendet")) {
-		kategorieBearbeiten.classList.remove("eingeblendet");
-		kategorieBearbeiten.classList.add("ausgeblendet");
+	if (kategorieBearbeitenForm.classList.contains("eingeblendet")) {
+		kategorieBearbeitenForm.classList.remove("eingeblendet");
+		kategorieBearbeitenForm.classList.add("ausgeblendet");
 	} else {
-		kategorieBearbeiten.classList.add("eingeblendet");
-		kategorieBearbeiten.classList.remove("ausgeblendet");
+		kategorieBearbeitenForm.classList.add("eingeblendet");
+		kategorieBearbeitenForm.classList.remove("ausgeblendet");
 	}
 }
 

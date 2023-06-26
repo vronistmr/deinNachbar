@@ -1,6 +1,7 @@
 //Veronika
 
 package servlets.formulare;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
@@ -27,7 +28,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.http.Part;
 
-
 @WebServlet("/ServletAnzeigeAufgeben")
 @MultipartConfig(maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5
 		* 5, location = "/tmp", fileSizeThreshold = 1024 * 1024)
@@ -53,33 +53,34 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 		beanAnzeigeAufgeben.setBeschreibung(request.getParameter("beschreibung"));
 		beanAnzeigeAufgeben.setDatum(Date.valueOf(LocalDate.now()));
 		beanAnzeigeAufgeben.setZeit(Time.valueOf(LocalTime.now()));
-		beanAnzeigeAufgeben.setBenutzerID(Integer.valueOf(((BeanBenutzerdaten) request.getSession().getAttribute("loginForm")).getBenutzerID()));
-		beanAnzeigeAufgeben.setVorname(((BeanBenutzerdaten) request.getSession().getAttribute("loginForm")).getVorname());
+		beanAnzeigeAufgeben.setBenutzerID(
+				Integer.valueOf(((BeanBenutzerdaten) request.getSession().getAttribute("loginForm")).getBenutzerID()));
+		beanAnzeigeAufgeben
+				.setVorname(((BeanBenutzerdaten) request.getSession().getAttribute("loginForm")).getVorname());
 
-
-
-		
 		// Foto
 		Part foto = request.getPart("foto");
 		// Datenbank Zugriff
 		persist(beanAnzeigeAufgeben, foto);
 
-		//Redirect, da Insert in DB
-		//!Redirect braucht immer Session -> Reload der 2. URL -> Daten wären nicht mehr in request Scope
+		// Redirect, da Insert in DB
+		// !Redirect braucht immer Session -> Reload der 2. URL -> Daten wären nicht
+		// mehr in request Scope
 		HttpSession session = request.getSession();
 		session.setAttribute("anzeigeNeu", beanAnzeigeAufgeben);
 		response.sendRedirect("./html/neueAnzeige.jsp");
-		
+
 	}
 
 	private void persist(BeanAnzeige beanAnzeigeAufgeben, Part foto) throws ServletException {
-		String[] generatedKeys = new String[] {"anzeigeID"};
+		String[] generatedKeys = new String[] { "anzeigeID" };
 
 		// Speichern in Datenbank
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(
 						"INSERT INTO anzeige (anzeigeArt,titelAnzeige, preis, preiskategorie, kategorie, standort, umkreis, beschreibung, foto, benutzerID, datum)"
-								+ "VALUES (?,?,?,?,?,?,?,?,?,?,?)",generatedKeys)) {
+								+ "VALUES (?,?,?,?,?,?,?,?,?,?,?)",
+						generatedKeys)) {
 
 			pstmt.setString(1, beanAnzeigeAufgeben.getAnzeigeArt());
 			pstmt.setString(2, beanAnzeigeAufgeben.getTitelAnzeige());
@@ -93,16 +94,8 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 			pstmt.setInt(10, beanAnzeigeAufgeben.getBenutzerID());
 			pstmt.setTimestamp(11, Timestamp.from(Instant.now()));
 
-
 			pstmt.executeUpdate();
 
-			// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)
-			try (ResultSet rs = pstmt.getGeneratedKeys()) {
-				while (rs.next()) {
-					beanAnzeigeAufgeben.setAnzeigeID(rs.getInt(1));
-
-				}
-			}
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
