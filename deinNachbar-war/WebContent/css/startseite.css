@@ -51,11 +51,6 @@ Positionierung der Anzeigen und Kategorien -> Flex boxen
   margin: 3px;
  } 
  
- .tabsSucheBiete {
-    list-style: none;
- 	padding: 0;
- 	padding-right: 40px;
- }
 
 /*Filter Formatierung - ausgewählter Filter wird durch JS der anderen Klasse zugewiesen */
 .inaktiverFilterButton {

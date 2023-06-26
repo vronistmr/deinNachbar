@@ -96,13 +96,7 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 
 			pstmt.executeUpdate();
 
-			// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)
-			try (ResultSet rs = pstmt.getGeneratedKeys()) {
-				while (rs.next()) {
-					beanAnzeigeAufgeben.setAnzeigeID(rs.getInt(1));
 
-				}
-			}
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}

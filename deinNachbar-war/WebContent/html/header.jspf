@@ -1,6 +1,7 @@
 <!-- Lukas -->
 
-<%@ page language="Java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="Java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page errorPage="fehlerausgabe.jsp"%>
 
@@ -16,65 +17,65 @@
 <base href="${pageContext.request.requestURI}" />
 
 <!-- Lukas -->
-	<c:choose>
-    <c:when test="${pageContext.request.servletPath == '/index.jsp'}"><!--in dieser Zeile in Klammern: chatGPT-->
-        <link rel="stylesheet" href="./css/basis.css">
-        <link rel="stylesheet" href="./css/indexRegistrieren.css">
-    </c:when>
-    <c:otherwise>
-    	<link rel="stylesheet" href="./../css/basis.css">
-    	<link rel="stylesheet" href="./../css/indexRegistrieren.css">
-    	<link rel="stylesheet" href="./../css/anzeigenAnzeigen.css">
-       	<link rel="stylesheet" href="./../css/anzeigeAufgeben.css">
-       	<link rel="stylesheet" href="./../css/startseite.css">
-    </c:otherwise>
-	</c:choose>
+<!--pageContext.request.servletPath == '/index.jsp': chatGPT - prüft ob aktuelle Seite die Index-Seite ist-->
+<c:choose>
+	<c:when test="${pageContext.request.servletPath == '/index.jsp'}">
+		<link rel="stylesheet" href="./css/basis.css">
+		<link rel="stylesheet" href="./css/indexRegistrieren.css">
+	</c:when>
+	<c:otherwise>
+		<link rel="stylesheet" href="./../css/basis.css">
+		<link rel="stylesheet" href="./../css/indexRegistrieren.css">
+		<link rel="stylesheet" href="./../css/anzeigenAnzeigen.css">
+		<link rel="stylesheet" href="./../css/anzeigeAufgeben.css">
+		<link rel="stylesheet" href="./../css/startseite.css">
+	</c:otherwise>
+</c:choose>
 </head>
 
 <body>
 
-<header>
-	<nav>
-		<c:choose> 
-			<c:when test="${empty loginForm}">
-			
+	<header>
+		<nav>
 			<c:choose>
-    			<c:when test="${pageContext.request.servletPath == '/index.jsp'}">
-    		  <div class="logoheader">
-        			 <a href="./index.jsp">
-       				 <img src="./img/logoheader.jpeg" width="150" height="48" alt="Logo deinNachbar">
-       				 deinNachbar.de
-    				</a>
-        	</div>
-    			</c:when>
-    			<c:otherwise>
-    			  <div class="logoheader">
-        			<a href="./../index.jsp">
-        			<img  src="./../img/logoheader.jpeg" width="150" height="48" alt="Logo deinNachbar">
-        			deinNachbar.de
-        			</a>
-        		</div>
-    			</c:otherwise>
-			</c:choose>
-			
-		</c:when>
-		<c:otherwise>
-		     <div class="logoheader">
-				<a href="./../ServletStartseite">
-				<img  src="./../img/logoheader.jpeg" width="150" height="48" alt="Logo deinNachbar">
-				deinNachbar.de</a>
-			 </div>
-				<div class="navRechts">
-					<a href="./anzeigeAufgeben.jsp" class="button">➕ Neue Anzeige aufgeben</a>
-					<a href="./../ServletMeineAnzeigen" class="button">Meine Anzeigen</a>
-					<a href="./../ServletMeineGebuchten" class="button">Meine Gebuchten</a>	
-					<a href="./../ServletLogout" class="buttonWeiss">LogOut</a>
-				</div>
-		</c:otherwise>
-		
-		</c:choose>
-		
-	</nav>
-</header>
+				<c:when test="${empty loginForm}">
+					<c:choose>
+						<c:when test="${pageContext.request.servletPath == '/index.jsp'}">
+							<div class="logoheader">
+								<a href="./index.jsp"> <img src="./img/logoheader.jpeg"
+									width="150" height="48" alt="Logo deinNachbar">
+									deinNachbar.de
+								</a>
+							</div>
+						</c:when>
+						<c:otherwise>
+							<div class="logoheader">
+								<a href="./../index.jsp"> <img
+									src="./../img/logoheader.jpeg" width="150" height="48"
+									alt="Logo deinNachbar"> deinNachbar.de
+								</a>
+							</div>
+						</c:otherwise>
+					</c:choose>
+				</c:when>
+				<c:otherwise>
+					<div class="logoheader">
+						<a href="./../ServletStartseite"> <img
+							src="./../img/logoheader.jpeg" width="150" height="48"
+							alt="Logo deinNachbar"> deinNachbar.de
+						</a>
+					</div>
+					<div class="navRechts">
+						<a href="./anzeigeAufgeben.jsp" class="button">➕ Neue Anzeige
+							aufgeben</a> <a href="./../ServletMeineAnzeigen" class="button">Meine
+							Anzeigen</a> <a href="./../ServletMeineGebuchten" class="button">Meine
+							Gebuchten</a> <a href="./../ServletLogout" class="buttonWeiss">LogOut</a>
+					</div>
+				</c:otherwise>
 
-<!-- Bildquelle Logo: Eigene Quelle -->
+			</c:choose>
+
+		</nav>
+	</header>
+
+	<!-- Bildquelle Logo: Eigene Quelle -->

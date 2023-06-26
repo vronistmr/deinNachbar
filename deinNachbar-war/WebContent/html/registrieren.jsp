@@ -17,9 +17,10 @@
 			title="Gib deinen Vor- und oder Nahchnamen ein"><span></span> 
 		</div>
 		<div class="spaceReg">
+		<!-- patterns von W3Schools -->
 		<input type="email" id="email"
 			name="email" size="30" maxlength="50"
-			pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+			pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
 			title="Gib eine gültige Email-Adresse ein"
 			required placeholder="E-Mail"><span></span>
 		</div>
@@ -32,7 +33,7 @@
 		</div>
 		<div class="spaceReg">
 		<input type="password" id="passwortwdh"
-			name="passwortwdh" size="30" maxlength="255" required placeholder="Passwort wiederholen"
+			name="passwortwdh" size="30" maxlength="255" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required placeholder="Passwort wiederholen"
 			title="Wiederhole bitte das zuvor eingegebene Passwort"><span></span>
 		</div>
 		<div class="spaceReg">

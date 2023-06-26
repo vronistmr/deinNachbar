@@ -33,6 +33,7 @@ public class ServletIndex extends HttpServlet implements Servlet {
 		BeanLogindaten beanLogin = new BeanLogindaten();
 		BeanBenutzerdaten benutzer = new BeanBenutzerdaten();
 		
+		//BeanLohin evlt nicht notwendig - sichern als String ausreichen - Prüfen nach Ajax!
 		beanLogin.setEmail(request.getParameter("email"));
 		beanLogin.setPasswort(request.getParameter("passwort"));
 		
