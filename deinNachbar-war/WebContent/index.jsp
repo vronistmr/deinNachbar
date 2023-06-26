@@ -6,6 +6,7 @@
 
 <%@ include file="./html/header.jspf"%>
 <script type="text/javascript" src="./js/index.js"></script>
+<noscript>⚠️ JavaScript ist deaktiviert. Bitte aktiviere JavaScript in deinem Browser, um unsere Website korrekt anzuzeigen.</noscript>
 
 <main>
 	<!-- Tobi -->

@@ -1,6 +1,7 @@
 //Veronika
 
 package servlets.formulare;
+
 import jakarta.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.sql.Connection;
@@ -23,89 +24,92 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/ServletMeineGebuchten")
 public class ServletMeineGebuchten extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = 1L;
 
-	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
+	@Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-request.setCharacterEncoding("UTF-8");
-		
-		int benutzerID = Integer.valueOf(((BeanBenutzerdaten) request.getSession().getAttribute("loginForm")).getBenutzerID());
-		
-		//DB-Zugriff
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+
+		int benutzerID = Integer
+				.valueOf(((BeanBenutzerdaten) request.getSession().getAttribute("loginForm")).getBenutzerID());
+
+		// DB-Zugriff
 		List<BeanAnzeige> gebuchteAnzeigen = read(benutzerID);
 
 		request.setAttribute("anzeigen", gebuchteAnzeigen);
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("./html/meineGebuchten.jsp");
-		dispatcher.forward(request, response);	
-		
+		dispatcher.forward(request, response);
+
 	}
-	
+
 	private List<BeanAnzeige> read(int benutzerID) throws ServletException {
 		List<BeanAnzeige> anzeigen = new ArrayList<BeanAnzeige>();
-		
+
 		try (Connection con = ds.getConnection();
-				 PreparedStatement pstmt = con.prepareStatement("SELECT DISTINCT * FROM anzeige JOIN gebuchte ON anzeige.anzeigeID=gebuchte.anzeigeID WHERE gebuchte.benutzerID = ?;")) {
+				PreparedStatement pstmt = con.prepareStatement(
+						"SELECT DISTINCT * FROM anzeige JOIN gebuchte ON anzeige.anzeigeID=gebuchte.anzeigeID WHERE gebuchte.benutzerID = ?;")) {
 
-				pstmt.setInt(1, benutzerID);
-				try (ResultSet rs = pstmt.executeQuery()) {
-					
-					while (rs != null && rs.next()) {
-						BeanAnzeige anzeige = new BeanAnzeige();
-						
-						Integer anzeigeID = Integer.valueOf(rs.getInt("anzeigeID"));
-						anzeige.setAnzeigeID(anzeigeID);
+			pstmt.setInt(1, benutzerID);
+			try (ResultSet rs = pstmt.executeQuery()) {
 
-						String anzeigeArt = rs.getString("anzeigeArt");
-						anzeige.setAnzeigeArt(anzeigeArt);
+				while (rs != null && rs.next()) {
+					BeanAnzeige anzeige = new BeanAnzeige();
 
-						anzeige.setBenutzerID(benutzerID);
+					Integer anzeigeID = Integer.valueOf(rs.getInt("anzeigeID"));
+					anzeige.setAnzeigeID(anzeigeID);
 
-						String beschreibung = rs.getString("beschreibung");
-						anzeige.setBeschreibung(beschreibung);
+					String anzeigeArt = rs.getString("anzeigeArt");
+					anzeige.setAnzeigeArt(anzeigeArt);
 
-						Integer umkreis = Integer.valueOf(rs.getInt("umkreis"));
-						anzeige.setUmkreis(umkreis);
+					anzeige.setBenutzerID(benutzerID);
 
-						String standort = rs.getString("standort");
-						anzeige.setStandort(standort);
+					String beschreibung = rs.getString("beschreibung");
+					anzeige.setBeschreibung(beschreibung);
 
-						String titelAnzeige = rs.getString("titelAnzeige");
-						anzeige.setTitelAnzeige(titelAnzeige);
+					Integer umkreis = Integer.valueOf(rs.getInt("umkreis"));
+					anzeige.setUmkreis(umkreis);
 
-						Integer preis = Integer.valueOf(rs.getInt("preis"));
-						anzeige.setPreis(preis);
+					String standort = rs.getString("standort");
+					anzeige.setStandort(standort);
 
-						String preiskategorie = rs.getString("preiskategorie");
-						anzeige.setPreiskategorie(preiskategorie);
+					String titelAnzeige = rs.getString("titelAnzeige");
+					anzeige.setTitelAnzeige(titelAnzeige);
 
-						String kategorie = rs.getString("kategorie");
-						anzeige.setKategorie(kategorie);
+					Integer preis = Integer.valueOf(rs.getInt("preis"));
+					anzeige.setPreis(preis);
 
-						Date datum = rs.getDate("datum");
-						anzeige.setDatum(datum);
+					String preiskategorie = rs.getString("preiskategorie");
+					anzeige.setPreiskategorie(preiskategorie);
 
-						Timestamp datetime = rs.getTimestamp("datum");
-						anzeige.setDatetime(datetime);
+					String kategorie = rs.getString("kategorie");
+					anzeige.setKategorie(kategorie);
 
-						byte[] foto = rs.getBinaryStream("foto").readAllBytes();
-						anzeige.setFoto(foto);
-						
-						anzeigen.add(anzeige);
-					} 
+					Date datum = rs.getDate("datum");
+					anzeige.setDatum(datum);
+
+					Timestamp datetime = rs.getTimestamp("datum");
+					anzeige.setDatetime(datetime);
+
+					byte[] foto = rs.getBinaryStream("foto").readAllBytes();
+					anzeige.setFoto(foto);
+
+					anzeigen.add(anzeige);
 				}
-			} catch (Exception ex) {
-				throw new ServletException(ex.getMessage());
 			}
-		
+		} catch (Exception ex) {
+			throw new ServletException(ex.getMessage());
+		}
+
 		return anzeigen;
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
