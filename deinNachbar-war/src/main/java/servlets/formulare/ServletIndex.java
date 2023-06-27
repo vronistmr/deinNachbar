@@ -49,8 +49,9 @@ public class ServletIndex extends HttpServlet implements Servlet {
 			disp.forward(request, response);
 		} else {
 			// Login fehlgeschlagen: mit Java Script Meldung anzeigen
-			response.sendRedirect("html/fehlerausgabe.jsp");
-
+			response.setContentType("text/plain");
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().append("Falsche E-Mail oder Passwort");
 		}
 
 	}

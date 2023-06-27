@@ -17,7 +17,7 @@
 		<p id="gebuchteAnzeige">Du hast diese Anzeige gebucht! Kontaktiere
 			den Inserenten!</p>
 	</c:if>
-	<!-- Tobi -->
+<!-- Tobi -->
 	<div id="flexanzeige">
 		<aside>
 			<img class="imganzeige"
@@ -60,7 +60,7 @@
 		</p>
 	</article>
 
-	<!-- Lukas -->
+<!-- Lukas -->
 	<div class="unten">
 		<c:if
 			test="${(AnzeigeForm.benutzerID != loginForm.benutzerID) && (AnzeigeForm.gebucht == false)}">
@@ -86,14 +86,14 @@
 			<a href="./../ServletAnzeigeLoeschen?id=${AnzeigeForm.anzeigeID}"
 				class="button anzeigeLoeschen">Löschen</a>
 		</c:if>
-		<!-- Veronika -->
+<!-- Veronika -->
 		<c:if
 			test="${AnzeigeForm.benutzerID != loginForm.benutzerID && loginForm.istAdmin}">
 			<a href="./../ServletAnzeigeLoeschen?id=${AnzeigeForm.anzeigeID}"
 				class="button adminAnzeigeLoeschen">Anzeige von
 				${AnzeigeForm.vorname} löschen</a>
 		</c:if>
-		<!-- Lukas -->
+<!-- Lukas -->
 	</div>
 </main>
 

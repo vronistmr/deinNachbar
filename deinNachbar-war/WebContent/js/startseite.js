@@ -23,7 +23,6 @@ function warnung(evt) {
 }
 
 
-
 //Veronika
 //Funktion, um nur Suche-Anzeigen zu Filtern + Filter Button wird entsprechend gefärbt
 function sucheAnzeigenFiltern() {

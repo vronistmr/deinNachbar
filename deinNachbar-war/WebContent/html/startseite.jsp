@@ -10,7 +10,7 @@
 
 
 <nav class="navStartseite">
-	<!-- Tobi -->
+<!-- Tobi -->
 	<form action="./../SuchServlet" method="post">
 		<input type="text" name="suchstring" size="50" maxlength="50"
 			placeholder="Was suchtst du?">
@@ -118,7 +118,7 @@
 				<img src="./../img/pencil.png" width="17" height="17"
 					alt="bearbeiten" class="kategorieBearbeiten">
 				<!--Bildquelle: http://bitly.ws/IDup-->
-				<!-- Lukas -->
+<!-- Lukas -->
 				<form
 					action="./../ServletKategorieBearbeiten?kategorieID=${currentKategorie.kategorieID}"
 					method="POST" class="ausgeblendet bearbeitenForm">
@@ -129,7 +129,7 @@
 					<button type="submit" value="neu" name="bearbeiten">🖊️
 						Kategorie umbenennen</button>
 				</form>
-				<!-- Veronika -->
+<!-- Veronika -->
 				<br />
 			</c:forEach>
 			<form action="./../ServletKategorieNeu" method="POST"

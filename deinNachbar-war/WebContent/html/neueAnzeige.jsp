@@ -8,7 +8,7 @@
 
 
 <main>
-	<!-- Veronika -->
+<!-- Veronika -->
 
 	<h1>Juhu! Deine Anzeige ist jetzt online!</h1>
 	<br>

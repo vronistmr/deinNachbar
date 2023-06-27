@@ -131,9 +131,9 @@ public class ServletAnzeigeAnzeigen extends HttpServlet {
 			try (ResultSet rs = pstmt.executeQuery()) {
 				if (rs.next()) {
 					int count = rs.getInt(1);
-					boolean entryExists = count > 0;
+					boolean existiert = count > 0;
 
-					if (entryExists) {
+					if (existiert) {
 						boolean gebucht = true;
 						anzeige.setGebucht(gebucht);
 					} else {

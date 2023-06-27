@@ -34,7 +34,6 @@
 </head>
 
 <body>
-
 	<header>
 		<nav>
 			<c:choose>
@@ -77,5 +76,5 @@
 
 		</nav>
 	</header>
-
+	<noscript><p><br />⚠️ JavaScript ist deaktiviert. Bitte aktiviere JavaScript in deinem Browser, um unsere Website korrekt anzuzeigen</p></noscript>
 	<!-- Bildquelle Logo: Eigene Quelle -->
