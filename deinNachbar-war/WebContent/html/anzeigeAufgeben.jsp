@@ -9,7 +9,7 @@
 
 
 <main>
-	<!-- Veronika -->
+<!-- Veronika, Lukas -->
 	<h1>Anzeige aufgeben</h1>
 
 	<form method="POST" action="./../ServletAnzeigeAufgeben"
@@ -27,7 +27,6 @@
 					placeholder="Preis in Euro" required class="rahmenRot"
 					title="Gib ein, wie viel du verlangen willst bzw. wie viel du zahlen willst">
 				<br />
-				<!-- Zeile: Lukas -->
 				<input type="text" name="standort" size="50" maxlength="50"
 					value="${loginForm.standort}" placeholder="Dein Standort" required
 					class="rahmenRot"
