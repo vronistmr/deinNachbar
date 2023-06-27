@@ -9,7 +9,7 @@
 
 
 <main>
-	<!-- Tobi -->
+<!-- Tobi, Lukas -->
 	<div class="centeredflex">
 		<form id="registrierenForm" method="POST"
 			action="./../ServletRegistrierung">
@@ -20,7 +20,7 @@
 					title="Gib deinen Vor- und oder Nahchnamen ein"><span></span>
 			</div>
 			<div class="spaceReg">
-				<!-- patterns von W3Schools -->
+<!-- patterns von W3Schools -->
 				<input type="email" id="email" name="email" size="30" maxlength="50"
 					pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
 					title="Gib eine gültige Email-Adresse ein" required

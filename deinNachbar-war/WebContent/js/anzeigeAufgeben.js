@@ -8,10 +8,6 @@ function init() {
 	preiskategorie.addEventListener("change", zuVerschenken);
 }
 
-
-
-
-
 function zuVerschenken() {
 	let preisfeld = document.getElementById("preis");
 	if (document.getElementById("preiskategorie").value === "Gratis") {

@@ -43,5 +43,6 @@
 		</c:forEach>
 	</main>
 </div>
+
 <!-- Lukas -->
 <%@ include file="footer.jspf"%>
