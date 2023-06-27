@@ -11,7 +11,9 @@ import java.sql.ResultSet;
 import javax.sql.DataSource;
 
 import beans.formulare.BeanBenutzerdaten;
+import beans.formulare.BeanFehlermeldung;
 import jakarta.annotation.Resource;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -44,7 +46,12 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 
 			response.sendRedirect("./index.jsp");
 		} else {
-			response.sendRedirect("html/fehlerausgabe.jsp");
+			// Login fehlgeschlagen: Behandlung mit Ajax 
+			BeanFehlermeldung fehlerRegistrierung = new BeanFehlermeldung();
+			fehlerRegistrierung.setFehlernachricht("E-Mail ist bereits registiert! Bitte verwenden Sie eine andere E-Mail.");
+			request.setAttribute("validierungRegistrieren", fehlerRegistrierung);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("./ajax/fehlermeldungAjax.jsp");
+			dispatcher.forward(request, response);
 		}
 
 	}

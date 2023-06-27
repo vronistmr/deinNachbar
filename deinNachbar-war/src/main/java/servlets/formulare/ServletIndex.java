@@ -12,6 +12,7 @@ import javax.sql.DataSource;
 
 import beans.formulare.BeanBenutzerdaten;
 import beans.formulare.BeanLogindaten;
+import beans.formulare.BeanFehlermeldung;
 import jakarta.annotation.Resource;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
@@ -48,10 +49,12 @@ public class ServletIndex extends HttpServlet implements Servlet {
 			RequestDispatcher disp = request.getRequestDispatcher("./ServletStartseite");
 			disp.forward(request, response);
 		} else {
-			// Login fehlgeschlagen: mit Java Script Meldung anzeigen
-			response.setContentType("text/plain");
-			response.setCharacterEncoding("UTF-8");
-			response.getWriter().append("Falsche E-Mail oder Passwort");
+			// Login fehlgeschlagen: Behandlung mit Ajax 
+			BeanFehlermeldung fehlerLogin = new BeanFehlermeldung();
+			fehlerLogin.setFehlernachricht("E-Mail oder Passwort falsch!");
+			request.setAttribute("validierungLogin", fehlerLogin);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("./ajax/fehlermeldungAjax.jsp");
+			dispatcher.forward(request, response);
 		}
 
 	}
