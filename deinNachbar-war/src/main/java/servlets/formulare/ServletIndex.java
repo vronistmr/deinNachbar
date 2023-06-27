@@ -1,6 +1,7 @@
 //Veronika
 
 package servlets.formulare;
+
 import jakarta.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.sql.Connection;
@@ -20,47 +21,48 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-
 @WebServlet("/ServletIndex")
 public class ServletIndex extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = 1L;
-	
-	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
+
+	@Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		BeanLogindaten beanLogin = new BeanLogindaten();
 		BeanBenutzerdaten benutzer = new BeanBenutzerdaten();
-		
-		//BeanLohin evlt nicht notwendig - sichern als String ausreichen - Prüfen nach Ajax!
+
+		// BeanLohin evlt nicht notwendig - sichern als String ausreichen - Prüfen nach
+		// Ajax!
 		beanLogin.setEmail(request.getParameter("email"));
 		beanLogin.setPasswort(request.getParameter("passwort"));
-		
+
 		benutzer = autentify(beanLogin);
-		
-		 
-		    
+
 		if (benutzer.getBenutzerID() != null) {
-			//Erfolgreicher Login
+			// Erfolgreicher Login
 			HttpSession session = request.getSession();
-		    session.setAttribute("loginForm", benutzer);
-		    RequestDispatcher disp = request.getRequestDispatcher("./ServletStartseite");
+			session.setAttribute("loginForm", benutzer);
+			RequestDispatcher disp = request.getRequestDispatcher("./ServletStartseite");
 			disp.forward(request, response);
 		} else {
-			//Login fehlgeschlagen: mit Java Script Meldung anzeigen
-			response.sendRedirect("html/fehlerausgabe.jsp");
-			
-				}
-		
+			// Login fehlgeschlagen: mit Java Script Meldung anzeigen
+			response.setContentType("text/plain");
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().append("Falsche E-Mail oder Passwort");
+		}
+
 	}
 
 	private BeanBenutzerdaten autentify(BeanLogindaten beanLogin) throws ServletException {
 		BeanBenutzerdaten benutzerDaten = new BeanBenutzerdaten();
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
-		     PreparedStatement pstmt = con.prepareStatement("SELECT * FROM benutzer WHERE email = ? AND passwort = ?")) {
-			
+				PreparedStatement pstmt = con
+						.prepareStatement("SELECT * FROM benutzer WHERE email = ? AND passwort = ?")) {
+
 			pstmt.setString(1, beanLogin.getEmail());
 			pstmt.setString(2, beanLogin.getPasswort());
 			try (ResultSet rs = pstmt.executeQuery()) {
@@ -77,11 +79,12 @@ public class ServletIndex extends HttpServlet implements Servlet {
 			throw new ServletException(ex.getMessage());
 		}
 
-		return 	benutzerDaten;
-		
+		return benutzerDaten;
+
 	}
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

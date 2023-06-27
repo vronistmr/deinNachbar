@@ -4,82 +4,78 @@
 /*AnzeigeBoxen werden aus der Basis css gezogen
 Positionierung der Anzeigen und Kategorien -> Flex boxen
 */
-
-.startseiteFlex{
+.startseiteFlex {
 	display: flex;
 	flex-flow: row wrap;
 }
 
-.sidebar{
+.sidebar {
 	flex: 1;
- }
+}
 
-.mainStartseite{
+.mainStartseite {
 	flex: 5;
 }
 
-.navStartseite{
-  margin-top: 45px;
-  padding: 10px;
-  padding-top: 20px;
-  justify-content: center;
-  align-items: center;  
-  border-radius: 10px;
-  }
-  
-   .kategorieButton {
-  	background-color: transparent;
-    line-height: 2.5;
-    padding-left: 25px;
-    padding-right: 10px;
-    font-size: 15px;
-    width: 100%;
-    text-align: left;
-  }
-  
-  
- .kategorieButtonWidthAdmin{
-     width: 80%;
- }
-  
-  .kategorieButton:hover {
-  	background-color: #ebebeb;
-  }
-  
-  
- .sidebar a{
-  margin: 3px;
- } 
- 
+.navStartseite {
+	margin-top: 45px;
+	padding: 10px;
+	padding-top: 20px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+}
+
+.kategorieButton {
+	background-color: transparent;
+	line-height: 2.5;
+	padding-left: 25px;
+	padding-right: 10px;
+	font-size: 15px;
+	width: 100%;
+	text-align: left;
+}
+
+.kategorieButtonWidthAdmin {
+	width: 80%;
+}
+
+.kategorieButton:hover {
+	background-color: #ebebeb;
+}
+
+.sidebar a {
+	margin: 3px;
+}
 
 /*Filter Formatierung - ausgewählter Filter wird durch JS der anderen Klasse zugewiesen */
 .inaktiverFilterButton {
-  background-color: #f5f5f5;
-  color: black;
-  padding: 10px;
-  width: 200px;
-  border-radius: 10px;
-  font-size: 15px;
- }
+	background-color: #f5f5f5;
+	color: black;
+	padding: 10px;
+	width: 200px;
+	border-radius: 10px;
+	font-size: 15px;
+}
 
 .aktiverFilterButton {
-  background-color: #3498db;
-  color: black;
-  padding: 10px;
-  width: 200px;
-  border-radius: 10px;
-  font-size: 15px;
+	background-color: #3498db;
+	color: black;
+	padding: 10px;
+	width: 200px;
+	border-radius: 10px;
+	font-size: 15px;
 }
 
-.kategorieAktiv{
-	  background-color: #ebebeb;
+.kategorieAktiv {
+	background-color: #ebebeb;
 }
-
 
 /*Für Filter: nur SucheAnzeigen einblenden*/
 .ausgeblendet {
 	display: none;
 }
-.eingeblendet  {
+
+.eingeblendet {
 	display: block
 }
