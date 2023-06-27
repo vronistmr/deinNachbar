@@ -10,7 +10,7 @@
 <main>
 <!-- Tobi -->
 	<div class="centeredflex">
-		<form method="POST" action="./ServletIndex">
+		<form method="POST" id="loginForm" action="./ServletIndex">
 			<h1>Login</h1>
 			<div class="spacereg" id = "ajaxMail">
 				<input autofocus type="text" id="email" name="email" maxlength="40"
@@ -22,11 +22,11 @@
 					title="Bitte geben sie ihr Passwort ein, mit dem sie sich registriert haben!"
 					required placeholder="Passwort">
 			</div>
-			<div id = ajaxLogIn class="regbutton">
-				<button type="submit" name="logIn" value="neu">OK</button>
+			<div  class="regbutton">
+				<button type="submit" name="logIn" id=ajaxLogIn value="neu">OK</button>
 			</div>
 		</form>
-		<div id = ajaxPasswortFalsch></div>
+		<div id=ajaxPasswortFalsch></div>
 		<nav>
 			<a href="./html/registrieren.jsp">Neu Registrieren</a>
 		</nav>
