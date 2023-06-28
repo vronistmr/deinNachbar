@@ -93,8 +93,16 @@ public class ServletAnzeigeAufgeben extends HttpServlet implements Servlet {
 			pstmt.setBinaryStream(9, foto.getInputStream());
 			pstmt.setInt(10, beanAnzeigeAufgeben.getBenutzerID());
 			pstmt.setTimestamp(11, Timestamp.from(Instant.now()));
-
+			
 			pstmt.executeUpdate();
+			
+			// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)-> damit Foto später geladen werden kann
+ 			try (ResultSet rs = pstmt.getGeneratedKeys()) {
+ 				while (rs.next()) {
+ 					beanAnzeigeAufgeben.setAnzeigeID(rs.getInt(1));
+
+ 				}
+ 			}
 
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
