@@ -120,8 +120,8 @@ public class ServletAnzeigeAnzeigen extends HttpServlet {
 			throw new ServletException(ex.getMessage());
 		}
 
-		// Lukas
-		// prüfen, ob gebucht
+// Lukas
+// prüfen, ob gebucht
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con
 						.prepareStatement("SELECT COUNT(*) FROM gebuchte WHERE benutzerID = ? AND anzeigeID = ?")) {

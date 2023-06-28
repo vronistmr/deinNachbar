@@ -9,7 +9,7 @@
 
 
 <main>
-<!-- Tobi, Lukas -->
+<!-- Tobi -->
 	<div class="centeredflex">
 		<form id="registrierenForm" method="POST"
 			action="./../ServletRegistrierung">
@@ -49,6 +49,7 @@
 				<p id="fehlerText"></p>
 			</div>
 		</form>
+		<p id="ajaxMailSchonVergeben"></p>
 	</div>
 </main>
 

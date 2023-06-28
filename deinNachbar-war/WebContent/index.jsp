@@ -12,12 +12,12 @@
 	<div class="centeredflex">
 		<form method="POST" id="loginForm" action="./ServletIndex">
 			<h1>Login</h1>
-			<div class="spacereg" id = "ajaxMail">
+			<div class="spacereg">
 				<input autofocus type="text" id="email" name="email" maxlength="40"
 					title="Bitte geben sie ihre Email-Adresse ein, mit der sie sich registriert haben!"
 					required placeholder="E-Mail">
 			</div>
-			<div class="spaceReg" id = "ajaxPasswort">
+			<div class="spaceReg">
 				<input type="password" id="passwort" name="passwort" maxlength="20"
 					title="Bitte geben sie ihr Passwort ein, mit dem sie sich registriert haben!"
 					required placeholder="Passwort">

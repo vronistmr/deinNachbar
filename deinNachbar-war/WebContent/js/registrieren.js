@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", init);
 function init() {
 	var form = document.getElementById("passwortwdh");
 	form.addEventListener("change", checkPasswordMatch);
+	evtemailValidierung();
 }
 
 function checkPasswordMatch(event) {
@@ -20,4 +21,28 @@ function checkPasswordMatch(event) {
 	} else {
 		fehlerMessage.innerHTML = ""; // Entfernt die Fehlermeldung
 	}
+}
+
+//Veronika, Tobi, Lukas
+function emailValidierungAjax() {
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.responseType = "json";
+
+	xmlhttp.addEventListener("load", function() {
+		var fehlermeldung = xmlhttp.response;
+   		var fehlermeldungRegistieren = fehlermeldung.fehlermeldungRegistieren;
+    
+		document.getElementById("ajaxMailSchonVergeben").innerHTML = fehlermeldungRegistieren;
+
+	});
+
+	xmlhttp.open("POST", "ServletRegistrierung", true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttp.send();
+}
+
+
+function evtemailValidierung() {
+	var registrierenButton = document.getElementById("registrierenButton");
+	registrierenButton.addEventListener("click", emailValidierungAjax);
 }
