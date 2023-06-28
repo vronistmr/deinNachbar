@@ -9,7 +9,7 @@
 
 
 <main>
-<!-- Tobi, Lukas -->
+<!-- Tobi -->
 	<div class="centeredflex">
 		<form id="registrierenForm" method="POST"
 			action="./../ServletRegistrierung">

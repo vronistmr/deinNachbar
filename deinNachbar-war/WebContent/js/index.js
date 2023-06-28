@@ -4,9 +4,10 @@
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-	warnung();
 	document.getElementById("ajaxLogIn").addEventListener("click", check);
 }
+
+//Veronika, Tobi, Lukas
 /*
 function check() {
 	var searchURL = "ServletIndex";
@@ -25,18 +26,13 @@ function check() {
 function check() {
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.responseType = "json";
-		xmlhttp.addEventListener("load", function() {
+	xmlhttp.addEventListener("load", function() {
 		var fehlermeldung = xmlhttp.response;
 		document.getElementById("ajaxPasswortFalsch").innerHTML = fehlermeldung.fehlermeldungLogin;
-	
+
 	});
 
 	xmlhttp.open("POST", "ServletIndex", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttp.send();
-}
-
-
-function warnung() {
-	alert("🍪 Wir verwenden Cookies! Möchtest du diese akzeptieren?");
 }
