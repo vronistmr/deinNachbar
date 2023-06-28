@@ -49,6 +49,7 @@
 				<p id="fehlerText"></p>
 			</div>
 		</form>
+		<p id="ajaxMailSchonVergeben"></p>
 	</div>
 </main>
 
