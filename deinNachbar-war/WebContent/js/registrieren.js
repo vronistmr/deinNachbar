@@ -5,8 +5,7 @@ document.addEventListener("DOMContentLoaded", init);
 
 function init() {
 	var form = document.getElementById("passwortwdh");
-	form.addEventListener("change", checkPasswordMatch);
-
+	form.addEventListener("keyup", checkPasswordMatch);
 	evtemailValidierung();
 }
 
@@ -24,6 +23,7 @@ function checkPasswordMatch(event) {
 	}
 }
 
+//Veronika, Tobi, Lukas
 function emailValidierungAjax() {
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.responseType = "json";

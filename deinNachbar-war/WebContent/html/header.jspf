@@ -22,6 +22,8 @@
 	<c:when test="${pageContext.request.servletPath == '/index.jsp'}">
 		<link rel="stylesheet" href="./css/basis.css">
 		<link rel="stylesheet" href="./css/indexRegistrieren.css">
+			<!--nur für Deaktivierung cookies, damit auf jeder seite geprüft wird, restliche script jwls. auf entsprechedner JSP-->
+			<script type="text/javascript" src="./js/init.js"></script>
 	</c:when>
 	<c:otherwise>
 		<link rel="stylesheet" href="./../css/basis.css">
@@ -29,6 +31,8 @@
 		<link rel="stylesheet" href="./../css/anzeigenAnzeigen.css">
 		<link rel="stylesheet" href="./../css/anzeigeAufgeben.css">
 		<link rel="stylesheet" href="./../css/startseite.css">
+			<!--nur für Deaktivierung cookies, damit auf jeder seite geprüft wird, restliche script jwls. auf entsprechedner JSP-->
+			<script type="text/javascript" src="./../js/init.js"></script>
 	</c:otherwise>
 </c:choose>
 </head>
@@ -76,5 +80,7 @@
 
 		</nav>
 	</header>
+	
 	<noscript><p><br />⚠️ JavaScript ist deaktiviert. Bitte aktiviere JavaScript in deinem Browser, um unsere Website korrekt anzuzeigen</p></noscript>
+	
 	<!-- Bildquelle Logo: Eigene Quelle -->
