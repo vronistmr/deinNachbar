@@ -4,6 +4,8 @@
 <%@ page errorPage="fehlerausgabe.jsp"%>
 
 <%@ include file="header.jspf"%>
+<script type="text/javascript" src="./../js/bildError.js"></script>
+
 
 
 <div class="startseiteFlex">
@@ -12,7 +14,7 @@
 	
 	<c:forEach items="${Anzeigen}" var="gesuchteAnzeige" varStatus="status">
 				<div class="anzeigeBox">
-					<span><img src="./../ServletBildAnzeige?anzeigeID=${gesuchteAnzeige.anzeigeID}" width="300" height="200" onerror="this.src='./../img/logo.jpeg';" alt="Kein Bild vorhanden"></span><br /><!--onerror: https://bit.ly/3N6GpwJ  -->
+					<span><img src="./../ServletBildAnzeige?anzeigeID=${gesuchteAnzeige.anzeigeID}" width="300" height="200" alt="Kein Bild vorhanden"></span><br />
 					<span>${gesuchteAnzeige.anzeigeArt}</span><br />
 					<h4>${gesuchteAnzeige.titelAnzeige}</h4><br />
 						<c:if test="${gesuchteAnzeige.preiskategorie == 'Gratis'}">

@@ -8,6 +8,8 @@
 <!-- Lukas -->
 <%@ include file="header.jspf"%>
 <script type="text/javascript" src="./../js/meineGebuchten.js"></script>
+<script type="text/javascript" src="./../js/bildError.js"></script>
+
 
 <div class="startseiteFlex">
 
@@ -19,9 +21,8 @@
 			<div class="anzeigeBox">
 				<span><img
 					src="./../ServletBildAnzeige?anzeigeID=${currentGebuchte.anzeigeID}"
-					width="300" height="200" onerror="this.src='./../img/logo.jpeg';"
+					width="300" height="200" 
 					alt="Kein Bild vorhanden"></span><br />
-				<!--onerror: https://bit.ly/3N6GpwJ  -->
 				<span>${currentGebuchte.anzeigeArt}</span><br />
 				<h4>${currentGebuchte.titelAnzeige}</h4>
 				<br />

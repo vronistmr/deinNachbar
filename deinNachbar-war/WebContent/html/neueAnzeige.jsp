@@ -5,6 +5,8 @@
 <%@ page errorPage="fehlerausgabe.jsp"%>
 
 <%@ include file="header.jspf"%>
+<script type="text/javascript" src="./../js/bildError.js"></script>
+
 
 
 <main>
@@ -17,9 +19,8 @@
 		<aside>
 			<img class="imganzeige"
 				src="./../ServletBildAnzeige?anzeigeID=${anzeigeNeu.anzeigeID}"
-				width="300" height="1000" onerror="this.src='./../img/logo.jpeg';"
+				width="300" height="1000" 
 				alt="Kein Bild vorhanden">
-			<!--onerror: https://bit.ly/3N6GpwJ  -->
 		</aside>
 		<article>
 			<h3>${anzeigeNeu.anzeigeArt}</h3>

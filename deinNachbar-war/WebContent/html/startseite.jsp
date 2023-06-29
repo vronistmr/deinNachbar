@@ -7,10 +7,11 @@
 <!-- Lukas -->
 <%@ include file="header.jspf"%>
 <script type="text/javascript" src="./../js/startseite.js"></script>
+<script type="text/javascript" src="./../js/bildError.js"></script>
 
 
 <nav class="navStartseite">
-<!-- Tobi -->
+	<!-- Tobi -->
 	<form action="./../SuchServlet" method="post">
 		<input type="text" name="suchstring" size="50" maxlength="50"
 			placeholder="Was suchtst du?">
@@ -39,9 +40,7 @@
 				<div class="anzeigeBox">
 					<span><img
 						src="./../ServletBildAnzeige?anzeigeID=${currentSucheAnzeige.anzeigeID}"
-						width="300" height="200" onerror="this.src='./../img/logo.jpeg';"
-						alt="Kein Bild vorhanden"><br /></span>
-					<!--onerror: https://bit.ly/3N6GpwJ  -->
+						width="300" height="200" alt="Kein Bild vorhanden"><br /></span>
 					<span>${currentSucheAnzeige.anzeigeArt}</span><br />
 					<h4>${currentSucheAnzeige.titelAnzeige}</h4>
 					<br />
@@ -67,9 +66,7 @@
 				<div class="anzeigeBox">
 					<span><img
 						src="./../ServletBildAnzeige?anzeigeID=${currentBieteAnzeige.anzeigeID}"
-						width="300" height="200" onerror="this.src='./../img/logo.jpeg';"
-						alt="Kein Bild vorhanden"></span><br />
-					<!--onerror: https://bit.ly/3N6GpwJ  -->
+						width="300" height="200" alt="Kein Bild vorhanden"></span><br />
 					<span>${currentBieteAnzeige.anzeigeArt}</span><br />
 					<h4>${currentBieteAnzeige.titelAnzeige}</h4>
 					<br />
@@ -118,7 +115,7 @@
 				<img src="./../img/pencil.png" width="17" height="17"
 					alt="bearbeiten" class="kategorieBearbeiten">
 				<!--Bildquelle: http://bitly.ws/IDup-->
-<!-- Lukas -->
+				<!-- Lukas -->
 				<form
 					action="./../ServletKategorieBearbeiten?kategorieID=${currentKategorie.kategorieID}"
 					method="POST" class="ausgeblendet bearbeitenForm">
@@ -129,18 +126,18 @@
 					<button type="submit" value="neu" name="bearbeiten">🖊️
 						Kategorie umbenennen</button>
 				</form>
-<!-- Veronika -->
+				<!-- Veronika -->
 				<br />
 			</c:forEach>
 			<form action="./../ServletKategorieNeu" method="POST"
 				class="spaceTop">
 				<input type="text" name="neueKategorie" size="50" maxlength="50"
 					placeholder="Neue Kategorie" pattern="[A-Z].*"
-					title="Kategorie muss mit einem Großbuchstaben beginnen"  id="neueKategorie" required>
-				<br />
-				<button type="submit" value="neu" name="hinzufuegen" id="neueKategorieButton">➕
-					Kategorie ergänzen</button>
-					<div id="fehlerKategorie"></div>
+					title="Kategorie muss mit einem Großbuchstaben beginnen"
+					id="neueKategorie" required> <br />
+				<button type="submit" value="neu" name="hinzufuegen"
+					id="neueKategorieButton">➕ Kategorie ergänzen</button>
+				<div id="fehlerKategorie"></div>
 			</form>
 		</c:if>
 
