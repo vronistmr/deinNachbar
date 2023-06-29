@@ -136,10 +136,11 @@
 				class="spaceTop">
 				<input type="text" name="neueKategorie" size="50" maxlength="50"
 					placeholder="Neue Kategorie" pattern="[A-Z].*"
-					title="Kategorie muss mit einem Großbuchstaben beginnen" required>
+					title="Kategorie muss mit einem Großbuchstaben beginnen"  id="neueKategorie" required>
 				<br />
-				<button type="submit" value="neu" name="hinzufuegen">➕
+				<button type="submit" value="neu" name="hinzufuegen" id="neueKategorieButton">➕
 					Kategorie ergänzen</button>
+					<div id="fehlerKategorie"></div>
 			</form>
 		</c:if>
 
