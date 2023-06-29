@@ -25,20 +25,31 @@ function checkPasswordMatch(event) {
 
 //Veronika, Tobi, Lukas
 function emailValidierungAjax() {
+	var email = document.getElementById("email").value;
+	var vorname = document.getElementById("vorname").value;
+	var passwort = document.getElementById("passwort").value;
+	var standort = document.getElementById("standort").value;
+
+
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.responseType = "json";
 
 	xmlhttp.addEventListener("load", function() {
 		var fehlermeldung = xmlhttp.response;
-   		var fehlermeldungRegistieren = fehlermeldung.fehlermeldungRegistieren;
+   		var fehlermeldungReg = fehlermeldung.fehlermeldungRegistieren;
+    	
+    	if (fehlermeldungReg === "Registrieren erfolgreich"){
+			document.getElementById("registrierenForm").submit();
+		}else{
+			document.getElementById("ajaxMailSchonVergeben").innerHTML = fehlermeldungReg;
+		}
     
-		document.getElementById("ajaxMailSchonVergeben").innerHTML = fehlermeldungRegistieren;
 
 	});
 
 	xmlhttp.open("POST", "ServletRegistrierung", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xmlhttp.send();
+	xmlhttp.send("vorname=" + vorname + "&email=" + email + "&passwort=" + passwort + "&standort=" + standort);
 }
 
 
