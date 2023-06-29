@@ -25,6 +25,7 @@ function checkPasswordMatch(event) {
 
 //Veronika, Tobi, Lukas
 function emailValidierungAjax() {
+	var form = document.getElementById("registrierenForm");
 	var email = document.getElementById("email").value;
 	var vorname = document.getElementById("vorname").value;
 	var passwort = document.getElementById("passwort").value;
@@ -36,20 +37,26 @@ function emailValidierungAjax() {
 
 	xmlhttp.addEventListener("load", function() {
 		var fehlermeldung = xmlhttp.response;
-   		var fehlermeldungReg = fehlermeldung.fehlermeldungRegistieren;
-    	
-    	if (fehlermeldungReg === "Registrieren erfolgreich"){
+		var fehlermeldungReg = fehlermeldung.fehlermeldungRegistieren;
+
+
+		if (fehlermeldungReg === "Registrieren erfolgreich") {
 			document.getElementById("registrierenForm").submit();
-		}else{
+		} else {
 			document.getElementById("ajaxMailSchonVergeben").innerHTML = fehlermeldungReg;
 		}
-    
 
 	});
 
-	xmlhttp.open("POST", "./../ServletRegistrierung", true);
-	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xmlhttp.send("vorname=" + vorname + "&email=" + email + "&passwort=" + passwort + "&standort=" + standort);
+	if (form.checkValidity()) { //Prüft ob Vorgaben des HTML Formulars erfüllt sind
+		xmlhttp.open("POST", "./../ServletRegistrierung", true);
+		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xmlhttp.send("vorname=" + vorname + "&email=" + email + "&passwort=" + passwort + "&standort=" + standort);
+	}
+	else {
+		document.getElementById("formularPattern").innerHTML = "Bitte Vorgaben erfüllen!";
+	}
+
 }
 
 
