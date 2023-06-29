@@ -23,7 +23,7 @@
 					required placeholder="Passwort">
 			</div>
 			<div  class="regbutton">
-				<button type="submit" name="logIn" id=ajaxLogIn value="neu">OK</button>
+				<button type="submit" name="logIn" id="ajaxLogIn" value="neu">OK</button>
 			</div>
 		</form>
 		<div id=ajaxPasswortFalsch></div>

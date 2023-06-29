@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", init);
 
 function init() {
 	var form = document.getElementById("passwortwdh");
-	form.addEventListener("change", checkPasswordMatch);
+	form.addEventListener("keyup", checkPasswordMatch);
 	evtemailValidierung();
 }
 
