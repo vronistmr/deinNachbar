@@ -19,6 +19,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/ServletRegistrierung")
 public class ServletRegistrierung extends HttpServlet implements Servlet {
@@ -34,6 +35,8 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 		// Bean nur für Speicherung Daten innerhalb des Servlets - Bean wird später
 		// nicht mehr ausgelesen
 		BeanBenutzerdaten beanRegistrieren = new BeanBenutzerdaten();
+		BeanFehlermeldung fehlerRegistrierung = new BeanFehlermeldung();
+
 
 		beanRegistrieren.setVorname(request.getParameter("vorname"));
 		beanRegistrieren.setEmail(request.getParameter("email"));
@@ -41,13 +44,15 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 		beanRegistrieren.setStandort(request.getParameter("standort"));
 
 		if (emailNeuPruefen(beanRegistrieren.getEmail())) {
-			// DB-Zugriff
 			persist(beanRegistrieren);
+			// Registrieren erfolgreich 
+			fehlerRegistrierung.setFehlernachricht("Registrieren erfolgreich");
+			HttpSession session = request.getSession();
+			session.setAttribute("validierungRegistrieren", fehlerRegistrierung);
+			response.sendRedirect("./ajax/fehlermeldungAjax.jsp");
 
-			response.sendRedirect("./index.jsp");
 		} else {
-			// Login fehlgeschlagen: Behandlung mit Ajax 
-			BeanFehlermeldung fehlerRegistrierung = new BeanFehlermeldung();
+			// Registrieren fehlgeschlagen - Benutzer bereits registiert: Behandlung mit Ajax 
 			fehlerRegistrierung.setFehlernachricht("E-Mail ist bereits registiert! Bitte verwenden Sie eine andere E-Mail.");
 			request.setAttribute("validierungRegistrieren", fehlerRegistrierung);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("./ajax/fehlermeldungAjax.jsp");
