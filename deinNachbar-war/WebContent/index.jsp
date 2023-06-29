@@ -10,7 +10,7 @@
 <main>
 <!-- Tobi -->
 	<div class="centeredflex">
-		<form method="POST" id="loginForm" action="./ServletIndex">
+		<form method="POST" id="loginForm" action="./ServletIndexErfolgreich">
 			<h1>Login</h1>
 			<div class="spacereg">
 				<input autofocus type="text" id="email" name="email" maxlength="40"
@@ -23,7 +23,7 @@
 					required placeholder="Passwort">
 			</div>
 			<div  class="regbutton">
-				<button type="submit" name="logIn" id=ajaxLogIn value="neu">OK</button>
+				<button type="button" name="logIn" id="ajaxLogIn" value="neu">OK</button>
 			</div>
 		</form>
 		<div id=ajaxPasswortFalsch></div>

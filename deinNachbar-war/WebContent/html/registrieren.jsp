@@ -9,10 +9,10 @@
 
 
 <main>
-<!-- Tobi -->
+	<!-- Tobi -->
 	<div class="centeredflex">
 		<form id="registrierenForm" method="POST"
-			action="./../ServletRegistrierung">
+			action="./../ServletRegistrierungErfolgreich">
 			<h1>Registrieren</h1>
 			<div class="spaceReg">
 				<input autofocus type="text" id="vorname" name="vorname" size="30"
@@ -20,7 +20,7 @@
 					title="Gib deinen Vor- und oder Nahchnamen ein"><span></span>
 			</div>
 			<div class="spaceReg">
-<!-- patterns von W3Schools -->
+				<!-- patterns von W3Schools -->
 				<input type="email" id="email" name="email" size="30" maxlength="50"
 					pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
 					title="Gib eine gültige Email-Adresse ein" required
@@ -44,12 +44,15 @@
 					title="Gib bitte deinen Wohnort ein"><span></span>
 			</div>
 			<div class="regbutton">
-				<button type="submit" id="registrierenButton" name="registrierung"
+				<button type="button" id="registrierenButton" name="registrierung"
 					value="neu">Registrieren</button>
-				<p id="fehlerText"></p>
+				<br /><br />
+				<div id="formularPattern"></div>
+				<div id="fehlerText"></div>
+				<div id="ajaxMailSchonVergeben"></div>
 			</div>
 		</form>
-		<p id="ajaxMailSchonVergeben"></p>
+
 	</div>
 </main>
 
