@@ -12,7 +12,7 @@
 <!-- Tobi -->
 	<div class="centeredflex">
 		<form id="registrierenForm" method="POST"
-			action="./../ServletRegistrierung">
+			action="./../ServletRegistrierungErfolgreich">
 			<h1>Registrieren</h1>
 			<div class="spaceReg">
 				<input autofocus type="text" id="vorname" name="vorname" size="30"
@@ -44,7 +44,7 @@
 					title="Gib bitte deinen Wohnort ein"><span></span>
 			</div>
 			<div class="regbutton">
-				<button type="submit" id="registrierenButton" name="registrierung"
+				<button type="button" id="registrierenButton" name="registrierung"
 					value="neu">Registrieren</button>
 				<p id="fehlerText"></p>
 			</div>
