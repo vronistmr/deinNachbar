@@ -13,6 +13,7 @@ function init() {
 	evtfilterKategorie();
 	evtfilterAus();
 	evtKategorieBearbeiten();
+	evtNeueKategorie();
 }
 
 function warnung(evt) {
@@ -129,3 +130,24 @@ function evtKategorieBearbeiten() {
 		kategorieBearbeiten[i].addEventListener("click", kategorieBearbeitenEinblenden);
 	}
 }
+
+function neueKategorie(event){
+var neueKategorie = document.getElementById("neueKategorie").value;
+console.log(neueKategorie);
+var vorhandeneKategorien = document.querySelectorAll("button.kategorieButton");
+for (var i = 0; i < vorhandeneKategorien.length; i++) {
+	console.log(vorhandeneKategorien[i].textContent);
+		if (neueKategorie === vorhandeneKategorien[i].textContent) {
+			event.preventDefault(); 
+			document.getElementById("fehlerKategorie").innerHTML = "Kategorie ist bereits vorhanden";
+			return;
+		}else{
+			document.getElementById("fehlerKategorie").innerHTML = "";
+		}
+	}
+}
+
+function evtNeueKategorie() {
+	var kategorieNeuButton = document.getElementById("neueKategorieButton");
+		kategorieNeuButton.addEventListener("click", neueKategorie);
+	}
