@@ -47,7 +47,7 @@ function emailValidierungAjax() {
 
 	});
 
-	xmlhttp.open("POST", "ServletRegistrierung", true);
+	xmlhttp.open("POST", "./../ServletRegistrierung", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttp.send("vorname=" + vorname + "&email=" + email + "&passwort=" + passwort + "&standort=" + standort);
 }
