@@ -37,7 +37,7 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 		BeanBenutzerdaten beanRegistrieren = new BeanBenutzerdaten();
 		BeanFehlermeldung fehlerRegistrierung = new BeanFehlermeldung();
 
-
+//Veronika, Tobi, Lukas
 		beanRegistrieren.setVorname(request.getParameter("vorname"));
 		beanRegistrieren.setEmail(request.getParameter("email"));
 		beanRegistrieren.setPasswort(request.getParameter("passwort"));
@@ -60,6 +60,8 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 		}
 
 	}
+	
+//Veronika
 
 	private void persist(BeanBenutzerdaten beanRegistrieren) throws ServletException {
 		// DB-Zugriff
