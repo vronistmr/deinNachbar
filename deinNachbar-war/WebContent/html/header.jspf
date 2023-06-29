@@ -18,6 +18,7 @@
 
 <!-- Lukas -->
 <!--pageContext.request.servletPath == '/index.jsp': chatGPT - prüft ob aktuelle Seite die Index-Seite ist-->
+
 <c:choose>
 	<c:when test="${pageContext.request.servletPath == '/index.jsp'}">
 		<link rel="stylesheet" href="./css/basis.css">
