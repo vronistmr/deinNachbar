@@ -38,7 +38,7 @@ function check() {
 		}
 	});
 
-	xmlhttp.open("POST", "ServletIndex", true);
+	xmlhttp.open("POST", "./ServletIndex", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttp.send("email=" + email + "&passwort=" + passwort);
 }
