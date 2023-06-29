@@ -22,6 +22,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+
 @WebServlet("/ServletIndex")
 public class ServletIndex extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = 1L;
@@ -41,17 +42,19 @@ public class ServletIndex extends HttpServlet implements Servlet {
 		beanLogin.setPasswort(request.getParameter("passwort"));
 
 		benutzer = autentify(beanLogin);
-
+		BeanFehlermeldung fehlerLogin = new BeanFehlermeldung();
+		
 		if (benutzer.getBenutzerID() != null) {
 			// Erfolgreicher Login
 			HttpSession session = request.getSession();
 			session.setAttribute("loginForm", benutzer);
-			RequestDispatcher disp = request.getRequestDispatcher("./ServletStartseite");
-			disp.forward(request, response);
+			fehlerLogin.setFehlernachricht("richtig");
+			request.setAttribute("validierungLogin", fehlerLogin);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("./ajax/fehlermeldungAjax.jsp");
+			dispatcher.forward(request, response);
 		} else {
 			// Login fehlgeschlagen: Behandlung mit Ajax 
-			BeanFehlermeldung fehlerLogin = new BeanFehlermeldung();
-			fehlerLogin.setFehlernachricht("E-Mail oder Passwort falsch!");
+			fehlerLogin.setFehlernachricht("Passwort oder E-Mail falsch");
 			request.setAttribute("validierungLogin", fehlerLogin);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("./ajax/fehlermeldungAjax.jsp");
 			dispatcher.forward(request, response);
