@@ -4,8 +4,10 @@
 	pageEncoding="UTF-8"%>
 <%@ page errorPage="fehlerausgabe.jsp"%>
 
+
 <!-- Lukas -->
 <%@ include file="header.jspf"%>
+<script type="text/javascript" src="./../js/bildError.js"></script>
 
 
 <!-- Veronika -->
@@ -16,9 +18,8 @@
 			<div class="anzeigeBox">
 				<span><img
 					src="./../ServletBildAnzeige?anzeigeID=${currentAnzeige.anzeigeID}"
-					width="300" height="200" onerror="this.src='./../img/logo.jpeg';"
+					width="300" height="200" 
 					alt="Kein Bild vorhanden"></span><br />
-				<!--onerror: https://bit.ly/3N6GpwJ  -->
 				<span>${currentAnzeige.anzeigeArt}</span><br />
 				<h4>${currentAnzeige.titelAnzeige}</h4>
 				<br />

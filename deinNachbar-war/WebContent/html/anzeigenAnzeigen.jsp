@@ -6,6 +6,8 @@
 
 <%@ include file="header.jspf"%>
 <script type="text/javascript" src="./../js/anzeigeAnzeigen.js"></script>
+<script type="text/javascript" src="./../js/bildError.js"></script>
+
 
 
 <main>
@@ -22,9 +24,8 @@
 		<aside>
 			<img class="imganzeige"
 				src="./../ServletBildAnzeige?anzeigeID=${AnzeigeForm.anzeigeID}"
-				width="400" height="1000" onerror="this.src='./../img/logo.jpeg';"
+				width="400" height="1000" 
 				alt="Kein Bild vorhanden">
-			<!--onerror: https://bit.ly/3N6GpwJ  -->
 		</aside>
 		<article>
 			<h3>${AnzeigeForm.anzeigeArt}</h3>

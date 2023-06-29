@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-	window.addEventListener('load', warnungCookies());
+	window.addEventListener("load", warnungCookies);
 }
 
 //https://developer.mozilla.org/en-US/docs/Web/API/Navigator/cookieEnabled

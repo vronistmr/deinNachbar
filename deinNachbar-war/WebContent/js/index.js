@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", init);
 
 function init() {
 	document.getElementById("ajaxLogIn").addEventListener("click", check);
-	document.getElementById("ajaxLogIn").addEventListener("click", check);
 }
 
 //Veronika, Tobi, Lukas
