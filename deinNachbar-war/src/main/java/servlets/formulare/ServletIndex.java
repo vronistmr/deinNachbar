@@ -44,6 +44,7 @@ public class ServletIndex extends HttpServlet implements Servlet {
 		benutzer = autentify(beanLogin);
 		BeanFehlermeldung fehlerLogin = new BeanFehlermeldung();
 		
+//Veronika, Tobi, Lukas
 		if (benutzer.getBenutzerID() != null) {
 			// Erfolgreicher Login
 			HttpSession session = request.getSession();
@@ -61,7 +62,7 @@ public class ServletIndex extends HttpServlet implements Servlet {
 		}
 
 	}
-
+//Veronika
 	private BeanBenutzerdaten autentify(BeanLogindaten beanLogin) throws ServletException {
 		BeanBenutzerdaten benutzerDaten = new BeanBenutzerdaten();
 		// DB-Zugriff

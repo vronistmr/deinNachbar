@@ -9,21 +9,6 @@ function init() {
 }
 
 //Veronika, Tobi, Lukas
-/*
-function check() {
-	var searchURL = "ServletIndex";
-	var email = document.getElementById("email").value;
-	var passwort = document.getElementById("passwort").value;
-
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.addEventListener("load", function() {
-		document.getElementById("ajaxPasswortFalsch").innerHTML = xmlhttp.responseText;
-	});
-	xmlhttp.open("POST", searchURL, true);
-	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xmlhttp.send("email=" + email + "&passwort=" + passwort);
-}
-*/
 function check() {
 	var email = document.getElementById("email").value;
 	var passwort = document.getElementById("passwort").value;
