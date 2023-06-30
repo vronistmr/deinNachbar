@@ -150,5 +150,7 @@ function neueKategorie(event) {
 
 function evtNeueKategorie() {
 	var kategorieNeuButton = document.getElementById("neueKategorieButton");
-	kategorieNeuButton.addEventListener("click", neueKategorie);
+	if (kategorieNeuButton !== null) {
+		kategorieNeuButton.addEventListener("click", neueKategorie);
+	}
 }

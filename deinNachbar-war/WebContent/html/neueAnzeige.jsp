@@ -5,7 +5,6 @@
 <%@ page errorPage="fehlerausgabe.jsp"%>
 
 <%@ include file="header.jspf"%>
-<script type="text/javascript" src="./../js/bildError.js"></script>
 
 
 
