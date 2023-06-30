@@ -8,7 +8,6 @@
 <!-- Lukas -->
 <%@ include file="header.jspf"%>
 <script type="text/javascript" src="./../js/meineGebuchten.js"></script>
-<script type="text/javascript" src="./../js/bildError.js"></script>
 
 
 <div class="startseiteFlex">

@@ -39,7 +39,6 @@ function emailValidierungAjax() {
 		var fehlermeldung = xmlhttp.response;
 		var fehlermeldungReg = fehlermeldung.fehlermeldungRegistieren;
 
-
 		if (fehlermeldungReg === "Registrieren erfolgreich") {
 			document.getElementById("registrierenForm").submit();
 		} else {
@@ -48,12 +47,16 @@ function emailValidierungAjax() {
 
 	});
 
+
 	if (form.checkValidity()) { //Prüft ob Vorgaben des HTML Formulars erfüllt sind
-		xmlhttp.open("POST", "./../ServletRegistrierung", true);
-		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		xmlhttp.send("vorname=" + vorname + "&email=" + email + "&passwort=" + passwort + "&standort=" + standort);
-	}
-	else {
+		if (document.getElementById("passwort").value === document.getElementById("passwortwdh").value) { //Vor absenden, Passwort prüfen
+			xmlhttp.open("POST", "./../ServletRegistrierung", true);
+			xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xmlhttp.send("vorname=" + vorname + "&email=" + email + "&passwort=" + passwort + "&standort=" + standort);
+		} else {
+			checkPasswordMatch();
+		}
+	} else {
 		document.getElementById("formularPattern").innerHTML = "Bitte Vorgaben erfüllen!";
 	}
 

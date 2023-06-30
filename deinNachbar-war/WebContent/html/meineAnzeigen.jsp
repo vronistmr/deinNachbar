@@ -7,7 +7,6 @@
 
 <!-- Lukas -->
 <%@ include file="header.jspf"%>
-<script type="text/javascript" src="./../js/bildError.js"></script>
 
 
 <!-- Veronika -->
