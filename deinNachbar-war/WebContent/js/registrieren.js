@@ -37,23 +37,25 @@ function emailValidierungAjax() {
 
 	xmlhttp.addEventListener("load", function() {
 		var fehlermeldung = xmlhttp.response;
-		var fehlermeldungReg = fehlermeldung.fehlermeldungRegistieren;
-
+		var fehlermeldungReg = fehlermeldung.fehlermeldungRegistieren; //Meldung vom ServletRegistrierung
 
 		if (fehlermeldungReg === "Registrieren erfolgreich") {
-			document.getElementById("registrierenForm").submit();
+			document.getElementById("registrierenForm").submit(); //Absensen an ServeltRegistrierungErfolgreich (aus form-Tag)
 		} else {
 			document.getElementById("ajaxMailSchonVergeben").innerHTML = fehlermeldungReg;
 		}
 
 	});
 
+
 	if (form.checkValidity()) { //Prüft ob Vorgaben des HTML Formulars erfüllt sind
-		xmlhttp.open("POST", "./../ServletRegistrierung", true);
-		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		xmlhttp.send("vorname=" + vorname + "&email=" + email + "&passwort=" + passwort + "&standort=" + standort);
-	}
-	else {
+		document.getElementById("formularPattern").innerHTML = "";
+		if (document.getElementById("passwort").value === document.getElementById("passwortwdh").value) { //Vor absenden, Passwort prüfen
+			xmlhttp.open("POST", "./../ServletRegistrierung", true);
+			xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xmlhttp.send("vorname=" + vorname + "&email=" + email + "&passwort=" + passwort + "&standort=" + standort);
+		}
+	} else {
 		document.getElementById("formularPattern").innerHTML = "Bitte Vorgaben erfüllen!";
 	}
 
