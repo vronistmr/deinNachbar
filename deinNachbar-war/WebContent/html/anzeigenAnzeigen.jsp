@@ -6,7 +6,6 @@
 
 <%@ include file="header.jspf"%>
 <script type="text/javascript" src="./../js/anzeigeAnzeigen.js"></script>
-<script type="text/javascript" src="./../js/bildError.js"></script>
 
 
 
@@ -73,7 +72,7 @@
 			<a href="mailto:${AnzeigeForm.email}?subject=deinNachbar.de&,"
 				title="hierzu muss ein E-Mail-Programm installiert sein"
 				class="button"><img src="./../img/mail.png" width="17"
-				height="13" alt="mail"> Nachricht an Inserenten</a>
+				height="13" alt="mail"> Nachricht an ${AnzeigeForm.vorname}</a>
 			<!-- quelle:https://www.tutorialspoint.com/de/html/html_email_links.htm#:~:text=HTML%20Email%20Tag,Adresse%20zusammen%20mit%20href%20attribute. -->
 		</c:if>
 
