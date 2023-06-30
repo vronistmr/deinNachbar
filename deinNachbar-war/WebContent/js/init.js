@@ -17,7 +17,6 @@ function warnungCookies() {
 }
 
 //onerror: https://bit.ly/3N6GpwJ
-
 // Statt Attribut in img Tag: onerror="this.src='./../img/logo.jpeg';"
 //Wenn ein Bild nicht geladen werden kann, weil nicht vorhanden - wird default Bild aus Ordnerstruktur angezeigt
 function defautlBild(foto) {
