@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-	window.addEventListener("load", warnungCookies);
+	window.addEventListener("load", warnungCookies());
 	evtBildladenFehler();
 }
 
