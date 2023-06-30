@@ -47,6 +47,7 @@ public class ServletRegistrierung extends HttpServlet implements Servlet {
 			persist(beanRegistrieren);
 			// Registrieren erfolgreich 
 			fehlerRegistrierung.setFehlernachricht("Registrieren erfolgreich");
+			//Session wegen sendRedirect AjaxMeldung
 			HttpSession session = request.getSession();
 			session.setAttribute("validierungRegistrieren", fehlerRegistrierung);
 			response.sendRedirect("./ajax/fehlermeldungAjax.jsp");
